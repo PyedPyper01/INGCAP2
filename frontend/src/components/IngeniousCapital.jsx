@@ -36,49 +36,33 @@ import {
 } from 'lucide-react';
 
 const IngeniousCapital = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
-  const [scrollY, setScrollY] = useState(0);
+  const [currentPage, setCurrentPage] = useState('logo');
 
-  // Prevent scrolling on initial load
+  // Prevent body scroll when on logo page
   useEffect(() => {
-    document.body.style.overflow = 'hidden';
+    if (currentPage === 'logo') {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    
     return () => {
       document.body.style.overflow = 'auto';
     };
-  }, []);
+  }, [currentPage]);
 
-  // Track scroll for navbar
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Smooth scroll to section and show site content
-  const scrollToSection = (sectionId) => {
-    const siteContent = document.getElementById('site-content');
-    if (siteContent) {
-      siteContent.classList.remove('hidden');
-      document.body.style.overflow = 'auto';
-      
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-          setIsMenuOpen(false);
-        }
-      }, 100);
-    }
+  const navigateToPage = (page) => {
+    setCurrentPage(page);
   };
 
-  // Function to return to home page
-  const returnToHome = () => {
-    const siteContent = document.getElementById('site-content');
-    if (siteContent) {
-      siteContent.classList.add('hidden');
-      document.body.style.overflow = 'hidden';
-    }
+  const scrollToSection = (sectionId) => {
+    setCurrentPage('site');
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   const AnimatedCounter = ({ end, suffix = '', prefix = '' }) => {
@@ -109,14 +93,61 @@ const IngeniousCapital = () => {
     return <span>{prefix}{count}{suffix}</span>;
   };
 
-  return (
-    <>
-      {/* Logo Page - Always Visible Initially */}
-      <div className="h-screen w-screen overflow-hidden bg-gray-900">
-        <section id="home" className="h-full w-full flex flex-col">
-          {/* Navigation Links - Symmetrically Aligned Across Top */}
-          <nav className="w-full z-50 py-8">
-            <div className="flex justify-center items-center space-x-16">
+  // Logo Page Component
+  const LogoPage = () => (
+    <div className="h-screen w-screen overflow-hidden bg-gray-900 flex flex-col">
+      {/* Navigation Links - Top */}
+      <nav className="w-full py-8">
+        <div className="flex justify-center items-center space-x-16">
+          {[
+            { id: 'about', label: 'Our Approach' },
+            { id: 'services', label: 'Services' },
+            { id: 'team', label: 'Team' },
+            { id: 'invest', label: 'Invest' },
+            { id: 'contact', label: 'Contact' }
+          ].map(item => (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className="text-white text-lg font-medium hover:text-teal-400 transition-colors duration-300"
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+      </nav>
+
+      {/* Logo Frame - Takes remaining space */}
+      <div className="flex-1 flex items-center justify-center p-12">
+        <div 
+          className="w-full h-full max-w-4xl max-h-4xl flex items-center justify-center bg-gray-800 rounded-3xl border-4 border-gray-700 cursor-pointer group hover:border-gray-600 transition-colors duration-300"
+          onClick={() => scrollToSection('about')}
+        >
+          <img 
+            src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
+            alt="Ingenious Capital - Click to Enter" 
+            className="w-96 h-96 object-contain group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+      </div>
+    </div>
+  );
+
+  // Main Site Component
+  const MainSite = () => (
+    <div className="min-h-screen bg-gray-900">
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-xl shadow-2xl border-b border-gray-700">
+        <div className="max-w-7xl mx-auto px-8 py-6">
+          <div className="flex justify-between items-center">
+            <button
+              onClick={() => navigateToPage('logo')}
+              className="text-white hover:text-teal-400 transition-colors font-medium"
+            >
+              ← Back to Home
+            </button>
+            
+            <div className="flex items-center space-x-12">
               {[
                 { id: 'about', label: 'Our Approach' },
                 { id: 'services', label: 'Services' },
@@ -127,67 +158,18 @@ const IngeniousCapital = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-white text-lg font-medium hover:text-teal-400 transition-colors duration-300"
+                  className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
                 >
                   {item.label}
                 </button>
               ))}
             </div>
-          </nav>
-
-          {/* Full Screen Logo Frame */}
-          <div className="flex-1 flex items-center justify-center p-8">
-            <div 
-              className="cursor-pointer group w-full h-full flex items-center justify-center border-4 border-gray-700 rounded-3xl bg-gray-800"
-              onClick={() => scrollToSection('about')}
-            >
-              <img 
-                src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
-                alt="Ingenious Capital Logo - Click to Enter" 
-                className="w-96 h-96 object-contain group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
           </div>
-        </section>
-      </div>
-
-      {/* Rest of Site - Hidden Initially */}
-      <div className="hidden" id="site-content">
-        <div className="min-h-screen bg-gray-900 relative">
-          {/* Navigation for rest of site */}
-          <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-xl shadow-2xl border-b border-gray-700">
-            <div className="max-w-7xl mx-auto px-8 py-6">
-              <div className="flex justify-between items-center">
-                <button
-                  onClick={() => returnToHome()}
-                  className="text-white hover:text-teal-400 transition-colors"
-                >
-                  ← Back to Home
-                </button>
-                
-                <div className="flex items-center space-x-12">
-                  {[
-                    { id: 'about', label: 'Our Approach' },
-                    { id: 'services', label: 'Services' },
-                    { id: 'team', label: 'Team' },
-                    { id: 'invest', label: 'Invest' },
-                    { id: 'contact', label: 'Contact' }
-                  ].map(item => (
-                    <button
-                      key={item.id}
-                      onClick={() => scrollToSection(item.id)}
-                      className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
-                    >
-                      {item.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </nav>
+        </div>
+      </nav>
 
       {/* Our Approach Section */}
-      <section id="about" className="py-32 bg-gray-800 relative overflow-hidden">
+      <section id="about" className="py-32 bg-gray-800 relative overflow-hidden mt-20">
         <div className="max-w-7xl mx-auto px-8 relative z-10">
           <div className="text-center mb-20">
             <p className="text-xl lg:text-2xl text-gray-300 mb-16 max-w-4xl mx-auto leading-relaxed font-light backdrop-blur-sm bg-white/5 rounded-2xl p-8 border border-gray-700">
@@ -279,9 +261,8 @@ const IngeniousCapital = () => {
         </div>
       </section>
 
-      {/* Services Section with Rich Graphics */}
+      {/* Services Section */}
       <section id="services" className="py-32 bg-gray-900 relative overflow-hidden">
-        {/* Background Image */}
         <div className="absolute inset-0 opacity-5">
           <img 
             src="https://images.unsplash.com/photo-1540760029765-138c8f6d2eac?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBvZmZpY2V8ZW58MHx8fHwxNzU1MDEwOTM5fDA&ixlib=rb-4.1.0&q=85" 
@@ -360,65 +341,10 @@ const IngeniousCapital = () => {
               </div>
             </div>
           </div>
-          
-          {/* Free Financial Healthcheck with Rich Visuals */}
-          <div className="relative">
-            <div className="absolute -top-8 -left-8 w-full h-full bg-gradient-to-r from-teal-500/10 to-orange-500/10 rounded-3xl blur-2xl"></div>
-            <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-12 lg:p-16 border border-gray-700 shadow-2xl">
-              {/* Background Image Overlay */}
-              <div className="absolute top-0 right-0 w-1/3 h-full opacity-10 overflow-hidden rounded-r-3xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwyfHxmaW5hbmNlfGVufDB8fHx8MTc1NTAxMDk0NHww&ixlib=rb-4.1.0&q=85" 
-                  alt="Financial analysis" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              <div className="relative z-10">
-                <div className="text-center mb-16">
-                  <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-teal-500 to-teal-600 rounded-full mb-6">
-                    <Activity className="h-10 w-10 text-white" />
-                  </div>
-                  <h3 className="text-4xl font-bold text-white mb-6">Free Financial Healthcheck</h3>
-                  <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                    We want to be the investment partner to guide you through the financial maze. 
-                    We carry out a free assessment of your current portfolios, identifying areas of risk.
-                  </p>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {[
-                    { icon: CheckCircle, title: 'Annual Mortgage Review', desc: "Ensure you're not paying more than you should be", color: 'from-teal-500 to-teal-600 border-teal-500/30' },
-                    { icon: Shield, title: 'Professional Will Writing', desc: "Protect yours and your family's wealth", color: 'from-orange-500 to-orange-600 border-orange-500/30' },
-                    { icon: PieChart, title: 'Pension Review', desc: 'Multiple pensions or retirement drawdown optimization', color: 'from-gray-500 to-gray-600 border-gray-500/30' },
-                    { icon: Users, title: 'Insurance Review', desc: 'Protection from employment loss, illness or death', color: 'from-teal-500 to-teal-600 border-teal-500/30' },
-                    { icon: Target, title: 'Tax Optimization', desc: 'Maximize various tax incentives for optimum returns', color: 'from-orange-500 to-orange-600 border-orange-500/30' },
-                    { icon: BarChart3, title: 'Secondary Market', desc: 'Offload underperforming investments', color: 'from-gray-500 to-gray-600 border-gray-500/30' }
-                  ].map((service, index) => (
-                    <div key={index} className="group">
-                      <div className={`bg-gray-900 rounded-2xl p-6 transition-all duration-500 hover:shadow-xl hover:transform hover:scale-105 border ${service.color}`}>
-                        <div className={`bg-gradient-to-r ${service.color.split(' ')[0]} ${service.color.split(' ')[1]} p-3 rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300 w-fit`}>
-                          <service.icon className="h-6 w-6 text-white" />
-                        </div>
-                        <h4 className="font-bold text-white mb-3">{service.title}</h4>
-                        <p className="text-sm text-gray-400 leading-relaxed">{service.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                
-                <div className="text-center mt-12">
-                  <p className="text-sm text-gray-500 font-light bg-gray-800 rounded-full px-6 py-3 inline-block border border-gray-700">
-                    All services provided by FCA regulated partners • No affiliate fees • Maximum discounts negotiated for you
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Team Section with Professional Photography */}
+      {/* Team Section */}
       <section id="team" className="py-32 bg-gray-800 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-20">
@@ -431,46 +357,6 @@ const IngeniousCapital = () => {
             </p>
           </div>
           
-          {/* Team Statistics with Rich Visuals */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-20">
-            <div className="text-center bg-gray-900 rounded-3xl p-8 shadow-xl border border-gray-700 group hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105">
-              <div className="bg-gradient-to-r from-teal-500 to-teal-600 p-4 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Award className="h-8 w-8 text-white" />
-              </div>
-              <div className="text-4xl font-bold text-white mb-3">50+</div>
-              <h3 className="text-lg font-semibold text-white mb-2">Years Combined Experience</h3>
-              <p className="text-sm text-gray-400">Venture capital, private equity, and structured finance</p>
-            </div>
-            
-            <div className="text-center bg-gray-900 rounded-3xl p-8 shadow-xl border border-gray-700 group hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105">
-              <div className="bg-gradient-to-r from-orange-500 to-orange-600 p-4 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <DollarSign className="h-8 w-8 text-white" />
-              </div>
-              <div className="text-4xl font-bold text-white mb-3">£30M+</div>
-              <h3 className="text-lg font-semibold text-white mb-2">Capital Deployed</h3>
-              <p className="text-sm text-gray-400">Across 10+ early-stage and growth deals</p>
-            </div>
-            
-            <div className="text-center bg-gray-900 rounded-3xl p-8 shadow-xl border border-gray-700 group hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105">
-              <div className="bg-gradient-to-r from-gray-500 to-gray-600 p-4 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Target className="h-8 w-8 text-white" />
-              </div>
-              <div className="text-4xl font-bold text-white mb-3">Multiple</div>
-              <h3 className="text-lg font-semibold text-white mb-2">Successful Exits</h3>
-              <p className="text-sm text-gray-400">To major acquirers and strategic buyers</p>
-            </div>
-            
-            <div className="text-center bg-gray-900 rounded-3xl p-8 shadow-xl border border-gray-700 group hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105">
-              <div className="bg-gradient-to-r from-teal-600 to-orange-600 p-4 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Globe className="h-8 w-8 text-white" />
-              </div>
-              <div className="text-4xl font-bold text-white mb-3">Diverse</div>
-              <h3 className="text-lg font-semibold text-white mb-2">Sector Expertise</h3>
-              <p className="text-sm text-gray-400">AI, biotech, fintech, and enterprise software</p>
-            </div>
-          </div>
-          
-          {/* Team Members with Professional Photography */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {[
               {
@@ -500,11 +386,6 @@ const IngeniousCapital = () => {
                       alt={member.name}
                       className="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <h3 className="text-2xl font-bold mb-1">{member.name}</h3>
-                      <p className="text-gray-200">{member.title}</p>
-                    </div>
                   </div>
                   
                   <div className="p-8">
@@ -516,47 +397,16 @@ const IngeniousCapital = () => {
                     <p className="text-gray-400 leading-relaxed mb-8 text-sm">
                       {member.bio}
                     </p>
-                    
-                    <div className="flex space-x-4">
-                      <Button 
-                        size="sm" 
-                        variant="outline"
-                        className="flex-1 border-gray-600 text-gray-300 hover:bg-gray-800"
-                      >
-                        <Users className="h-4 w-4 mr-2" />
-                        LinkedIn
-                      </Button>
-                      <Button 
-                        size="sm"
-                        className="bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white"
-                      >
-                        <Mail className="h-4 w-4" />
-                      </Button>
-                    </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          
-          <div className="text-center mt-16">
-            <Button 
-              size="lg"
-              onClick={() => scrollToSection('contact')}
-              className="bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white px-12 py-6 rounded-full text-lg font-medium transition-all duration-500 hover:scale-105 shadow-2xl hover:shadow-teal-500/25"
-            >
-              Contact Our Team
-              <ArrowRight className="ml-3 h-5 w-5" />
-            </Button>
-          </div>
         </div>
       </section>
 
-      {/* Investment Opportunities Section with Rich Graphics */}
+      {/* Investment Section */}
       <section id="invest" className="py-32 bg-gray-900 relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-800/50 to-gray-700/50"></div>
-        
         <div className="max-w-7xl mx-auto px-8 relative z-10">
           <div className="text-center mb-20">
             <h2 className="text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight">
@@ -591,12 +441,6 @@ const IngeniousCapital = () => {
             <div className="relative">
               <div className="absolute -top-4 -right-4 w-full h-full bg-gradient-to-r from-teal-500/10 to-orange-500/10 rounded-3xl blur-xl"></div>
               <div className="relative bg-gray-800 rounded-3xl p-10 shadow-2xl border border-gray-700">
-                <img
-                  src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzU1MDEwOTUzfDA&ixlib=rb-4.1.0&q=85"
-                  alt="Business team collaboration"
-                  className="w-full h-64 rounded-2xl mb-8 object-cover"
-                />
-                
                 <h4 className="text-2xl font-bold text-white mb-8">Investment Process</h4>
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
@@ -619,102 +463,11 @@ const IngeniousCapital = () => {
               </div>
             </div>
           </div>
-          
-          {/* Investment Services with Rich Visuals */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
-            <div className="group">
-              <div className="bg-gradient-to-br from-gray-800 to-gray-700 rounded-3xl p-10 h-full shadow-xl border border-gray-600 transition-all duration-700 hover:shadow-2xl hover:transform hover:scale-105">
-                <div className="relative mb-8">
-                  <div className="absolute -top-2 -left-2 w-20 h-20 bg-gradient-to-r from-teal-500/20 to-teal-600/20 rounded-2xl blur-xl"></div>
-                  <div className="relative bg-gradient-to-r from-teal-500 to-teal-600 w-16 h-16 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                    <BarChart3 className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Investment Review</h3>
-                <p className="text-gray-300 leading-relaxed mb-8">
-                  Have you seen an investment opportunity that you are considering? Our investment banking 
-                  background can help you make the final decision. We will carry out a full due diligence 
-                  review of the project or product and give you our feedback completely free of charge.
-                </p>
-                <p className="text-sm text-gray-500 bg-gray-800 rounded-lg p-4 italic border border-gray-700">
-                  (If we recommend the investment, we may even invest ourselves)
-                </p>
-              </div>
-            </div>
-            
-            <div className="group">
-              <div className="bg-gradient-to-br from-gray-800 to-gray-700 rounded-3xl p-10 h-full shadow-xl border border-gray-600 transition-all duration-700 hover:shadow-2xl hover:transform hover:scale-105">
-                <div className="relative mb-8">
-                  <div className="absolute -top-2 -left-2 w-20 h-20 bg-gradient-to-r from-orange-500/20 to-orange-600/20 rounded-2xl blur-xl"></div>
-                  <div className="relative bg-gradient-to-r from-orange-500 to-orange-600 w-16 h-16 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                    <PieChart className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Portfolio Review</h3>
-                <p className="text-gray-300 leading-relaxed mb-8">
-                  How are your current investments performing? Are you getting paid on time, 
-                  is there a threat of administration, or just a bad feeling about things on your part?
-                </p>
-                <p className="text-gray-300 leading-relaxed">
-                  There are many ways to salvage poor investments, including a change of management control, 
-                  a refinancing or a sale on our Secondary Market.
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          {/* Investor Network Benefits with Rich Graphics */}
-          <div className="relative">
-            <div className="absolute -top-8 -left-8 w-full h-full bg-gradient-to-r from-teal-500/5 to-orange-500/5 rounded-3xl blur-2xl"></div>
-            <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-12 lg:p-16 border border-gray-700 shadow-2xl">
-              {/* Background Office Image */}
-              <div className="absolute top-0 right-0 w-2/3 h-full opacity-10 overflow-hidden rounded-r-3xl">
-                <img 
-                  src="https://images.unsplash.com/39/lIZrwvbeRuuzqOoWJUEn_Photoaday_CSD%20%281%20of%201%29-5.jpg?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzU1MDEwOTUzfDA&ixlib=rb-4.1.0&q=85" 
-                  alt="Business meeting" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              <div className="relative z-10">
-                <div className="text-center mb-16">
-                  <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-teal-500 to-orange-500 rounded-full mb-6">
-                    <Users className="h-10 w-10 text-white" />
-                  </div>
-                  <h3 className="text-4xl font-bold text-white mb-6">Join Our Investor Network</h3>
-                  <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                    Connect with our team to learn more about investment opportunities and how our 
-                    dual-strategy approach can enhance your portfolio returns.
-                  </p>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                  {[
-                    { icon: Globe, title: 'Exclusive Deal Flow', desc: 'Access to pre-seed and mezzanine opportunities before they reach the market', color: 'from-teal-500 to-teal-600 border-teal-500/30' },
-                    { icon: BarChart3, title: 'Quarterly Reporting', desc: 'Transparent performance updates and portfolio company progress', color: 'from-orange-500 to-orange-600 border-orange-500/30' },
-                    { icon: Users, title: 'Co-Investment', desc: 'Opportunities for direct investment alongside the fund', color: 'from-gray-500 to-gray-600 border-gray-500/30' },
-                    { icon: Award, title: 'Investor Events', desc: 'Regular networking events and portfolio company presentations', color: 'from-teal-600 to-orange-600 border-orange-500/30' }
-                  ].map((benefit, index) => (
-                    <div key={index} className="text-center group">
-                      <div className={`bg-gray-900 rounded-2xl p-8 shadow-xl border transition-all duration-500 hover:shadow-2xl hover:transform hover:scale-105 ${benefit.color.split(' ').slice(2).join(' ')}`}>
-                        <div className={`bg-gradient-to-r ${benefit.color.split(' ')[0]} ${benefit.color.split(' ')[1]} w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                          <benefit.icon className="h-8 w-8 text-white" />
-                        </div>
-                        <h4 className="font-bold text-white mb-3">{benefit.title}</h4>
-                        <p className="text-sm text-gray-400 leading-relaxed">{benefit.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Contact Section with Luxury Office Background */}
+      {/* Contact Section */}
       <section id="contact" className="py-32 relative overflow-hidden">
-        {/* Background Image */}
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1525896544042-354764aa27e6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBvZmZpY2V8ZW58MHx8fHwxNzU1MDEwOTM5fDA&ixlib=rb-4.1.0&q=85" 
@@ -847,16 +600,11 @@ const IngeniousCapital = () => {
 
       {/* Footer */}
       <footer className="bg-black text-white py-16 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="w-full h-full bg-gray-800 opacity-20"></div>
-        </div>
-        
         <div className="max-w-7xl mx-auto px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="bg-gray-900 p-2 rounded-2xl shadow-2xl">
+                <div className="bg-gray-800 p-2 rounded-2xl shadow-2xl">
                   <img 
                     src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
                     alt="Ingenious Capital" 
@@ -914,9 +662,11 @@ const IngeniousCapital = () => {
           </div>
         </div>
       </footer>
-      </div>
-    </>
+    </div>
   );
+
+  // Render based on current page
+  return currentPage === 'logo' ? <LogoPage /> : <MainSite />;
 };
 
 export default IngeniousCapital;
