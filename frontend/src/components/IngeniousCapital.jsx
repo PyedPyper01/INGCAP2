@@ -385,6 +385,29 @@ const IngeniousCapital = () => {
               </div>
             </div>
           </div>
+          
+          {/* Making Your Investment - Full Width */}
+          <div className="relative mt-8">
+            <div className="absolute -top-4 -left-4 w-full h-full bg-gradient-to-r from-teal-500/5 to-orange-500/5 rounded-3xl blur-xl"></div>
+            <div className="relative bg-gray-800 rounded-3xl p-10 shadow-2xl border border-gray-700">
+              <h4 className="text-2xl font-bold text-white mb-8">Making Your Investment</h4>
+              
+              <div className="space-y-6 text-gray-300 leading-relaxed">
+                <p>
+                  The minimum amount you can invest in a pitch on Ingenious Capital Ltd varies depending on the specific investment 
+                  opportunity. Generally, the minimum investment amount is designed to be accessible, allowing a wide range of investors 
+                  to participate. Specific details for each investment will be identified in the relevant Pitch Page.
+                </p>
+                
+                <p>
+                  From here you will complete an application form either as an individual, with a partner or as a company, stating the 
+                  amount you wish to invest and confirming your HNW or Sophisticated Investor status. You are also required to submit 
+                  identity documents as part of the KYC process and confirm the source of your funds to meet anti money laundering 
+                  requirements.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
