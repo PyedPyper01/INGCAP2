@@ -182,7 +182,9 @@ const IngeniousCapital = () => {
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">
               To familiarize yourself with non-traditional, alternative investments requires a partner 
-              who has a substantial stake in the game themselves.
+              who has a substantial stake in the game themselves to ensure that the decision
+              making is in everybody's best interests. Ingenious Capital does exactly that by co-investing
+              in every project that it promotes.
             </p>
           </div>
           
