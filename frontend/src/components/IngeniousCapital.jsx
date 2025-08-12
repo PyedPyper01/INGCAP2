@@ -639,7 +639,7 @@ const IngeniousCapital = () => {
                   <label className="block text-sm font-medium text-gray-300 mb-3">Investment Interest</label>
                   <select className="w-full p-4 bg-gray-900/50 border border-gray-600 rounded-xl text-white focus:border-teal-500 focus:outline-none transition-colors backdrop-blur-sm">
                     <option value="" className="bg-gray-900">Select investment range</option>
-                    <option value="10k-50k" className="bg-gray-900">£10,000 - £50,000</option>
+                    <option value="25k-50k" className="bg-gray-900">£25,000 - £50,000</option>
                     <option value="50k-100k" className="bg-gray-900">£50,000 - £100,000</option>
                     <option value="100k-500k" className="bg-gray-900">£100,000 - £500,000</option>
                     <option value="500k+" className="bg-gray-900">£500,000+</option>
