@@ -270,47 +270,6 @@ const IngeniousCapital = () => {
               ensure that you are comfortable with the way that your funds are invested and the returns that you are achieving.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
-            <div className="group h-full">
-              <div className="bg-gradient-to-br from-gray-800 to-gray-700 rounded-3xl p-10 h-full transition-all duration-700 hover:shadow-2xl hover:transform hover:scale-105 border border-gray-600">
-                <div className="relative mb-8">
-                  <div className="absolute -top-2 -left-2 w-20 h-20 bg-gradient-to-r from-teal-500/20 to-teal-600/20 rounded-2xl blur-xl"></div>
-                  <div className="relative bg-gradient-to-r from-teal-500 to-teal-600 w-16 h-16 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                    <TrendingUp className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Co-Investment Strategy</h3>
-                <p className="text-gray-300 leading-relaxed mb-6">
-                  Ingenious Capital co-invests in every project that it promotes, ensuring decision making 
-                  is in everybody's best interests.
-                </p>
-                <div className="flex items-center text-teal-500 font-medium group-hover:translate-x-2 transition-transform duration-300">
-                  <span>Learn more</span>
-                  <ArrowRight className="h-4 w-4 ml-2" />
-                </div>
-              </div>
-            </div>
-            
-            <div className="group h-full">
-              <div className="bg-gradient-to-br from-gray-800 to-gray-700 rounded-3xl p-10 h-full transition-all duration-700 hover:shadow-2xl hover:transform hover:scale-105 border border-gray-600">
-                <div className="relative mb-8">
-                  <div className="absolute -top-2 -left-2 w-20 h-20 bg-gradient-to-r from-orange-500/20 to-orange-600/20 rounded-2xl blur-xl"></div>
-                  <div className="relative bg-gradient-to-r from-orange-500 to-orange-600 w-16 h-16 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                    <Shield className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Tax Optimization</h3>
-                <p className="text-gray-300 leading-relaxed mb-6">
-                  Maximize various tax incentives for optimum returns with our comprehensive tax optimization strategies.
-                </p>
-                <div className="flex items-center text-orange-500 font-medium group-hover:translate-x-2 transition-transform duration-300">
-                  <span>Learn more</span>
-                  <ArrowRight className="h-4 w-4 ml-2" />
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
