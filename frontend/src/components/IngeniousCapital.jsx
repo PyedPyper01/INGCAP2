@@ -158,7 +158,7 @@ const IngeniousCapital = () => {
           <div className="max-w-7xl mx-auto px-8 py-6">
             <div className="flex justify-between items-center">
               <button
-                onClick={() => { document.getElementById('site-content').classList.add('hidden'); document.body.style.overflow = 'hidden'; }}
+                onClick={() => returnToHome()}
                 className="text-white hover:text-teal-400 transition-colors"
               >
                 ← Back to Home
