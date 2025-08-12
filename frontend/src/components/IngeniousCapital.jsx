@@ -205,8 +205,8 @@ const IngeniousCapital = () => {
                 </p>
                 <p className="text-lg text-gray-300 leading-relaxed mb-8">
                   Ingenious Capital invests into a diverse portfolio of assets ranging from commodities, 
-                  shares, ETF's and AIM listed Companies to maintain liquidity and create income. We also invest in land 
-                  as an asset based business opportunities such as hotels, build to rent units, self storage, holiday parks 
+                  shares, ETF's and AIM listed Companies to maintain liquidity and create income. We also invest in property 
+                  based business opportunities such as hotels, build to rent units, self storage, holiday parks 
                   and more recently in demand sporting facilities such as Padel Tennis Centres - we see this as de-risking 
                   property investment, no developer risk (we have witnessed so many developments fail that involve construction 
                   and planning risk) and investment into strong operator models. <span className="text-xl font-bold text-white bg-gradient-to-r from-teal-500 to-orange-500 bg-clip-text text-transparent">This philosophy means that 50% of your funds invested are available to you on 48 hours notice, 
