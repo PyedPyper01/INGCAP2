@@ -39,40 +39,12 @@ const IngeniousCapital = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [scrollY, setScrollY] = useState(0);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  // Track scroll and mouse position for advanced animations
+  // Track scroll for navbar
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('mousemove', handleMouseMove);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
-  // Intersection Observer for section tracking
-  useEffect(() => {
-    const sections = document.querySelectorAll('section[id]');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   // Smooth scroll to section
@@ -84,116 +56,33 @@ const IngeniousCapital = () => {
     }
   };
 
-  const AnimatedCounter = ({ end, suffix = '', prefix = '', duration = 2500 }) => {
+  const AnimatedCounter = ({ end, suffix = '', prefix = '' }) => {
     const [count, setCount] = useState(0);
     const [hasAnimated, setHasAnimated] = useState(false);
     const countRef = useRef(null);
     
     useEffect(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting && !hasAnimated) {
-            setHasAnimated(true);
-            let startTime = null;
-            
-            const counter = (timestamp) => {
-              if (!startTime) startTime = timestamp;
-              const progress = timestamp - startTime;
-              
-              if (progress < duration) {
-                const easeOutQuart = 1 - Math.pow(1 - progress / duration, 4);
-                setCount(Math.floor(easeOutQuart * end));
-                requestAnimationFrame(counter);
-              } else {
-                setCount(end);
-              }
-            };
-            
-            requestAnimationFrame(counter);
-          }
-        },
-        { threshold: 0.5 }
-      );
-      
-      if (countRef.current) observer.observe(countRef.current);
-      return () => observer.disconnect();
-    }, [end, duration, hasAnimated]);
+      if (!hasAnimated) {
+        const timer = setTimeout(() => {
+          setHasAnimated(true);
+          let current = 0;
+          const increment = end / 50;
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= end) {
+              setCount(end);
+              clearInterval(timer);
+            } else {
+              setCount(Math.floor(current));
+            }
+          }, 30);
+          return () => clearInterval(timer);
+        }, 500);
+        return () => clearTimeout(timer);
+      }
+    }, [end, hasAnimated]);
     
     return <span ref={countRef}>{prefix}{count}{suffix}</span>;
-  };
-
-  const RevealOnScroll = ({ children, delay = 0, direction = 'up' }) => {
-    const [isVisible, setIsVisible] = useState(false);
-    const elementRef = useRef(null);
-    
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => setIsVisible(true), delay);
-          }
-        },
-        { threshold: 0.1 }
-      );
-      
-      if (elementRef.current) observer.observe(elementRef.current);
-      return () => observer.disconnect();
-    }, [delay]);
-    
-    const getTransform = () => {
-      if (!isVisible) {
-        switch (direction) {
-          case 'up': return 'translateY(60px)';
-          case 'down': return 'translateY(-60px)';
-          case 'left': return 'translateX(60px)';
-          case 'right': return 'translateX(-60px)';
-          default: return 'translateY(60px)';
-        }
-      }
-      return 'translateY(0px)';
-    };
-    
-    return (
-      <div
-        ref={elementRef}
-        style={{
-          transform: getTransform(),
-          opacity: isVisible ? 1 : 0,
-          transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-        }}
-      >
-        {children}
-      </div>
-    );
-  };
-
-  const ParallaxImage = ({ src, className = '', alt = '' }) => {
-    const [offset, setOffset] = useState(0);
-    const imageRef = useRef(null);
-    
-    useEffect(() => {
-      const handleScroll = () => {
-        if (imageRef.current) {
-          const rect = imageRef.current.getBoundingClientRect();
-          const scrolled = window.pageYOffset;
-          setOffset(scrolled * 0.3);
-        }
-      };
-      
-      window.addEventListener('scroll', handleScroll);
-      return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-    
-    return (
-      <div ref={imageRef} className={`overflow-hidden ${className}`}>
-        <img
-          src={src}
-          alt={alt}
-          className="w-full h-full object-cover transition-transform duration-300 ease-out"
-          style={{ transform: `translateY(${offset}px)` }}
-        />
-      </div>
-    );
   };
 
   return (
