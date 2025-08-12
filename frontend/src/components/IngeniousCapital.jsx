@@ -94,14 +94,14 @@ const IngeniousCapital = () => {
       }`}>
         <div className="max-w-7xl mx-auto px-8 py-6">
           <div className="flex justify-between items-center">
+            {/* Simple Corner Logo */}
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center shadow-2xl transform rotate-12 hover:rotate-0 transition-transform duration-500">
-                <span className="text-white font-bold text-2xl transform -rotate-12">I</span>
-              </div>
-              <div>
-                <span className="text-2xl font-bold bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent tracking-tight">Ingenious</span>
-                <span className="block text-sm font-medium text-gray-400 tracking-wider">CAPITAL</span>
-              </div>
+              <img 
+                src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
+                alt="Ingenious Capital" 
+                className="w-8 h-8 object-contain rounded-lg"
+              />
+              <span className="text-lg font-bold text-white tracking-tight">Ingenious Capital</span>
             </div>
             
             {/* Desktop Menu */}
