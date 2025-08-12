@@ -205,7 +205,9 @@ const IngeniousCapital = () => {
                 </p>
                 <p className="text-lg text-gray-300 leading-relaxed mb-8">
                   Ingenious Capital invests into a diverse portfolio of assets ranging from commodities, 
-                  shares, ETF's and AIM listed Companies to maintain liquidity and create income.
+                  shares, ETF's and AIM listed Companies to maintain liquidity and create income. 
+                  This philosophy means that 50% of your funds invested are available to you on 48 hours notice, 
+                  with the other 50% on a maximum of 180 days notice.
                 </p>
                 
                 <div className="bg-gradient-to-r from-gray-800 to-gray-700 p-8 rounded-2xl border border-gray-600">
