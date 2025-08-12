@@ -331,6 +331,60 @@ const IngeniousCapital = () => {
               </div>
             </div>
           </div>
+          
+          {/* The Due Diligence Process - Full Width */}
+          <div className="relative">
+            <div className="absolute -top-4 -left-4 w-full h-full bg-gradient-to-r from-teal-500/5 to-orange-500/5 rounded-3xl blur-xl"></div>
+            <div className="relative bg-gray-800 rounded-3xl p-10 shadow-2xl border border-gray-700">
+              <h4 className="text-2xl font-bold text-white mb-8">The Due Diligence Process</h4>
+              
+              <div className="space-y-6 text-gray-300 leading-relaxed">
+                <p>
+                  For every opportunity Ingenious Capital issues a Pitch Page or a Pitch Deck contains the core proposition, 
+                  information about the business and an important disclosure document, which we call the Summary of Key Information 
+                  (you will receive the Summary of Key Information via email). All investors must read the Pitch Page and the 
+                  Summary of Key Information, because they contain important due diligence information.
+                </p>
+                
+                <p>
+                  You must also consider your own personal investment requirements and consider making your own further due diligence 
+                  enquiries, which you can do by contacting us via Whatsapp or email to ask the company questions about the business 
+                  and/or investment proposition. Ingenious Capital Ltd provides detailed information and analysis on each investment 
+                  opportunity to help you make informed decisions. However, we do not offer personalized financial advice. We recommend 
+                  consulting with a qualified financial advisor to determine which investments align best with your financial goals and 
+                  risk tolerance.
+                </p>
+                
+                <div className="pt-6">
+                  <h5 className="text-xl font-bold text-white mb-4">How is the share price calculated?</h5>
+                  <p className="mb-6">
+                    The share price for each investment is calculated based on a thorough evaluation of the company's current financial 
+                    status, market conditions, and growth potential. This includes an assessment of the company's assets, liabilities, 
+                    revenue, and future earning prospects. The share price reflects the fair market value of the company's equity at 
+                    the time of the offering.
+                  </p>
+                  
+                  <h5 className="text-xl font-bold text-white mb-4">How is the valuation of a company calculated?</h5>
+                  <p className="mb-4">
+                    The valuation of a company on Ingenious Capital Ltd is determined using various methodologies, depending on the 
+                    nature of the business and the available financial data. Common methods include:
+                  </p>
+                  
+                  <ul className="space-y-2 mb-6 pl-4">
+                    <li>• <strong>Discounted Cash Flow (DCF) Analysis:</strong> Projects future cash flows and discounts them back to present value.</li>
+                    <li>• <strong>Comparable Company Analysis:</strong> Evaluates the valuation of similar companies in the same industry.</li>
+                    <li>• <strong>Precedent Transactions Analysis:</strong> Looks at past transactions of similar companies.</li>
+                    <li>• <strong>Asset-Based Valuation:</strong> Assesses the value of the company's assets and liabilities.</li>
+                  </ul>
+                  
+                  <p>
+                    Our team of experts conducts a rigorous due diligence process to ensure that the valuation is accurate and 
+                    reflects the true worth of the company.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
