@@ -209,23 +209,6 @@ const IngeniousCapital = () => {
                   This philosophy means that <span className="text-xl font-bold text-white bg-gradient-to-r from-teal-500 to-orange-500 bg-clip-text text-transparent">50% of your funds invested are available to you on 48 hours notice, 
                   with the other 50% on a maximum of 180 days notice.</span>
                 </p>
-                
-                <div className="bg-gradient-to-r from-gray-800 to-gray-700 p-8 rounded-2xl border border-gray-600">
-                  <h4 className="text-xl font-bold text-white mb-4 flex items-center">
-                    <Clock className="h-6 w-6 text-teal-500 mr-3" />
-                    Flexible Withdrawals
-                  </h4>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-300">Withdraw 50% in</span>
-                      <span className="font-bold text-teal-500">48 hours</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-300">Balance in</span>
-                      <span className="font-bold text-orange-500">180 days</span>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
             
