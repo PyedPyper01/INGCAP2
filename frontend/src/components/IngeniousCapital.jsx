@@ -167,31 +167,40 @@ const IngeniousCapital = () => {
         )}
       </nav>
 
-      {/* Hero Section - Logo Only Page */}
-      <section id="home" className="h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwxfHxmaW5hbmNlfGVufDB8fHx8MTc1NTAxMDk0NHww&ixlib=rb-4.1.0&q=85"
-            alt="Financial district skyscrapers"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/95 via-black/90 to-gray-800/95"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-        </div>
-        
-        <div className="relative z-10 flex items-center justify-center">
+      {/* Hero Section - Full Screen Logo Only */}
+      <section id="home" className="h-screen w-screen flex flex-col overflow-hidden">
+        {/* Navigation Links - Symmetrically Aligned Across Top */}
+        <nav className="w-full z-50 py-6">
+          <div className="flex justify-center items-center space-x-16">
+            {[
+              { id: 'about', label: 'Our Approach' },
+              { id: 'services', label: 'Services' },
+              { id: 'team', label: 'Team' },
+              { id: 'invest', label: 'Invest' },
+              { id: 'contact', label: 'Contact' }
+            ].map(item => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="text-white text-lg font-medium hover:text-teal-400 transition-colors duration-300"
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        </nav>
+
+        {/* Full Screen Logo */}
+        <div className="flex-1 flex items-center justify-center bg-gray-900">
           <div 
-            className="cursor-pointer group"
+            className="cursor-pointer group w-full h-full flex items-center justify-center"
             onClick={() => scrollToSection('about')}
           >
-            <div className="bg-gray-800 p-6 rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500">
-              <img 
-                src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
-                alt="Ingenious Capital Logo - Click to Enter" 
-                className="w-64 h-64 object-contain"
-              />
-            </div>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
+              alt="Ingenious Capital Logo - Click to Enter" 
+              className="w-full h-full object-contain max-w-none group-hover:scale-105 transition-transform duration-500"
+            />
           </div>
         </div>
       </section>
