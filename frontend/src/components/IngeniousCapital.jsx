@@ -47,12 +47,20 @@ const IngeniousCapital = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Smooth scroll to section
+  // Smooth scroll to section and show site content
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
+    const siteContent = document.getElementById('site-content');
+    if (siteContent) {
+      siteContent.classList.remove('hidden');
+      document.body.style.overflow = 'auto';
+      
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+          setIsMenuOpen(false);
+        }
+      }, 100);
     }
   };
 
