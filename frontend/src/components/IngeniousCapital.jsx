@@ -169,7 +169,7 @@ const IngeniousCapital = () => {
       </nav>
 
       {/* Our Approach Section */}
-      <section id="about" className="py-32 bg-gray-800 relative overflow-hidden mt-20">
+      <section id="about" className="pt-32 pb-16 bg-gray-800 relative overflow-hidden mt-20">
         <div className="max-w-7xl mx-auto px-8 relative z-10">
           <div className="text-center mb-20">
             <p className="text-xl lg:text-2xl text-gray-300 mb-16 max-w-4xl mx-auto leading-relaxed font-light backdrop-blur-sm bg-white/5 rounded-2xl p-8 border border-gray-700">
