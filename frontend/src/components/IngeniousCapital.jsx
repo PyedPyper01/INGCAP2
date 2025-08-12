@@ -273,6 +273,67 @@ const IngeniousCapital = () => {
         </div>
       </section>
 
+      {/* Investment Opportunities Section */}
+      <section id="invest" className="py-32 bg-gray-900 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-8 relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight">
+              Investment <span className="bg-gradient-to-r from-teal-500 to-orange-500 bg-clip-text text-transparent">Opportunities</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              We share all of our risk evaluation data with you to show what makes for a good investment.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+            <div className="space-y-8">
+              <div className="bg-gray-800 rounded-3xl p-10 shadow-2xl border border-gray-700">
+                <div className="flex items-center mb-6">
+                  <div className="bg-gradient-to-r from-teal-500 to-teal-600 p-3 rounded-2xl mr-4">
+                    <BarChart3 className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-3xl font-bold text-white">Our Selected Co-Investments</h3>
+                </div>
+                <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                  Remember, you are generally investing into a specific company or individual with returns 
+                  dictated by (i) the viability of the product or project they are offering and 
+                  (ii) their ability bring it to fruition at the right price in the right timeframe.
+                </p>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  It is our job to ensure that both of these are positive and we then factor in our view 
+                  of market conditions over the term the investment.
+                </p>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <div className="absolute -top-4 -right-4 w-full h-full bg-gradient-to-r from-teal-500/10 to-orange-500/10 rounded-3xl blur-xl"></div>
+              <div className="relative bg-gray-800 rounded-3xl p-10 shadow-2xl border border-gray-700">
+                <h4 className="text-2xl font-bold text-white mb-8">Investment Process</h4>
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-full flex items-center justify-center text-lg font-bold">1</div>
+                    <span className="text-gray-300">Due diligence and risk evaluation</span>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full flex items-center justify-center text-lg font-bold">2</div>
+                    <span className="text-gray-300">Market conditions assessment</span>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-gray-600 to-gray-700 text-white rounded-full flex items-center justify-center text-lg font-bold">3</div>
+                    <span className="text-gray-300">Co-investment commitment</span>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-teal-600 to-orange-600 text-white rounded-full flex items-center justify-center text-lg font-bold">4</div>
+                    <span className="text-gray-300">Fund release and share allocation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Team Section */}
       <section id="team" className="py-32 bg-gray-800 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-8">
@@ -330,67 +391,6 @@ const IngeniousCapital = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Investment Section */}
-      <section id="invest" className="py-32 bg-gray-900 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-8 relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight">
-              Investment <span className="bg-gradient-to-r from-teal-500 to-orange-500 bg-clip-text text-transparent">Opportunities</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              We share all of our risk evaluation data with you to show what makes for a good investment.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-            <div className="space-y-8">
-              <div className="bg-gray-800 rounded-3xl p-10 shadow-2xl border border-gray-700">
-                <div className="flex items-center mb-6">
-                  <div className="bg-gradient-to-r from-teal-500 to-teal-600 p-3 rounded-2xl mr-4">
-                    <BarChart3 className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-3xl font-bold text-white">Our Selected Co-Investments</h3>
-                </div>
-                <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                  Remember, you are generally investing into a specific company or individual with returns 
-                  dictated by (i) the viability of the product or project they are offering and 
-                  (ii) their ability bring it to fruition at the right price in the right timeframe.
-                </p>
-                <p className="text-lg text-gray-300 leading-relaxed">
-                  It is our job to ensure that both of these are positive and we then factor in our view 
-                  of market conditions over the term the investment.
-                </p>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <div className="absolute -top-4 -right-4 w-full h-full bg-gradient-to-r from-teal-500/10 to-orange-500/10 rounded-3xl blur-xl"></div>
-              <div className="relative bg-gray-800 rounded-3xl p-10 shadow-2xl border border-gray-700">
-                <h4 className="text-2xl font-bold text-white mb-8">Investment Process</h4>
-                <div className="space-y-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-full flex items-center justify-center text-lg font-bold">1</div>
-                    <span className="text-gray-300">Due diligence and risk evaluation</span>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full flex items-center justify-center text-lg font-bold">2</div>
-                    <span className="text-gray-300">Market conditions assessment</span>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-gray-600 to-gray-700 text-white rounded-full flex items-center justify-center text-lg font-bold">3</div>
-                    <span className="text-gray-300">Co-investment commitment</span>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-teal-600 to-orange-600 text-white rounded-full flex items-center justify-center text-lg font-bold">4</div>
-                    <span className="text-gray-300">Fund release and share allocation</span>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
