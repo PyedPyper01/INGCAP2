@@ -600,7 +600,7 @@ const IngeniousCapital = () => {
                   Membership of Ingenious Capital is <strong>free</strong>, but strictly limited. 
                   Availability is on a <strong>first-come, first-served</strong> basis.
                 </p>
-                <div className="text-4xl font-bold text-white mb-2">£10,000</div>
+                <div className="text-4xl font-bold text-white mb-2">£25,000</div>
                 <p className="text-gray-400">Minimum initial investment</p>
               </div>
             </div>
