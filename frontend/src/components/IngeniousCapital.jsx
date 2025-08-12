@@ -94,14 +94,13 @@ const IngeniousCapital = () => {
       }`}>
         <div className="max-w-7xl mx-auto px-8 py-6">
           <div className="flex justify-between items-center">
-            {/* Simple Corner Logo */}
-            <div className="flex items-center space-x-3">
+            {/* Large Corner Logo Only */}
+            <div className="flex items-center">
               <img 
                 src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
                 alt="Ingenious Capital" 
-                className="w-8 h-8 object-contain rounded-lg"
+                className="w-40 h-40 object-contain rounded-lg"
               />
-              <span className="text-lg font-bold text-white tracking-tight">Ingenious Capital</span>
             </div>
             
             {/* Desktop Menu */}
