@@ -208,22 +208,25 @@ const IngeniousCapital = () => {
         </div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-8 text-center">
-          <h1 className="text-7xl lg:text-9xl font-bold text-white mb-8 leading-tight tracking-tight">
-            <span className="bg-gradient-to-r from-white via-gray-100 to-teal-100 bg-clip-text text-transparent">
-              Innovate.
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-teal-100 via-white to-orange-100 bg-clip-text text-transparent">
-              Inspire.
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-orange-100 via-white to-gray-100 bg-clip-text text-transparent">
-              Invest.
-            </span>
-          </h1>
+          {/* Enlarged Logo and Company Name */}
+          <div className="flex items-center justify-center mb-12">
+            <div className="flex items-center space-x-6">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
+                alt="Ingenious Capital Logo" 
+                className="w-32 h-32 object-contain rounded-3xl shadow-2xl"
+              />
+              <div className="text-left">
+                <h1 className="text-6xl lg:text-8xl font-bold bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent tracking-tight">
+                  Ingenious
+                </h1>
+                <span className="block text-3xl lg:text-4xl font-medium text-gray-400 tracking-wider">CAPITAL</span>
+              </div>
+            </div>
+          </div>
           
           <p className="text-xl lg:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed font-light backdrop-blur-sm bg-white/5 rounded-2xl p-8 border border-gray-700">
-            As a sophisticated or high net worth investor, we try to do things differently. 
+            As a sophisticated or high net worth investor, it is unlikely that we are the first investment portal that you have visited, and it is with that in mind that we try to do things differently. 
             Our focus is you and how we can help you to declutter your finances and simplify your investments.
           </p>
           
