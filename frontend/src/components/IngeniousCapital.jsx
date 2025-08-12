@@ -496,50 +496,43 @@ const IngeniousCapital = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {[
-              {
-                name: 'Daniel Moretti',
-                title: 'Investment Director',
-                bio: 'With extensive experience in the alternative investments sector, Daniel has a proven track record of managing and growing diversified portfolios across asset classes such as private equity, real estate, hedge funds, and structured products.',
-                image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNzU1MDEwOTQ4fDA&ixlib=rb-4.1.0&q=85'
-              },
-              {
-                name: 'Jude Zorlu',
-                title: 'Finance Director',
-                bio: 'Jude is recognized for his expertise in financial analysis, budgeting and forecasting and risk management. His main focus is on leveraging financial insights to support business growth, and he continues to drive value through innovative financial modelling.',
-                image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNzU1MDEwOTQ4fDA&ixlib=rb-4.1.0&q=85'
-              },
-              {
-                name: 'Dean Curtis',
-                title: 'Sales Director',
-                bio: 'Dean is recognized for his expertise in account-based marketing, hybrid selling strategies, and leveraging technology to enhance sales performance. His ability to build and maintain key client relationships, combined with a deep understanding of market trends and customer needs, has positioned him as a trusted advisor to both clients and colleagues.',
-                image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNzU1MDEwOTQ4fDA&ixlib=rb-4.1.0&q=85'
-              }
-            ].map((member, index) => (
-              <div key={index} className="group">
-                <div className="bg-gray-900 rounded-3xl overflow-hidden shadow-xl border border-gray-700 transition-all duration-700 hover:shadow-2xl hover:transform hover:scale-105">
-                  <div className="relative overflow-hidden">
-                    <img 
-                      src={member.image} 
-                      alt={member.name}
-                      className="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                  </div>
-                  
-                  <div className="p-8">
-                    <div className="mb-6">
-                      <h3 className="text-2xl font-bold text-white mb-2">{member.name}</h3>
-                      <p className="text-teal-500 font-semibold">{member.title}</p>
-                    </div>
-                    
-                    <p className="text-gray-400 leading-relaxed mb-8 text-sm">
-                      {member.bio}
-                    </p>
-                  </div>
-                </div>
+          {/* Team Statistics */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center bg-gray-900 rounded-3xl p-8 shadow-xl border border-gray-700 group hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105">
+              <div className="bg-gradient-to-r from-teal-500 to-teal-600 p-4 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Award className="h-8 w-8 text-white" />
               </div>
-            ))}
+              <div className="text-4xl font-bold text-white mb-3">75+</div>
+              <h3 className="text-lg font-semibold text-white mb-2">Years Combined Experience</h3>
+              <p className="text-sm text-gray-400">Venture capital, private equity, and structured finance</p>
+            </div>
+            
+            <div className="text-center bg-gray-900 rounded-3xl p-8 shadow-xl border border-gray-700 group hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105">
+              <div className="bg-gradient-to-r from-orange-500 to-orange-600 p-4 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <DollarSign className="h-8 w-8 text-white" />
+              </div>
+              <div className="text-4xl font-bold text-white mb-3">£200M+</div>
+              <h3 className="text-lg font-semibold text-white mb-2">Capital Deployed</h3>
+              <p className="text-sm text-gray-400">Across 10+ early-stage and growth deals</p>
+            </div>
+            
+            <div className="text-center bg-gray-900 rounded-3xl p-8 shadow-xl border border-gray-700 group hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105">
+              <div className="bg-gradient-to-r from-gray-500 to-gray-600 p-4 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Target className="h-8 w-8 text-white" />
+              </div>
+              <div className="text-4xl font-bold text-white mb-3">Multiple</div>
+              <h3 className="text-lg font-semibold text-white mb-2">Successful Exits</h3>
+              <p className="text-sm text-gray-400">To major acquirers and strategic buyers</p>
+            </div>
+            
+            <div className="text-center bg-gray-900 rounded-3xl p-8 shadow-xl border border-gray-700 group hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105">
+              <div className="bg-gradient-to-r from-teal-600 to-orange-600 p-4 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Globe className="h-8 w-8 text-white" />
+              </div>
+              <div className="text-4xl font-bold text-white mb-3">Diverse</div>
+              <h3 className="text-lg font-semibold text-white mb-2">Sector Expertise</h3>
+              <p className="text-sm text-gray-400">AI, biotech, fintech, stock analysis & property</p>
+            </div>
           </div>
         </div>
       </section>
