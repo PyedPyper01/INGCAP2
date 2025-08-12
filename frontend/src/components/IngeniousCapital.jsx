@@ -211,11 +211,11 @@ const IngeniousCapital = () => {
         <div className="relative z-10 max-w-6xl mx-auto px-8 text-center">
           {/* Enlarged Centered Logo Only */}
           <div className="flex items-center justify-center mb-12">
-            <div className="bg-gray-900 p-6 rounded-3xl shadow-2xl">
+            <div className="bg-gray-800 p-8 rounded-3xl shadow-2xl">
               <img 
                 src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
                 alt="Ingenious Capital Logo" 
-                className="w-160 h-160 object-contain"
+                className="w-800 h-800 object-contain"
               />
             </div>
           </div>
