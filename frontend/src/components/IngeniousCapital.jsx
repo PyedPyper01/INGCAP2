@@ -441,6 +441,45 @@ const IngeniousCapital = () => {
               </div>
             </div>
           </div>
+          
+          {/* Making a return on your investment - Full Width */}
+          <div className="relative mt-8">
+            <div className="absolute -top-4 -left-4 w-full h-full bg-gradient-to-r from-teal-500/5 to-orange-500/5 rounded-3xl blur-xl"></div>
+            <div className="relative bg-gray-800 rounded-3xl p-10 shadow-2xl border border-gray-700">
+              <h4 className="text-2xl font-bold text-white mb-8">Making a return on your investment</h4>
+              
+              <div className="space-y-6 text-gray-300 leading-relaxed">
+                <p>
+                  You can make a return on your investment through various means, depending on the type of investment you choose. 
+                  Common ways to earn returns include:
+                </p>
+                
+                <ul className="space-y-2 pl-4">
+                  <li>• <strong>Dividends:</strong> Periodic payments made by the company to its shareholders from its profits.</li>
+                  <li>• <strong>Capital Gains:</strong> The profit earned when you sell your shares for a higher price than you initially paid.</li>
+                  <li>• <strong>Interest Payments:</strong> For debt investments, you receive regular interest payments until the principal is repaid.</li>
+                  <li>• <strong>Exit Events:</strong> Selling your shares during an acquisition, merger, or initial public offering (IPO), potentially yielding a significant return.</li>
+                </ul>
+                
+                <p>
+                  In some circumstances, you may be required to sell your shares. These situations are typically outlined in the 
+                  company's articles of association or shareholder agreements and may include events such as:
+                </p>
+                
+                <ul className="space-y-2 pl-4">
+                  <li>• <strong>Acquisition or Merger:</strong> If the company is acquired or merges with another entity.</li>
+                  <li>• <strong>Drag-Along Rights:</strong> If a majority shareholder decides to sell their stake, minority shareholders may be compelled to sell their shares under certain conditions.</li>
+                  <li>• <strong>Company Buy-Backs:</strong> If the company decides to repurchase shares from shareholders as part of a strategic move.</li>
+                </ul>
+                
+                <p>
+                  This is where Ingenious Capital really comes into its own. Through the advices given by our regulated accountancy 
+                  partners at Cubed Consultancy we advise on an individual basis as to the potential tax saving schemes that you may 
+                  be eligible for, in some cases reducing your tax liability to NIL.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
