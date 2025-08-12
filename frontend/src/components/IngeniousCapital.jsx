@@ -367,7 +367,7 @@ const IngeniousCapital = () => {
 
       {/* Our Approach Section */}
       <section id="about" className="py-32 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill-opacity="0.03" fill="%23ffffff"%3E%3Cpolygon points="50,0 60,40 100,50 60,60 50,100 40,60 0,50 40,40"/%3E%3C/g%3E%3C/svg%3E')] opacity-10"></div>
+        <div className="absolute inset-0 bg-gray-900 opacity-10"></div>
         
         <div className="max-w-7xl mx-auto px-8 relative z-10">
           <div className="text-center mb-20">
