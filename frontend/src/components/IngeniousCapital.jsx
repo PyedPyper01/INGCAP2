@@ -200,8 +200,8 @@ const IngeniousCapital = () => {
           ))}
         </div>
         
-        <div className="relative z-10 flex items-center justify-center h-full w-full">
-          {/* Clickable Logo - Full Screen Centered */}
+        <div className="relative z-10 flex items-center justify-center h-full w-full max-w-4xl mx-auto px-8">
+          {/* Clickable Logo - Properly Framed */}
           <div 
             className="flex items-center justify-center cursor-pointer group"
             onClick={() => scrollToSection('about')}
@@ -210,7 +210,7 @@ const IngeniousCapital = () => {
               <img 
                 src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
                 alt="Ingenious Capital Logo - Click to Enter" 
-                className="w-800 h-800 object-contain"
+                className="w-96 h-96 object-contain"
               />
             </div>
           </div>
