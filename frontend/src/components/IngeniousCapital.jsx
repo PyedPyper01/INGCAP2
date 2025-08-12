@@ -992,15 +992,15 @@ const IngeniousCapital = () => {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {[
-                      { icon: Globe, title: 'Exclusive Deal Flow', desc: 'Access to pre-seed and mezzanine opportunities before they reach the market', color: 'blue' },
-                      { icon: BarChart3, title: 'Quarterly Reporting', desc: 'Transparent performance updates and portfolio company progress', color: 'purple' },
-                      { icon: Users, title: 'Co-Investment', desc: 'Opportunities for direct investment alongside the fund', color: 'indigo' },
-                      { icon: Award, title: 'Investor Events', desc: 'Regular networking events and portfolio company presentations', color: 'green' }
+                      { icon: Globe, title: 'Exclusive Deal Flow', desc: 'Access to pre-seed and mezzanine opportunities before they reach the market', color: 'from-blue-500 to-blue-600 border-blue-100 hover:border-blue-200' },
+                      { icon: BarChart3, title: 'Quarterly Reporting', desc: 'Transparent performance updates and portfolio company progress', color: 'from-purple-500 to-purple-600 border-purple-100 hover:border-purple-200' },
+                      { icon: Users, title: 'Co-Investment', desc: 'Opportunities for direct investment alongside the fund', color: 'from-indigo-500 to-indigo-600 border-indigo-100 hover:border-indigo-200' },
+                      { icon: Award, title: 'Investor Events', desc: 'Regular networking events and portfolio company presentations', color: 'from-green-500 to-green-600 border-green-100 hover:border-green-200' }
                     ].map((benefit, index) => (
                       <RevealOnScroll key={index} delay={index * 100}>
                         <div className="text-center group">
-                          <div className={`bg-white rounded-2xl p-8 shadow-xl border border-${benefit.color}-100 transition-all duration-500 hover:shadow-2xl hover:transform hover:scale-105 hover:border-${benefit.color}-200`}>
-                            <div className={`bg-gradient-to-r from-${benefit.color}-500 to-${benefit.color}-600 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                          <div className={`bg-white rounded-2xl p-8 shadow-xl border transition-all duration-500 hover:shadow-2xl hover:transform hover:scale-105 ${benefit.color.split(' ').slice(2).join(' ')}`}>
+                            <div className={`bg-gradient-to-r ${benefit.color.split(' ')[0]} ${benefit.color.split(' ')[1]} w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
                               <benefit.icon className="h-8 w-8 text-white" />
                             </div>
                             <h4 className="font-bold text-gray-900 mb-3">{benefit.title}</h4>
