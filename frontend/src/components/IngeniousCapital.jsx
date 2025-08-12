@@ -200,9 +200,9 @@ const IngeniousCapital = () => {
           ))}
         </div>
         
-        <div className="relative z-10 max-w-6xl mx-auto px-8 text-center">
+        <div className="relative z-10 max-w-6xl mx-auto px-8 text-center pt-24">
           {/* Enlarged Centered Logo Only */}
-          <div className="flex items-center justify-center mb-12">
+          <div className="flex items-center justify-center mb-32">
             <div className="bg-gray-800 p-8 rounded-3xl shadow-2xl">
               <img 
                 src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
@@ -212,7 +212,7 @@ const IngeniousCapital = () => {
             </div>
           </div>
           
-          <p className="text-xl lg:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed font-light backdrop-blur-sm bg-white/5 rounded-2xl p-8 border border-gray-700">
+          <p className="text-xl lg:text-2xl text-gray-300 mb-16 max-w-4xl mx-auto leading-relaxed font-light backdrop-blur-sm bg-white/5 rounded-2xl p-8 border border-gray-700">
             As a sophisticated or high net worth investor, it is unlikely that we are the first investment portal that you have visited, and it is with that in mind that we try to do things differently. 
             Our focus is you and how we can help you to declutter your finances and simplify your investments.
           </p>
