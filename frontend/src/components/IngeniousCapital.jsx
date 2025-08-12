@@ -914,8 +914,9 @@ const IngeniousCapital = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
-};
+        </div>
+      </>
+    );
+  };
 
 export default IngeniousCapital;
