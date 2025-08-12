@@ -167,8 +167,8 @@ const IngeniousCapital = () => {
         )}
       </nav>
 
-      {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero Section - Full Screen Logo */}
+      <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <img
@@ -200,101 +200,18 @@ const IngeniousCapital = () => {
           ))}
         </div>
         
-        <div className="relative z-10 max-w-6xl mx-auto px-8 text-center pt-24">
-          {/* Enlarged Centered Logo Only */}
-          <div className="flex items-center justify-center mb-32">
-            <div className="bg-gray-800 p-8 rounded-3xl shadow-2xl">
+        <div className="relative z-10 flex items-center justify-center h-full w-full">
+          {/* Clickable Logo - Full Screen Centered */}
+          <div 
+            className="flex items-center justify-center cursor-pointer group"
+            onClick={() => scrollToSection('about')}
+          >
+            <div className="bg-gray-800 p-8 rounded-3xl shadow-2xl group-hover:scale-105 transition-transform duration-500 group-hover:shadow-3xl">
               <img 
                 src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
-                alt="Ingenious Capital Logo" 
+                alt="Ingenious Capital Logo - Click to Enter" 
                 className="w-800 h-800 object-contain"
               />
-            </div>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-            <Button 
-              size="lg"
-              onClick={() => scrollToSection('about')}
-              className="bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white px-12 py-6 rounded-full text-lg font-medium transition-all duration-500 hover:scale-105 shadow-2xl hover:shadow-teal-500/25"
-            >
-              Discover Our Approach
-              <ArrowRight className="ml-3 h-5 w-5" />
-            </Button>
-            
-            <Button 
-              size="lg" 
-              variant="outline"
-              onClick={() => scrollToSection('invest')}
-              className="border-2 border-gray-600 text-white hover:bg-gray-800 px-12 py-6 rounded-full text-lg font-medium transition-all duration-500 hover:scale-105 backdrop-blur-sm"
-            >
-              Start Investing
-            </Button>
-          </div>
-          
-          {/* Enhanced Statistics with Rich Graphics */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="group">
-              <div className="bg-gray-800/40 backdrop-blur-sm border border-gray-700 rounded-3xl p-8 transition-all duration-500 hover:bg-gray-800/60 hover:border-gray-600 hover:transform hover:scale-105">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="bg-gradient-to-r from-teal-500 to-teal-600 p-4 rounded-2xl">
-                    <Award className="h-8 w-8 text-white" />
-                  </div>
-                  <div className="text-right">
-                    <div className="text-4xl font-bold text-white mb-1">
-                      <AnimatedCounter end={50} suffix="+" />
-                    </div>
-                    <div className="text-gray-400 text-sm">Years</div>
-                  </div>
-                </div>
-                <h3 className="text-lg font-semibold text-white mb-2">Combined Experience</h3>
-                <p className="text-gray-400 text-sm">Venture capital, private equity, and structured finance expertise</p>
-                <div className="mt-4 bg-gray-700 rounded-full h-2">
-                  <div className="bg-gradient-to-r from-teal-500 to-teal-600 h-2 rounded-full w-4/5 transition-all duration-1000"></div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="group">
-              <div className="bg-gray-800/40 backdrop-blur-sm border border-gray-700 rounded-3xl p-8 transition-all duration-500 hover:bg-gray-800/60 hover:border-gray-600 hover:transform hover:scale-105">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="bg-gradient-to-r from-orange-500 to-orange-600 p-4 rounded-2xl">
-                    <DollarSign className="h-8 w-8 text-white" />
-                  </div>
-                  <div className="text-right">
-                    <div className="text-4xl font-bold text-white mb-1">
-                      £<AnimatedCounter end={30} suffix="M+" />
-                    </div>
-                    <div className="text-gray-400 text-sm">Deployed</div>
-                  </div>
-                </div>
-                <h3 className="text-lg font-semibold text-white mb-2">Capital Deployed</h3>
-                <p className="text-gray-400 text-sm">Across 10+ early-stage and growth investment deals</p>
-                <div className="mt-4 bg-gray-700 rounded-full h-2">
-                  <div className="bg-gradient-to-r from-orange-500 to-orange-600 h-2 rounded-full w-3/4 transition-all duration-1000"></div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="group">
-              <div className="bg-gray-800/40 backdrop-blur-sm border border-gray-700 rounded-3xl p-8 transition-all duration-500 hover:bg-gray-800/60 hover:border-gray-600 hover:transform hover:scale-105">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="bg-gradient-to-r from-gray-600 to-gray-700 p-4 rounded-2xl">
-                    <TrendingUp className="h-8 w-8 text-white" />
-                  </div>
-                  <div className="text-right">
-                    <div className="text-4xl font-bold text-white mb-1">
-                      <AnimatedCounter end={30} suffix="%" />
-                    </div>
-                    <div className="text-gray-400 text-sm">Returns</div>
-                  </div>
-                </div>
-                <h3 className="text-lg font-semibold text-white mb-2">Internal Rate of Return</h3>
-                <p className="text-gray-400 text-sm">Verified past activity demonstrating consistent excellence</p>
-                <div className="mt-4 bg-gray-700 rounded-full h-2">
-                  <div className="bg-gradient-to-r from-gray-600 to-gray-500 h-2 rounded-full w-5/6 transition-all duration-1000"></div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -303,7 +220,7 @@ const IngeniousCapital = () => {
         <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-center">
           <div className="animate-bounce">
             <ChevronDown className="h-8 w-8 text-gray-400 mx-auto" />
-            <p className="text-gray-400 text-sm mt-2">Scroll to explore</p>
+            <p className="text-gray-400 text-sm mt-2">Click logo to enter</p>
           </div>
         </div>
       </section>
