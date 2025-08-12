@@ -120,13 +120,13 @@ const IngeniousCapital = () => {
       {/* Logo Frame - Takes remaining space */}
       <div className="flex-1 flex items-center justify-center p-12">
         <div 
-          className="w-full h-full max-w-4xl max-h-4xl flex items-center justify-center bg-gray-800 rounded-3xl border-4 border-gray-700 cursor-pointer group hover:border-gray-600 transition-colors duration-300"
+          className="w-full h-full max-w-4xl max-h-4xl flex items-center justify-center bg-black rounded-3xl border-4 border-gray-700 cursor-pointer group hover:border-gray-600 transition-colors duration-300"
           onClick={() => scrollToSection('about')}
         >
           <img 
             src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
             alt="Ingenious Capital - Click to Enter" 
-            className="w-96 h-96 object-contain group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-full object-contain p-8 group-hover:scale-105 transition-transform duration-500"
           />
         </div>
       </div>
