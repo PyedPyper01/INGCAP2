@@ -991,9 +991,11 @@ const IngeniousCapital = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center shadow-2xl">
-                  <span className="text-white font-bold text-2xl">I</span>
-                </div>
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
+                  alt="Ingenious Capital" 
+                  className="w-12 h-12 object-contain rounded-2xl shadow-2xl"
+                />
                 <div>
                   <span className="text-2xl font-bold bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">Ingenious</span>
                   <span className="block text-sm font-medium text-gray-400 tracking-wider">CAPITAL</span>
