@@ -264,8 +264,10 @@ const IngeniousCapital = () => {
               Tailored Investment <span className="bg-gradient-to-r from-teal-500 to-orange-500 bg-clip-text text-transparent">Solutions</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto font-light leading-relaxed">
-              We operate to ensure that investors are comfortable in their investment and can afford to invest 
-              in the knowledge that a significant part of their funds can be withdrawn quickly.
+              We will tailor your investment to suit you, with funds being distributed in accordance with your end goals. 
+              You may want quarterly income, you may want compound growth, you may require Shariah compliant investing, 
+              you may want to make regular contributions rather than a lump sum. We can accommodate all of your needs to 
+              ensure that you are comfortable with the way that your funds are invested and the returns that you are achieving.
             </p>
           </div>
           
