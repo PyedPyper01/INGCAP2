@@ -40,6 +40,14 @@ const IngeniousCapital = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [scrollY, setScrollY] = useState(0);
 
+  // Prevent scrolling on initial load
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
+
   // Track scroll for navbar
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -61,6 +69,15 @@ const IngeniousCapital = () => {
           setIsMenuOpen(false);
         }
       }, 100);
+    }
+  };
+
+  // Function to return to home page
+  const returnToHome = () => {
+    const siteContent = document.getElementById('site-content');
+    if (siteContent) {
+      siteContent.classList.add('hidden');
+      document.body.style.overflow = 'hidden';
     }
   };
 
