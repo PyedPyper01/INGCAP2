@@ -513,7 +513,7 @@ const IngeniousCapital = () => {
               </div>
               <div className="text-4xl font-bold text-white mb-3">£200M+</div>
               <h3 className="text-lg font-semibold text-white mb-2">Capital Deployed</h3>
-              <p className="text-sm text-gray-400">Across 10+ early-stage and growth deals</p>
+              <p className="text-sm text-gray-400">Across 100+ early-stage and growth deals</p>
             </div>
             
             <div className="text-center bg-gray-900 rounded-3xl p-8 shadow-xl border border-gray-700 group hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105">
