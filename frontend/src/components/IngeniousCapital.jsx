@@ -312,6 +312,11 @@ const IngeniousCapital = () => {
       <section id="about" className="py-32 bg-gray-800 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-8 relative z-10">
           <div className="text-center mb-20">
+            <p className="text-xl lg:text-2xl text-gray-300 mb-16 max-w-4xl mx-auto leading-relaxed font-light backdrop-blur-sm bg-white/5 rounded-2xl p-8 border border-gray-700">
+              As a sophisticated or high net worth investor, it is unlikely that we are the first investment portal that you have visited, and it is with that in mind that we try to do things differently. 
+              Our focus is you and how we can help you to declutter your finances and simplify your investments.
+            </p>
+            
             <h2 className="text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight">
               Our <span className="bg-gradient-to-r from-teal-500 to-orange-500 bg-clip-text text-transparent">Approach</span>
             </h2>
