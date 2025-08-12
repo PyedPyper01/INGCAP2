@@ -85,7 +85,7 @@ const IngeniousCapital = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 relative overflow-hidden">
+    <div className="min-h-screen bg-gray-900 relative">
       {/* Navigation */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
         scrollY > 50 
@@ -167,8 +167,8 @@ const IngeniousCapital = () => {
         )}
       </nav>
 
-      {/* Hero Section - Full Screen Logo */}
-      <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero Section - Logo Only Page */}
+      <section id="home" className="h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <img
@@ -180,47 +180,18 @@ const IngeniousCapital = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
         </div>
         
-        {/* Floating Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          {[...Array(6)].map((_, i) => (
-            <div
-              key={i}
-              className={`absolute w-64 h-64 rounded-full bg-gradient-to-r ${
-                i % 3 === 0 ? 'from-teal-500/10 to-teal-600/10' : 
-                i % 3 === 1 ? 'from-orange-500/10 to-orange-600/10' : 
-                'from-gray-500/10 to-gray-600/10'
-              } blur-3xl animate-pulse`}
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${i * 2}s`,
-                animationDuration: `${8 + i * 2}s`
-              }}
-            />
-          ))}
-        </div>
-        
-        <div className="relative z-10 flex items-center justify-center h-full w-full max-w-4xl mx-auto px-8">
-          {/* Clickable Logo - Properly Framed */}
+        <div className="relative z-10 flex items-center justify-center">
           <div 
-            className="flex items-center justify-center cursor-pointer group"
+            className="cursor-pointer group"
             onClick={() => scrollToSection('about')}
           >
-            <div className="bg-gray-800 p-8 rounded-3xl shadow-2xl group-hover:scale-105 transition-transform duration-500 group-hover:shadow-3xl">
+            <div className="bg-gray-800 p-6 rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500">
               <img 
                 src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
                 alt="Ingenious Capital Logo - Click to Enter" 
-                className="w-96 h-96 object-contain"
+                className="w-64 h-64 object-contain"
               />
             </div>
-          </div>
-        </div>
-        
-        {/* Animated Scroll Indicator */}
-        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-center">
-          <div className="animate-bounce">
-            <ChevronDown className="h-8 w-8 text-gray-400 mx-auto" />
-            <p className="text-gray-400 text-sm mt-2">Click logo to enter</p>
           </div>
         </div>
       </section>
