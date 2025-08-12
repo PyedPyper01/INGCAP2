@@ -252,8 +252,8 @@ const IngeniousCapital = () => {
                     </div>
                   </div>
                   <div className="text-center bg-gradient-to-r from-gray-800 to-gray-700 rounded-2xl p-6 border border-orange-500/30">
-                    <div className="text-4xl font-bold text-orange-500 mb-2">3-6</div>
-                    <div className="text-gray-300 font-medium">Years</div>
+                    <div className="text-4xl font-bold text-orange-500 mb-2">25-30%</div>
+                    <div className="text-gray-300 font-medium">Targeted IRR</div>
                     <div className="mt-3 bg-gray-600 rounded-full h-2">
                       <div className="bg-gradient-to-r from-orange-500 to-orange-600 h-2 rounded-full w-3/4"></div>
                     </div>
