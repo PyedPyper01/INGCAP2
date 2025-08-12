@@ -658,17 +658,17 @@ const IngeniousCapital = () => {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {[
-                      { icon: CheckCircle, title: 'Annual Mortgage Review', desc: "Ensure you're not paying more than you should be", color: 'blue' },
-                      { icon: Shield, title: 'Professional Will Writing', desc: "Protect yours and your family's wealth", color: 'purple' },
-                      { icon: PieChart, title: 'Pension Review', desc: 'Multiple pensions or retirement drawdown optimization', color: 'indigo' },
-                      { icon: Users, title: 'Insurance Review', desc: 'Protection from employment loss, illness or death', color: 'green' },
-                      { icon: Target, title: 'Tax Optimization', desc: 'Maximize various tax incentives for optimum returns', color: 'orange' },
-                      { icon: BarChart3, title: 'Secondary Market', desc: 'Offload underperforming investments', color: 'red' }
+                      { icon: CheckCircle, title: 'Annual Mortgage Review', desc: "Ensure you're not paying more than you should be", color: 'from-blue-500 to-blue-600 border-blue-100 hover:border-blue-200' },
+                      { icon: Shield, title: 'Professional Will Writing', desc: "Protect yours and your family's wealth", color: 'from-purple-500 to-purple-600 border-purple-100 hover:border-purple-200' },
+                      { icon: PieChart, title: 'Pension Review', desc: 'Multiple pensions or retirement drawdown optimization', color: 'from-indigo-500 to-indigo-600 border-indigo-100 hover:border-indigo-200' },
+                      { icon: Users, title: 'Insurance Review', desc: 'Protection from employment loss, illness or death', color: 'from-green-500 to-green-600 border-green-100 hover:border-green-200' },
+                      { icon: Target, title: 'Tax Optimization', desc: 'Maximize various tax incentives for optimum returns', color: 'from-orange-500 to-orange-600 border-orange-100 hover:border-orange-200' },
+                      { icon: BarChart3, title: 'Secondary Market', desc: 'Offload underperforming investments', color: 'from-red-500 to-red-600 border-red-100 hover:border-red-200' }
                     ].map((service, index) => (
                       <RevealOnScroll key={index} delay={index * 100}>
                         <div className="group">
-                          <div className={`bg-white rounded-2xl p-6 transition-all duration-500 hover:shadow-xl hover:transform hover:scale-105 border border-${service.color}-100 hover:border-${service.color}-200`}>
-                            <div className={`bg-gradient-to-r from-${service.color}-500 to-${service.color}-600 p-3 rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300 w-fit`}>
+                          <div className={`bg-white rounded-2xl p-6 transition-all duration-500 hover:shadow-xl hover:transform hover:scale-105 border ${service.color}`}>
+                            <div className={`bg-gradient-to-r ${service.color.split(' ')[0]} ${service.color.split(' ')[1]} p-3 rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300 w-fit`}>
                               <service.icon className="h-6 w-6 text-white" />
                             </div>
                             <h4 className="font-bold text-gray-900 mb-3">{service.title}</h4>
