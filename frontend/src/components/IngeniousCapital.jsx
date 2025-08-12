@@ -110,80 +110,81 @@ const IngeniousCapital = () => {
   };
 
   return (
-    <div className="h-screen w-screen overflow-hidden bg-gray-900">
-      {/* Hero Section - Full Screen Logo Only */}
-      <section id="home" className="h-full w-full flex flex-col">
-        {/* Navigation Links - Symmetrically Aligned Across Top */}
-        <nav className="w-full z-50 py-8">
-          <div className="flex justify-center items-center space-x-16">
-            {[
-              { id: 'about', label: 'Our Approach' },
-              { id: 'services', label: 'Services' },
-              { id: 'team', label: 'Team' },
-              { id: 'invest', label: 'Invest' },
-              { id: 'contact', label: 'Contact' }
-            ].map(item => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-white text-lg font-medium hover:text-teal-400 transition-colors duration-300"
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-        </nav>
+    <>
+      {/* Logo Page - Always Visible Initially */}
+      <div className="h-screen w-screen overflow-hidden bg-gray-900">
+        <section id="home" className="h-full w-full flex flex-col">
+          {/* Navigation Links - Symmetrically Aligned Across Top */}
+          <nav className="w-full z-50 py-8">
+            <div className="flex justify-center items-center space-x-16">
+              {[
+                { id: 'about', label: 'Our Approach' },
+                { id: 'services', label: 'Services' },
+                { id: 'team', label: 'Team' },
+                { id: 'invest', label: 'Invest' },
+                { id: 'contact', label: 'Contact' }
+              ].map(item => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-white text-lg font-medium hover:text-teal-400 transition-colors duration-300"
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </nav>
 
-        {/* Full Screen Logo Frame */}
-        <div className="flex-1 flex items-center justify-center p-8">
-          <div 
-            className="cursor-pointer group w-full h-full flex items-center justify-center border-4 border-gray-700 rounded-3xl bg-gray-800"
-            onClick={() => scrollToSection('about')}
-          >
-            <img 
-              src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
-              alt="Ingenious Capital Logo - Click to Enter" 
-              className="w-96 h-96 object-contain group-hover:scale-105 transition-transform duration-500"
-            />
-          </div>
-        </div>
-      </section>
-    </div>
-
-    {/* Rest of Site - Hidden Initially */}
-    <div className="hidden" id="site-content">
-      <div className="min-h-screen bg-gray-900 relative">
-        {/* Navigation for rest of site */}
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-xl shadow-2xl border-b border-gray-700">
-          <div className="max-w-7xl mx-auto px-8 py-6">
-            <div className="flex justify-between items-center">
-              <button
-                onClick={() => returnToHome()}
-                className="text-white hover:text-teal-400 transition-colors"
-              >
-                ← Back to Home
-              </button>
-              
-              <div className="flex items-center space-x-12">
-                {[
-                  { id: 'about', label: 'Our Approach' },
-                  { id: 'services', label: 'Services' },
-                  { id: 'team', label: 'Team' },
-                  { id: 'invest', label: 'Invest' },
-                  { id: 'contact', label: 'Contact' }
-                ].map(item => (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </div>
+          {/* Full Screen Logo Frame */}
+          <div className="flex-1 flex items-center justify-center p-8">
+            <div 
+              className="cursor-pointer group w-full h-full flex items-center justify-center border-4 border-gray-700 rounded-3xl bg-gray-800"
+              onClick={() => scrollToSection('about')}
+            >
+              <img 
+                src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
+                alt="Ingenious Capital Logo - Click to Enter" 
+                className="w-96 h-96 object-contain group-hover:scale-105 transition-transform duration-500"
+              />
             </div>
           </div>
-        </nav>
+        </section>
+      </div>
+
+      {/* Rest of Site - Hidden Initially */}
+      <div className="hidden" id="site-content">
+        <div className="min-h-screen bg-gray-900 relative">
+          {/* Navigation for rest of site */}
+          <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-xl shadow-2xl border-b border-gray-700">
+            <div className="max-w-7xl mx-auto px-8 py-6">
+              <div className="flex justify-between items-center">
+                <button
+                  onClick={() => returnToHome()}
+                  className="text-white hover:text-teal-400 transition-colors"
+                >
+                  ← Back to Home
+                </button>
+                
+                <div className="flex items-center space-x-12">
+                  {[
+                    { id: 'about', label: 'Our Approach' },
+                    { id: 'services', label: 'Services' },
+                    { id: 'team', label: 'Team' },
+                    { id: 'invest', label: 'Invest' },
+                    { id: 'contact', label: 'Contact' }
+                  ].map(item => (
+                    <button
+                      key={item.id}
+                      onClick={() => scrollToSection(item.id)}
+                      className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </nav>
 
       {/* Our Approach Section */}
       <section id="about" className="py-32 bg-gray-800 relative overflow-hidden">
