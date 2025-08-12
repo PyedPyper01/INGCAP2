@@ -240,7 +240,7 @@ const IngeniousCapital = () => {
                 
                 <h4 className="text-3xl font-bold text-white mb-6 text-center">Investment Returns</h4>
                 <p className="text-lg text-gray-300 mb-8 text-center">
-                  A world with targeted returns of 1.5 to 6 times initial investment over a period of 3 to 6 years.
+                  A world with targeted returns of 1.5 to 6 times initial investment and IRR's of 25-30%.
                 </p>
                 
                 <div className="grid grid-cols-2 gap-6">
