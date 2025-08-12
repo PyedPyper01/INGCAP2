@@ -212,11 +212,6 @@ const IngeniousCapital = () => {
             </div>
           </div>
           
-          <p className="text-xl lg:text-2xl text-gray-300 mb-16 max-w-4xl mx-auto leading-relaxed font-light backdrop-blur-sm bg-white/5 rounded-2xl p-8 border border-gray-700">
-            As a sophisticated or high net worth investor, it is unlikely that we are the first investment portal that you have visited, and it is with that in mind that we try to do things differently. 
-            Our focus is you and how we can help you to declutter your finances and simplify your investments.
-          </p>
-          
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
             <Button 
               size="lg"
