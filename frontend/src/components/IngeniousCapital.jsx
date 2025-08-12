@@ -411,6 +411,36 @@ const IngeniousCapital = () => {
               </div>
             </div>
           </div>
+          
+          {/* What happens after you've invested - Full Width */}
+          <div className="relative mt-8">
+            <div className="absolute -top-4 -left-4 w-full h-full bg-gradient-to-r from-teal-500/5 to-orange-500/5 rounded-3xl blur-xl"></div>
+            <div className="relative bg-gray-800 rounded-3xl p-10 shadow-2xl border border-gray-700">
+              <h4 className="text-2xl font-bold text-white mb-8">What happens after you've invested?</h4>
+              
+              <div className="space-y-6 text-gray-300 leading-relaxed">
+                <p>
+                  After you've made an investment, your funds will be allocated to the chosen opportunity, and you will become an 
+                  equity holder in the respective company or project. You will receive a confirmation email detailing the specifics 
+                  of your investment. This will provide you with your own log in to your investor portal where you can track the 
+                  progress of your investment through your investment account, and you will receive regular updates from the businesses 
+                  you've invested in.
+                </p>
+                
+                <p>
+                  These updates may include financial reports, progress on business milestones, strategic developments, and other 
+                  relevant information - Ingenious Capital ensures that investors are kept informed through periodic emails and 
+                  updates on your account dashboard.
+                </p>
+                
+                <p>
+                  Once you receive your ownership statement, you will have official documentation confirming your stake in the 
+                  investment. This statement will outline the number of shares or units you hold, the value of your investment, 
+                  and any relevant terms or conditions. You should review this document carefully and keep it for your records.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
