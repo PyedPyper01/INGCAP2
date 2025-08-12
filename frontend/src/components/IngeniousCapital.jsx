@@ -207,9 +207,9 @@ const IngeniousCapital = () => {
                   Ingenious Capital invests into a diverse portfolio of assets ranging from commodities, 
                   shares, ETF's and AIM listed Companies to maintain liquidity and create income. We also invest in property 
                   based business opportunities such as hotels, build to rent units, self storage, holiday parks 
-                  and more recently in demand sporting facilities such as Padel Tennis Centres - we see this as de-risking 
+                  and more recently, in demand sporting facilities such as Padel Tennis Centres, considering only those with capable and proven operators. We see this as de-risking 
                   property investment, no developer risk (we have witnessed so many developments fail that involve construction 
-                  and planning risk) and investment into strong operator models. <span className="text-xl font-bold text-white bg-gradient-to-r from-teal-500 to-orange-500 bg-clip-text text-transparent">This philosophy means that 50% of your funds invested are available to you on 48 hours notice, 
+                  and planning risk). <span className="text-xl font-bold text-white bg-gradient-to-r from-teal-500 to-orange-500 bg-clip-text text-transparent">This philosophy means that 50% of your funds invested are available to you on 48 hours notice, 
                   with the other 50% on a maximum of 180 days notice.</span>
                 </p>
               </div>
