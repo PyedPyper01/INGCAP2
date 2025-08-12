@@ -85,92 +85,11 @@ const IngeniousCapital = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 relative">
-      {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-        scrollY > 50 
-          ? 'bg-gray-900/95 backdrop-blur-xl shadow-2xl border-b border-gray-700' 
-          : 'bg-transparent'
-      }`}>
-        <div className="max-w-7xl mx-auto px-8 py-6">
-          <div className="flex justify-between items-center">
-            {/* Empty space for logo area */}
-            <div></div>
-            
-            {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center space-x-12">
-              {[
-                { id: 'home', label: 'Home' },
-                { id: 'about', label: 'Our Approach' },
-                { id: 'services', label: 'Services' },
-                { id: 'team', label: 'Team' },
-                { id: 'invest', label: 'Invest' },
-                { id: 'contact', label: 'Contact' }
-              ].map(item => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`relative text-sm font-medium transition-all duration-500 hover:text-white ${
-                    activeSection === item.id 
-                      ? 'text-white' 
-                      : 'text-gray-300'
-                  }`}
-                >
-                  {item.label}
-                  {activeSection === item.id && (
-                    <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-teal-500 to-orange-500 transform scale-x-100 transition-transform duration-700" />
-                  )}
-                </button>
-              ))}
-              
-              <Button 
-                onClick={() => scrollToSection('invest')}
-                className="bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-500 hover:scale-105 shadow-2xl hover:shadow-teal-500/25"
-              >
-                Get Started
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
-            
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden p-3 rounded-xl bg-gray-800 hover:bg-gray-700 transition-colors"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X className="h-6 w-6 text-white" /> : <Menu className="h-6 w-6 text-white" />}
-            </button>
-          </div>
-        </div>
-        
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="lg:hidden bg-gray-900/98 backdrop-blur-xl border-t border-gray-700 shadow-2xl">
-            <div className="px-8 py-8 space-y-6">
-              {[
-                { id: 'home', label: 'Home' },
-                { id: 'about', label: 'Our Approach' },
-                { id: 'services', label: 'Services' },
-                { id: 'team', label: 'Team' },
-                { id: 'invest', label: 'Invest' },
-                { id: 'contact', label: 'Contact' }
-              ].map(item => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left text-lg font-medium text-gray-300 hover:text-white transition-colors py-3"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-      </nav>
-
+    <div className="h-screen w-screen overflow-hidden bg-gray-900">
       {/* Hero Section - Full Screen Logo Only */}
-      <section id="home" className="h-screen w-screen flex flex-col overflow-hidden">
+      <section id="home" className="h-full w-full flex flex-col">
         {/* Navigation Links - Symmetrically Aligned Across Top */}
-        <nav className="w-full z-50 py-6">
+        <nav className="w-full z-50 py-8">
           <div className="flex justify-center items-center space-x-16">
             {[
               { id: 'about', label: 'Our Approach' },
@@ -190,20 +109,56 @@ const IngeniousCapital = () => {
           </div>
         </nav>
 
-        {/* Full Screen Logo */}
-        <div className="flex-1 flex items-center justify-center bg-gray-900">
+        {/* Full Screen Logo Frame */}
+        <div className="flex-1 flex items-center justify-center p-8">
           <div 
-            className="cursor-pointer group w-full h-full flex items-center justify-center"
+            className="cursor-pointer group w-full h-full flex items-center justify-center border-4 border-gray-700 rounded-3xl bg-gray-800"
             onClick={() => scrollToSection('about')}
           >
             <img 
               src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
               alt="Ingenious Capital Logo - Click to Enter" 
-              className="w-full h-full object-contain max-w-none group-hover:scale-105 transition-transform duration-500"
+              className="w-96 h-96 object-contain group-hover:scale-105 transition-transform duration-500"
             />
           </div>
         </div>
       </section>
+    </div>
+
+    {/* Rest of Site - Hidden Initially */}
+    <div className="hidden" id="site-content">
+      <div className="min-h-screen bg-gray-900 relative">
+        {/* Navigation for rest of site */}
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-xl shadow-2xl border-b border-gray-700">
+          <div className="max-w-7xl mx-auto px-8 py-6">
+            <div className="flex justify-between items-center">
+              <button
+                onClick={() => { document.getElementById('site-content').classList.add('hidden'); document.body.style.overflow = 'hidden'; }}
+                className="text-white hover:text-teal-400 transition-colors"
+              >
+                ← Back to Home
+              </button>
+              
+              <div className="flex items-center space-x-12">
+                {[
+                  { id: 'about', label: 'Our Approach' },
+                  { id: 'services', label: 'Services' },
+                  { id: 'team', label: 'Team' },
+                  { id: 'invest', label: 'Invest' },
+                  { id: 'contact', label: 'Contact' }
+                ].map(item => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </nav>
 
       {/* Our Approach Section */}
       <section id="about" className="py-32 bg-gray-800 relative overflow-hidden">
