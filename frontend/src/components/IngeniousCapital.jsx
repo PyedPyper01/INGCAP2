@@ -94,16 +94,8 @@ const IngeniousCapital = () => {
       }`}>
         <div className="max-w-7xl mx-auto px-8 py-6">
           <div className="flex justify-between items-center">
-            {/* Large Corner Logo Only */}
-            <div className="flex items-center">
-              <div className="bg-gray-900 p-2 rounded-lg">
-                <img 
-                  src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
-                  alt="Ingenious Capital" 
-                  className="w-40 h-40 object-contain rounded-lg"
-                />
-              </div>
-            </div>
+            {/* Empty space for logo area */}
+            <div></div>
             
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center space-x-12">
