@@ -1315,7 +1315,7 @@ const IngeniousCapital = () => {
             <h2 className="text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight">Get In <span className="bg-gradient-to-r from-teal-500 to-orange-500 bg-clip-text text-transparent">Touch</span></h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Ready to take control of your wealth? Contact our team for a confidential discussion 
-              about your investment opportunities.
+              about our current and upcoming investment opportunities and whether they are right for you.
             </p>
           </div>
           
