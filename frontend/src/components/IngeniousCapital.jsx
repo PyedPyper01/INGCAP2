@@ -661,7 +661,7 @@ const IngeniousCapital = () => {
       </section>
 
       {/* Investment Opportunities Section */}
-      <section id="invest" className="py-32 bg-gray-900 relative overflow-hidden">
+      <section id="invest" className="min-h-screen py-32 bg-gray-900 relative overflow-hidden flex items-center">
         <div className="max-w-7xl mx-auto px-8 relative z-10">
           <div className="text-center mb-20">
             <h2 className="text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight">
