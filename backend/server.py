@@ -241,7 +241,7 @@ The Ingenious Capital Team
                     {"_id": result.inserted_id},
                     {"$set": {
                         "status": "emails_sent", 
-                        "emails_sent_to": ['appointmentsingcap@gmail.com', booking.email],
+                        "emails_sent_to": ['appointment@ingcap.co.uk', booking.email],
                         "email_sent_time": datetime.utcnow()
                     }}
                 )
