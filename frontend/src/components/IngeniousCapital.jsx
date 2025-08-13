@@ -1484,19 +1484,29 @@ const IngeniousCapital = () => {
               </div>
             </div>
 
-            {/* Investment Opportunity 3 - Coming Soon */}
+            {/* Investment Opportunity 3 - Serenity Lakes */}
             <div className="bg-gray-900 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full min-h-[500px] sm:min-h-[600px]">
               {/* PDF Pitch Deck Area */}
               <div className="mb-4 sm:mb-6">
-                <div className="bg-gray-700 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-dashed border-gray-600 text-center hover:border-gray-500 transition-colors cursor-pointer group">
+                <div className="bg-gray-700 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-blue-500 text-center cursor-pointer group">
                   <div className="w-fit mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Upload className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 text-gray-500" />
+                    <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-4 rounded-2xl">
+                      <span className="text-white font-bold text-lg tracking-wider">SERENITY<br/>LAKES</span>
+                    </div>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Coming Soon</h3>
-                  <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">New opportunity launching shortly</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Serenity Lakes</h3>
+                  <p className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4">Click to view investment brochure</p>
                   <div className="bg-gray-800 rounded-lg p-3 sm:p-4 text-left">
-                    <p className="text-xs text-gray-500 mb-2">📄 Pitch Deck will be available soon</p>
-                    <p className="text-xs text-gray-500">Subscribe to be notified when this opportunity launches</p>
+                    <div className="flex items-center justify-between mb-2">
+                      <p className="text-xs sm:text-sm text-blue-400 font-semibold">📄 Serenity Lakes Brochure.pdf</p>
+                      <Download className="h-3 w-3 sm:h-4 sm:w-4 text-blue-400" />
+                    </div>
+                    <button
+                      onClick={() => window.open('https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/nvx2wy1e_Serenity%20Lakes%20Brochure.pdf', '_blank')}
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg text-xs sm:text-sm font-medium transition-colors"
+                    >
+                      Open Investment Brochure
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1504,17 +1514,20 @@ const IngeniousCapital = () => {
               {/* Description Area */}
               <div className="bg-gray-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-600 flex-1 flex flex-col">
                 <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Investment Description</h4>
-                <div className="text-xs text-gray-400 leading-relaxed text-center py-6 sm:py-8 flex-1 flex flex-col justify-center">
-                  <p className="mb-3">
-                    🚀 Exciting new investment opportunity in development
+                <div className="text-xs text-gray-300 leading-relaxed flex-1">
+                  <p className="mb-2">
+                    Serenity Lakes represents a premium real estate development opportunity combining luxury residential properties with sustainable environmental practices. This exclusive development offers investors exposure to high-end property markets with strong capital appreciation potential.
                   </p>
-                  <p className="mb-3">
-                    Stay tuned for details on our next carefully vetted investment opportunity. 
-                    Our team is currently conducting due diligence on several promising ventures.
+                  <p className="mb-2">
+                    The project features carefully planned lakefront properties designed to maximize both lifestyle appeal and investment returns. Strategic location advantages include proximity to key amenities, transport links, and established residential communities.
                   </p>
-                  <p className="text-xs text-gray-500">
-                    Contact us to be added to the priority notification list
+                  <p>
+                    Key investment highlights: prime waterfront locations, premium development standards, established developer track record, and strong rental yield potential in a supply-constrained market.
                   </p>
+                </div>
+                <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0">
+                  <span className="text-xs text-gray-500">Investment Type: Real Estate Development</span>
+                  <span className="text-xs text-blue-400 font-semibold">Target Return: 18-22% Annual</span>
                 </div>
               </div>
             </div>
