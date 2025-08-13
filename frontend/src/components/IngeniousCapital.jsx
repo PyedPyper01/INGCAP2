@@ -1317,19 +1317,27 @@ const IngeniousCapital = () => {
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Investment Opportunity 1 */}
+            {/* Investment Opportunity 1 - Checkace */}
             <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105">
               {/* PDF Pitch Deck Area */}
               <div className="mb-6">
-                <div className="bg-gray-700 rounded-2xl p-6 border-2 border-dashed border-gray-600 text-center hover:border-teal-500 transition-colors cursor-pointer group">
+                <div className="bg-gray-700 rounded-2xl p-6 border-2 border-teal-500 text-center cursor-pointer group">
                   <div className="bg-gradient-to-r from-teal-500 to-teal-600 p-4 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Briefcase className="h-8 w-8 text-white" />
+                    <FileText className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">Investment Opportunity #1</h3>
-                  <p className="text-gray-400 text-sm mb-4">Click to upload pitch deck PDF</p>
+                  <h3 className="text-xl font-bold text-white mb-2">Checkace</h3>
+                  <p className="text-gray-300 text-sm mb-4">Click to view pitch deck</p>
                   <div className="bg-gray-800 rounded-lg p-4 text-left">
-                    <p className="text-xs text-gray-500 mb-2">📄 Pitch Deck PDF will appear here</p>
-                    <p className="text-xs text-gray-500">Users will be able to open and view the PDF document</p>
+                    <div className="flex items-center justify-between mb-2">
+                      <p className="text-sm text-teal-400 font-semibold">📄 Checkaface-Pitch-Deck.pdf</p>
+                      <Download className="h-4 w-4 text-teal-400" />
+                    </div>
+                    <button
+                      onClick={() => window.open('https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/wxmtu9on_Checkaface-Pitch-Deck%20.pdf', '_blank')}
+                      className="w-full bg-teal-600 hover:bg-teal-700 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors"
+                    >
+                      Open Pitch Deck
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1337,34 +1345,45 @@ const IngeniousCapital = () => {
               {/* Description Area */}
               <div className="bg-gray-800 rounded-2xl p-6 border border-gray-600">
                 <h4 className="text-lg font-bold text-white mb-4">Investment Description</h4>
-                <div className="text-sm text-gray-400 mb-4">
-                  <span className="bg-gray-700 px-2 py-1 rounded text-xs">Up to 300 words</span>
+                <div className="text-sm text-gray-300 leading-relaxed">
+                  <p className="mb-3">
+                    Checkace represents an innovative fintech solution targeting the digital verification and compliance market. This opportunity offers investors exposure to cutting-edge technology that addresses growing regulatory requirements across multiple industries.
+                  </p>
+                  <p className="mb-3">
+                    The company has demonstrated strong early-stage traction with a robust business model focused on scalable SaaS revenue streams. Key differentiators include proprietary verification algorithms and strategic partnerships with established financial institutions.
+                  </p>
+                  <p>
+                    Investment highlights: proven management team, clear path to profitability, and significant market opportunity in the expanding RegTech sector.
+                  </p>
                 </div>
-                <textarea 
-                  placeholder="Add your investment opportunity description here (up to 300 words)..."
-                  maxLength={1500}
-                  rows={6}
-                  className="w-full bg-gray-700 border border-gray-600 rounded-xl text-white text-sm p-4 placeholder-gray-500 focus:border-teal-500 focus:outline-none resize-none"
-                ></textarea>
-                <div className="mt-2 text-xs text-gray-500 text-right">
-                  0 / 300 words
+                <div className="mt-4 flex justify-between items-center">
+                  <span className="text-xs text-gray-500">Investment Stage: Series A</span>
+                  <span className="text-xs text-teal-400 font-semibold">Target Return: 25-30% IRR</span>
                 </div>
               </div>
             </div>
 
-            {/* Investment Opportunity 2 */}
+            {/* Investment Opportunity 2 - Section 106 Reclaims */}
             <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105">
               {/* PDF Pitch Deck Area */}
               <div className="mb-6">
-                <div className="bg-gray-700 rounded-2xl p-6 border-2 border-dashed border-gray-600 text-center hover:border-orange-500 transition-colors cursor-pointer group">
+                <div className="bg-gray-700 rounded-2xl p-6 border-2 border-orange-500 text-center cursor-pointer group">
                   <div className="bg-gradient-to-r from-orange-500 to-orange-600 p-4 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <LineChart className="h-8 w-8 text-white" />
+                    <Building className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">Investment Opportunity #2</h3>
-                  <p className="text-gray-400 text-sm mb-4">Click to upload pitch deck PDF</p>
+                  <h3 className="text-xl font-bold text-white mb-2">Section 106 Reclaims</h3>
+                  <p className="text-gray-300 text-sm mb-4">Click to view pitch deck</p>
                   <div className="bg-gray-800 rounded-lg p-4 text-left">
-                    <p className="text-xs text-gray-500 mb-2">📄 Pitch Deck PDF will appear here</p>
-                    <p className="text-xs text-gray-500">Users will be able to open and view the PDF document</p>
+                    <div className="flex items-center justify-between mb-2">
+                      <p className="text-sm text-orange-400 font-semibold">📄 Section-106-Reclaim Pitch.pdf</p>
+                      <Download className="h-4 w-4 text-orange-400" />
+                    </div>
+                    <button
+                      onClick={() => window.open('https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/u942afse_Section-106-Reclaim%20Pitch.pdf', '_blank')}
+                      className="w-full bg-orange-600 hover:bg-orange-700 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors"
+                    >
+                      Open Pitch Deck
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1372,34 +1391,37 @@ const IngeniousCapital = () => {
               {/* Description Area */}
               <div className="bg-gray-800 rounded-2xl p-6 border border-gray-600">
                 <h4 className="text-lg font-bold text-white mb-4">Investment Description</h4>
-                <div className="text-sm text-gray-400 mb-4">
-                  <span className="bg-gray-700 px-2 py-1 rounded text-xs">Up to 300 words</span>
+                <div className="text-sm text-gray-300 leading-relaxed">
+                  <p className="mb-3">
+                    Section 106 Reclaims presents a specialized property investment opportunity focused on reclaiming developer contributions from local authorities. This unique asset class offers investors exposure to recoverable funds with strong legal foundations.
+                  </p>
+                  <p className="mb-3">
+                    The opportunity leverages extensive legal expertise and established relationships with local councils to identify and recover significant sums. Historical success rates exceed 85% with average recovery periods of 12-18 months.
+                  </p>
+                  <p>
+                    Key benefits include: minimal correlation to traditional property cycles, predictable returns, and backed by comprehensive legal precedent in UK property law.
+                  </p>
                 </div>
-                <textarea 
-                  placeholder="Add your investment opportunity description here (up to 300 words)..."
-                  maxLength={1500}
-                  rows={6}
-                  className="w-full bg-gray-700 border border-gray-600 rounded-xl text-white text-sm p-4 placeholder-gray-500 focus:border-orange-500 focus:outline-none resize-none"
-                ></textarea>
-                <div className="mt-2 text-xs text-gray-500 text-right">
-                  0 / 300 words
+                <div className="mt-4 flex justify-between items-center">
+                  <span className="text-xs text-gray-500">Investment Type: Alternative Asset</span>
+                  <span className="text-xs text-orange-400 font-semibold">Target Return: 15-20% Annual</span>
                 </div>
               </div>
             </div>
 
-            {/* Investment Opportunity 3 */}
+            {/* Investment Opportunity 3 - Coming Soon */}
             <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105">
               {/* PDF Pitch Deck Area */}
               <div className="mb-6">
                 <div className="bg-gray-700 rounded-2xl p-6 border-2 border-dashed border-gray-600 text-center hover:border-gray-500 transition-colors cursor-pointer group">
                   <div className="bg-gradient-to-r from-gray-500 to-gray-600 p-4 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Building className="h-8 w-8 text-white" />
+                    <Upload className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">Investment Opportunity #3</h3>
-                  <p className="text-gray-400 text-sm mb-4">Click to upload pitch deck PDF</p>
+                  <h3 className="text-xl font-bold text-white mb-2">Coming Soon</h3>
+                  <p className="text-gray-400 text-sm mb-4">New opportunity launching shortly</p>
                   <div className="bg-gray-800 rounded-lg p-4 text-left">
-                    <p className="text-xs text-gray-500 mb-2">📄 Pitch Deck PDF will appear here</p>
-                    <p className="text-xs text-gray-500">Users will be able to open and view the PDF document</p>
+                    <p className="text-xs text-gray-500 mb-2">📄 Pitch Deck will be available soon</p>
+                    <p className="text-xs text-gray-500">Subscribe to be notified when this opportunity launches</p>
                   </div>
                 </div>
               </div>
@@ -1407,17 +1429,17 @@ const IngeniousCapital = () => {
               {/* Description Area */}
               <div className="bg-gray-800 rounded-2xl p-6 border border-gray-600">
                 <h4 className="text-lg font-bold text-white mb-4">Investment Description</h4>
-                <div className="text-sm text-gray-400 mb-4">
-                  <span className="bg-gray-700 px-2 py-1 rounded text-xs">Up to 300 words</span>
-                </div>
-                <textarea 
-                  placeholder="Add your investment opportunity description here (up to 300 words)..."
-                  maxLength={1500}
-                  rows={6}
-                  className="w-full bg-gray-700 border border-gray-600 rounded-xl text-white text-sm p-4 placeholder-gray-500 focus:border-gray-500 focus:outline-none resize-none"
-                ></textarea>
-                <div className="mt-2 text-xs text-gray-500 text-right">
-                  0 / 300 words
+                <div className="text-sm text-gray-400 leading-relaxed text-center py-8">
+                  <p className="mb-3">
+                    🚀 Exciting new investment opportunity in development
+                  </p>
+                  <p className="mb-3">
+                    Stay tuned for details on our next carefully vetted investment opportunity. 
+                    Our team is currently conducting due diligence on several promising ventures.
+                  </p>
+                  <p className="text-xs text-gray-500">
+                    Contact us to be added to the priority notification list
+                  </p>
                 </div>
               </div>
             </div>
