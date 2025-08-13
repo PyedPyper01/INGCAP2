@@ -32,7 +32,10 @@ import {
   DollarSign,
   Activity,
   Eye,
-  Percent
+  Percent,
+  Upload,
+  FileText,
+  Download
 } from 'lucide-react';
 
 // Booking Calendar Component (moved outside to prevent re-render issues)
