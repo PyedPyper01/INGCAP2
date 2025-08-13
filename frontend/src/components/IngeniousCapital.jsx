@@ -1356,8 +1356,11 @@ const IngeniousCapital = () => {
                   <p className="mb-3">
                     The company has demonstrated strong early-stage traction with a robust business model focused on scalable SaaS revenue streams. Key differentiators include proprietary verification algorithms and strategic partnerships with established financial institutions.
                   </p>
-                  <p>
+                  <p className="mb-3">
                     Investment highlights: proven management team, clear path to profitability, and significant market opportunity in the expanding RegTech sector.
+                  </p>
+                  <p className="text-teal-400 font-semibold text-sm">
+                    Checkaface has received HMRC Advance Assurance Approval for SEIS/EIS, making it a very attractive tax efficient investment.
                   </p>
                 </div>
                 <div className="mt-4 flex justify-between items-center">
