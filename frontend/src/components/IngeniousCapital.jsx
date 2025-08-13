@@ -159,7 +159,7 @@ Ingenious Capital Booking System`;
                 <input 
                   type="text"
                   value={bookingForm.name}
-                  onChange={(e) => handleFormChange('name', e.target.value)}
+                  onChange={(e) => setBookingForm(prev => ({ ...prev, name: e.target.value }))}
                   className="w-full p-4 bg-gray-900/50 border border-gray-600 rounded-xl text-white focus:border-teal-500 focus:outline-none transition-colors"
                   placeholder="Enter your full name"
                 />
@@ -170,7 +170,7 @@ Ingenious Capital Booking System`;
                 <input 
                   type="email"
                   value={bookingForm.email}
-                  onChange={(e) => handleFormChange('email', e.target.value)}
+                  onChange={(e) => setBookingForm(prev => ({ ...prev, email: e.target.value }))}
                   className="w-full p-4 bg-gray-900/50 border border-gray-600 rounded-xl text-white focus:border-teal-500 focus:outline-none transition-colors"
                   placeholder="your.email@example.com"
                 />
@@ -181,7 +181,7 @@ Ingenious Capital Booking System`;
                 <input 
                   type="tel"
                   value={bookingForm.phone}
-                  onChange={(e) => handleFormChange('phone', e.target.value)}
+                  onChange={(e) => setBookingForm(prev => ({ ...prev, phone: e.target.value }))}
                   className="w-full p-4 bg-gray-900/50 border border-gray-600 rounded-xl text-white focus:border-teal-500 focus:outline-none transition-colors"
                   placeholder="Your phone number"
                 />
@@ -192,7 +192,7 @@ Ingenious Capital Booking System`;
                 <input 
                   type="text"
                   value={bookingForm.company}
-                  onChange={(e) => handleFormChange('company', e.target.value)}
+                  onChange={(e) => setBookingForm(prev => ({ ...prev, company: e.target.value }))}
                   className="w-full p-4 bg-gray-900/50 border border-gray-600 rounded-xl text-white focus:border-teal-500 focus:outline-none transition-colors"
                   placeholder="Your company name"
                 />
