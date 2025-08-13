@@ -231,7 +231,7 @@ The Ingenious Capital Team
                 customer_msg['Subject'] = customer_subject
                 customer_msg['From'] = smtp_user
                 customer_msg['To'] = booking.email
-                customer_msg['Reply-To'] = 'appointment@ingcap.co.uk'
+                customer_msg['Reply-To'] = 'appointmentsingcap@gmail.com'
                 
                 server.send_message(customer_msg)
                 server.quit()
