@@ -1396,7 +1396,7 @@ const IngeniousCapital = () => {
                 </div>
                 <div className="mt-4 flex justify-between items-center">
                   <span className="text-xs text-gray-500">Investment Stage: Series A</span>
-                  <span className="text-xs text-teal-400 font-semibold">Target Return: 25-30% IRR</span>
+                  <span className="text-xs text-teal-400 font-semibold">Target Return: 50% IRR over a 3 year investment cycle</span>
                 </div>
               </div>
             </div>
