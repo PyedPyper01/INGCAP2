@@ -138,8 +138,14 @@ async def send_booking_email(booking: BookingRequest):
         
         # Connect to SMTP server with proper error handling
         try:
-            server = smtplib.SMTP(smtp_server, smtp_port)
-            server.starttls()
+            use_ssl = os.environ.get('SMTP_USE_SSL', 'false').lower() == 'true'
+            
+            if use_ssl:
+                server = smtplib.SMTP_SSL(smtp_server, smtp_port)
+            else:
+                server = smtplib.SMTP(smtp_server, smtp_port)
+                server.starttls()
+            
             server.login(smtp_user, smtp_password)
         except smtplib.SMTPAuthenticationError as auth_error:
             logger.error(f"SMTP Authentication failed: {auth_error}")
