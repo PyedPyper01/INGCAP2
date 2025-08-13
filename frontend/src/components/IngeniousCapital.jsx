@@ -1519,17 +1519,17 @@ const IngeniousCapital = () => {
               </div>
             </div>
 
-            {/* Investment Opportunity 4 - Coming Soon */}
-            <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full min-h-[600px]">
+            {/* Investment Opportunity 4 - Future Opportunity */}
+            <div className="bg-gray-900 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full min-h-[500px] sm:min-h-[600px]">
               {/* PDF Pitch Deck Area */}
-              <div className="mb-6">
-                <div className="bg-gray-700 rounded-2xl p-6 border-2 border-dashed border-gray-600 text-center hover:border-purple-500 transition-colors cursor-pointer group">
-                  <div className="w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Briefcase className="h-16 w-16 text-purple-500" />
+              <div className="mb-4 sm:mb-6">
+                <div className="bg-gray-700 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-dashed border-gray-600 text-center hover:border-purple-500 transition-colors cursor-pointer group">
+                  <div className="w-fit mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Briefcase className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 text-purple-500" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">Future Opportunity</h3>
-                  <p className="text-gray-400 text-sm mb-4">Pipeline opportunity in development</p>
-                  <div className="bg-gray-800 rounded-lg p-4 text-left">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Future Opportunity</h3>
+                  <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">Pipeline opportunity in development</p>
+                  <div className="bg-gray-800 rounded-lg p-3 sm:p-4 text-left">
                     <p className="text-xs text-gray-500 mb-2">📄 Investment details coming soon</p>
                     <p className="text-xs text-gray-500">Join our investor network for early access</p>
                   </div>
@@ -1537,9 +1537,9 @@ const IngeniousCapital = () => {
               </div>
               
               {/* Description Area */}
-              <div className="bg-gray-800 rounded-2xl p-6 border border-gray-600 flex-1 flex flex-col">
-                <h4 className="text-lg font-bold text-white mb-4">Investment Description</h4>
-                <div className="text-xs text-gray-400 leading-relaxed text-center py-8 flex-1 flex flex-col justify-center">
+              <div className="bg-gray-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-600 flex-1 flex flex-col">
+                <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Investment Description</h4>
+                <div className="text-xs text-gray-400 leading-relaxed text-center py-6 sm:py-8 flex-1 flex flex-col justify-center">
                   <p className="mb-3">
                     💼 Additional investment opportunity in our pipeline
                   </p>
