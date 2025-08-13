@@ -243,9 +243,13 @@ The Ingenious Capital Team
         
         return {
             "success": True, 
-            "message": "Booking request received successfully! You will be contacted shortly to confirm your appointment.",
+            "message": "Booking request received successfully! " + (
+                "Confirmation emails have been sent to both you and our team. We will contact you within 24 hours to confirm your appointment." 
+                if email_sent 
+                else "You will be contacted shortly to confirm your appointment."
+            ),
             "booking_id": str(result.inserted_id),
-            "email_sent": email_sent
+            "emails_sent": email_sent
         }
         
     except Exception as e:
