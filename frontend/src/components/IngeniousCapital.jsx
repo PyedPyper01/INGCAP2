@@ -1121,6 +1121,182 @@ const IngeniousCapital = () => {
         </div>
       </section>
 
+      {/* In a Nutshell Section */}
+      <section id="in-a-nutshell" className="min-h-screen py-32 bg-gray-900 relative overflow-hidden flex items-center">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight">
+              In a <span className="bg-gradient-to-r from-teal-500 to-orange-500 bg-clip-text text-transparent">Nutshell</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Everything you need to know about partnering with Ingenious Capital - your comprehensive investment solution.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            {/* Investment & Co-Investment Benefits */}
+            <div className="bg-gray-800 rounded-3xl p-8 shadow-2xl border border-gray-700">
+              <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
+                <div className="bg-gradient-to-r from-teal-500 to-teal-600 p-3 rounded-2xl mr-4">
+                  <Users className="h-6 w-6 text-white" />
+                </div>
+                Investment Excellence
+              </h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="h-5 w-5 text-teal-500 mt-1 flex-shrink-0" />
+                  <p className="text-gray-300 leading-relaxed">
+                    <strong>Co-investing with experienced partners</strong> to ensure full due diligence and risk profiling
+                  </p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="h-5 w-5 text-teal-500 mt-1 flex-shrink-0" />
+                  <p className="text-gray-300 leading-relaxed">
+                    <strong>Investment opportunities</strong> previously available only to institutional investors
+                  </p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="h-5 w-5 text-teal-500 mt-1 flex-shrink-0" />
+                  <p className="text-gray-300 leading-relaxed">
+                    <strong>Continuous liquidity</strong> with 50% of invested funds available on 48 hours notice and the balance within 180 days with no forfeiture of profit
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Financial Management */}
+            <div className="bg-gray-800 rounded-3xl p-8 shadow-2xl border border-gray-700">
+              <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
+                <div className="bg-gradient-to-r from-orange-500 to-orange-600 p-3 rounded-2xl mr-4">
+                  <PieChart className="h-6 w-6 text-white" />
+                </div>
+                Financial Management
+              </h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-1 flex-shrink-0" />
+                  <p className="text-gray-300 leading-relaxed">
+                    <strong>Tidy up your personal finances</strong> and create a one stop shop for all your finances
+                  </p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-1 flex-shrink-0" />
+                  <p className="text-gray-300 leading-relaxed">
+                    <strong>Tax efficiency assured</strong> on both new and existing investments
+                  </p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="h-5 w-5 text-orange-500 mt-1 flex-shrink-0" />
+                  <p className="text-gray-300 leading-relaxed">
+                    <strong>Exit underperforming investments</strong> via our Secondary market
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            {/* Learning & Savings */}
+            <div className="bg-gray-800 rounded-3xl p-8 shadow-2xl border border-gray-700">
+              <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
+                <div className="bg-gradient-to-r from-gray-500 to-gray-600 p-3 rounded-2xl mr-4">
+                  <Award className="h-6 w-6 text-white" />
+                </div>
+                Learning & Savings
+              </h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="h-5 w-5 text-gray-400 mt-1 flex-shrink-0" />
+                  <p className="text-gray-300 leading-relaxed">
+                    <strong>Earn while you learn</strong> by following our regular tutorials and seminars
+                  </p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="h-5 w-5 text-gray-400 mt-1 flex-shrink-0" />
+                  <p className="text-gray-300 leading-relaxed">
+                    <strong>Benefit from up to 25% cost savings</strong> by using our recommended partners
+                  </p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="h-5 w-5 text-gray-400 mt-1 flex-shrink-0" />
+                  <p className="text-gray-300 leading-relaxed">
+                    <strong>Shariah compliant Investing</strong> options available
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Payment Options */}
+            <div className="bg-gray-800 rounded-3xl p-8 shadow-2xl border border-gray-700">
+              <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
+                <div className="bg-gradient-to-r from-teal-600 to-orange-600 p-3 rounded-2xl mr-4">
+                  <DollarSign className="h-6 w-6 text-white" />
+                </div>
+                Flexible Payments
+              </h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="h-5 w-5 text-teal-500 mt-1 flex-shrink-0" />
+                  <p className="text-gray-300 leading-relaxed">
+                    <strong>Choose how you get paid:</strong> Quarterly Income, Annual Roll-Up or a mixture of both
+                  </p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="h-5 w-5 text-teal-500 mt-1 flex-shrink-0" />
+                  <p className="text-gray-300 leading-relaxed">
+                    <strong>All forms of payment accepted:</strong> Any currency, credit and debit cards, all payment gateways, and cryptocurrencies
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Fee Structure Highlight */}
+          <div className="relative">
+            <div className="absolute -top-4 -left-4 w-full h-full bg-gradient-to-r from-teal-500/5 to-orange-500/5 rounded-3xl blur-xl"></div>
+            <div className="relative bg-gray-800 rounded-3xl p-10 shadow-2xl border border-gray-700">
+              <h3 className="text-3xl font-bold text-white mb-8 text-center">Our Fee Structure</h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div className="bg-gray-900 rounded-2xl p-6 border border-teal-500/30">
+                  <div className="text-center">
+                    <div className="text-4xl font-bold text-teal-500 mb-2">0%</div>
+                    <h4 className="text-xl font-semibold text-white mb-2">Initial & Management Fees</h4>
+                    <p className="text-gray-400 text-sm">No upfront costs or ongoing management fees</p>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-900 rounded-2xl p-6 border border-orange-500/30">
+                  <div className="text-center">
+                    <div className="text-4xl font-bold text-orange-500 mb-2">15%+</div>
+                    <h4 className="text-xl font-semibold text-white mb-2">Minimum Return Threshold</h4>
+                    <p className="text-gray-400 text-sm">We only earn when you earn above 15% annual return</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-r from-gray-800 to-gray-700 rounded-2xl p-6 border border-gray-600">
+                <h4 className="text-xl font-bold text-white mb-4 text-center">Profit Sharing Above 15% Annual Return</h4>
+                <div className="flex justify-center items-center space-x-12">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-teal-500 mb-2">30%</div>
+                    <div className="text-white font-medium">Your Share</div>
+                  </div>
+                  <div className="w-px h-16 bg-gray-600"></div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-orange-500 mb-2">5%</div>
+                    <div className="text-white font-medium">Our Share</div>
+                  </div>
+                </div>
+                <p className="text-gray-400 text-center text-sm mt-4">
+                  *We only charge a profit share which commences above a 15% annual return to you
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="min-h-screen py-32 relative overflow-hidden flex items-center">
         <div className="absolute inset-0">
