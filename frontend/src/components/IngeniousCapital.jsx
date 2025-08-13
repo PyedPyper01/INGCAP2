@@ -1375,7 +1375,7 @@ const IngeniousCapital = () => {
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 md:mb-8 tracking-tight">
               Some of our Current <span className="bg-gradient-to-r from-teal-500 to-orange-500 bg-clip-text text-transparent">Investment Opportunities</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Explore our carefully selected investment opportunities, each with comprehensive due diligence and detailed pitch decks.
             </p>
           </div>
