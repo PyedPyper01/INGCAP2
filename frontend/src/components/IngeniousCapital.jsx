@@ -1322,11 +1322,11 @@ const IngeniousCapital = () => {
               {/* PDF Pitch Deck Area */}
               <div className="mb-6">
                 <div className="bg-gray-700 rounded-2xl p-6 border-2 border-teal-500 text-center cursor-pointer group">
-                  <div className="bg-white p-4 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <img 
                       src="https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/7qm8o67m_Checkaface%20Wide%20Logo.jpg" 
                       alt="Checkaface Logo" 
-                      className="h-12 w-auto object-contain"
+                      className="h-20 w-auto object-contain"
                     />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">Checkace</h3>
