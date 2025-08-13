@@ -556,43 +556,76 @@ const IngeniousCapital = () => {
   };
 
   // Main Site Component
-  const MainSite = () => (
-    <div className="min-h-screen bg-gray-900">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-xl shadow-2xl border-b border-gray-700">
-        <div className="max-w-7xl mx-auto px-8 py-6">
-          <div className="flex justify-between items-center">
-            <button
-              onClick={() => navigateToPage('logo')}
-              className="text-white hover:text-teal-400 transition-colors font-medium"
-            >
-              ← Back to Home
-            </button>
-            
-            <div className="flex items-center space-x-12">
-              {[
-                { id: 'about', label: 'Our Approach' },
-                { id: 'services', label: 'Services' },
-                { id: 'team', label: 'Team' },
-                { id: 'investor-network', label: 'Investor Network' },
-                { id: 'financial-healthcheck', label: 'Financial Healthcheck' },
-                { id: 'in-a-nutshell', label: 'In a Nutshell' },
-                { id: 'investment-opportunities', label: 'Opportunities' },
-                { id: 'invest', label: 'Invest' },
-                { id: 'contact', label: 'Contact' }
-              ].map(item => (
+  const MainSite = () => {
+    const [isMainMenuOpen, setIsMainMenuOpen] = useState(false);
+    
+    return (
+      <div className="min-h-screen bg-gray-900">
+        {/* Navigation */}
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-xl shadow-2xl border-b border-gray-700">
+          <div className="max-w-7xl mx-auto px-8 py-6">
+            <div className="flex justify-between items-center">
+              <button
+                onClick={() => navigateToPage('logo')}
+                className="text-white hover:text-teal-400 transition-colors font-medium flex items-center space-x-2"
+              >
+                <ArrowRight className="h-4 w-4 rotate-180" />
+                <span>Return to Home</span>
+              </button>
+              
+              {/* Main Navigation Dropdown */}
+              <div className="relative">
                 <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                  onClick={() => setIsMainMenuOpen(!isMainMenuOpen)}
+                  className="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-lg border border-gray-600 transition-colors duration-300 flex items-center space-x-2"
                 >
-                  {item.label}
+                  <Menu className="h-4 w-4" />
+                  <span className="text-sm font-medium">Navigation</span>
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isMainMenuOpen ? 'rotate-180' : ''}`} />
                 </button>
-              ))}
+                
+                {isMainMenuOpen && (
+                  <>
+                    {/* Backdrop */}
+                    <div 
+                      className="fixed inset-0 bg-black bg-opacity-50 z-40"
+                      onClick={() => setIsMainMenuOpen(false)}
+                    ></div>
+                    
+                    {/* Dropdown Menu */}
+                    <div className="absolute right-0 top-full mt-2 w-64 bg-gray-800 rounded-lg border border-gray-600 shadow-2xl z-50">
+                      <div className="py-2">
+                        {[
+                          { id: 'about', label: 'Our Approach' },
+                          { id: 'services', label: 'Services' },
+                          { id: 'team', label: 'Team' },
+                          { id: 'investor-network', label: 'Investor Network' },
+                          { id: 'financial-healthcheck', label: 'Financial Healthcheck' },
+                          { id: 'in-a-nutshell', label: 'In a Nutshell' },
+                          { id: 'investment-opportunities', label: 'Opportunities' },
+                          { id: 'invest', label: 'Invest' },
+                          { id: 'contact', label: 'Contact' }
+                        ].map(item => (
+                          <button
+                            key={item.id}
+                            onClick={() => {
+                              scrollToSection(item.id);
+                              setIsMainMenuOpen(false);
+                            }}
+                            className="w-full text-left px-4 py-3 text-white hover:bg-gray-700 hover:text-teal-400 transition-colors duration-300 flex items-center space-x-3"
+                          >
+                            <ChevronRight className="h-4 w-4" />
+                            <span className="text-sm font-medium">{item.label}</span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      </nav>
+        </nav>
 
       {/* Our Approach Section */}
       <section id="about" className="min-h-screen pt-20 pb-8 bg-gray-800 relative overflow-hidden flex items-center">
