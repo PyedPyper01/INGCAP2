@@ -868,7 +868,7 @@ const IngeniousCapital = () => {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="py-32 bg-gray-800 relative overflow-hidden">
+      <section id="team" className="min-h-screen py-32 bg-gray-800 relative overflow-hidden flex items-center">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight">
