@@ -63,6 +63,20 @@ async def get_status_checks():
     status_checks = await db.status_checks.find().to_list(1000)
     return [StatusCheck(**status_check) for status_check in status_checks]
 
+@api_router.get("/bookings")
+async def get_all_bookings():
+    """Get all booking requests for admin review"""
+    try:
+        bookings = await db.bookings.find().sort("timestamp", -1).to_list(100)
+        for booking in bookings:
+            # Format timestamp for display
+            if 'timestamp' in booking:
+                booking['formatted_date'] = booking['timestamp'].strftime('%Y-%m-%d %H:%M:%S')
+        return {"bookings": bookings}
+    except Exception as e:
+        logger.error(f"Error fetching bookings: {str(e)}")
+        return {"bookings": []}
+
 @api_router.get("/test-email")
 async def test_email_connection():
     """Test SMTP connection and authentication"""
