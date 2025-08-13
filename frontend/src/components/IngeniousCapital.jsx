@@ -1326,7 +1326,7 @@ const IngeniousCapital = () => {
                     <img 
                       src="https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/7qm8o67m_Checkaface%20Wide%20Logo.jpg" 
                       alt="Checkaface Logo" 
-                      className="h-8 w-auto object-contain"
+                      className="h-12 w-auto object-contain"
                     />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">Checkace</h3>
