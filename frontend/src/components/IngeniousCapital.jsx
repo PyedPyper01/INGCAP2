@@ -1286,6 +1286,7 @@ const IngeniousCapital = () => {
                   { label: 'Services', id: 'services' },
                   { label: 'Team', id: 'team' },
                   { label: 'Investor Network', id: 'investor-network' },
+                  { label: 'Financial Healthcheck', id: 'financial-healthcheck' },
                   { label: 'Investment', id: 'invest' }
                 ].map(link => (
                   <li key={link.id}>
