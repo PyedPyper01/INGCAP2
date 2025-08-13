@@ -1347,9 +1347,9 @@ const IngeniousCapital = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Investment Opportunity 1 - Checkace */}
-            <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full min-h-[800px]">
+            <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full min-h-[600px]">
               {/* PDF Pitch Deck Area */}
               <div className="mb-6">
                 <div className="bg-gray-700 rounded-2xl p-6 border-2 border-teal-500 text-center cursor-pointer group">
@@ -1357,7 +1357,7 @@ const IngeniousCapital = () => {
                     <img 
                       src="https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/7qm8o67m_Checkaface%20Wide%20Logo.jpg" 
                       alt="Checkaface Logo" 
-                      className="h-20 w-auto object-contain"
+                      className="h-16 w-auto object-contain"
                     />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">Checkace</h3>
@@ -1380,17 +1380,17 @@ const IngeniousCapital = () => {
               {/* Description Area */}
               <div className="bg-gray-800 rounded-2xl p-6 border border-gray-600 flex-1 flex flex-col">
                 <h4 className="text-lg font-bold text-white mb-4">Investment Description</h4>
-                <div className="text-sm text-gray-300 leading-relaxed flex-1">
-                  <p className="mb-3">
+                <div className="text-xs text-gray-300 leading-relaxed flex-1">
+                  <p className="mb-2">
                     Checkace represents an innovative fintech solution targeting the digital verification and compliance market. This opportunity offers investors exposure to cutting-edge technology that addresses growing regulatory requirements across multiple industries.
                   </p>
-                  <p className="mb-3">
+                  <p className="mb-2">
                     The company has demonstrated strong early-stage traction with a robust business model focused on scalable SaaS revenue streams. Key differentiators include proprietary verification algorithms and strategic partnerships with established financial institutions.
                   </p>
-                  <p className="mb-3">
+                  <p className="mb-2">
                     Investment highlights: proven management team, clear path to profitability, and significant market opportunity in the expanding RegTech sector.
                   </p>
-                  <p className="text-teal-400 font-semibold text-sm">
+                  <p className="text-teal-400 font-semibold text-xs">
                     Checkaface has received HMRC Advance Assurance Approval for SEIS/EIS, making it a very attractive tax efficient investment.
                   </p>
                 </div>
@@ -1402,7 +1402,7 @@ const IngeniousCapital = () => {
             </div>
 
             {/* Investment Opportunity 2 - Section 106 Reclaims */}
-            <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full min-h-[800px]">
+            <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full min-h-[600px]">
               {/* PDF Pitch Deck Area */}
               <div className="mb-6">
                 <div className="bg-gray-700 rounded-2xl p-6 border-2 border-orange-500 text-center cursor-pointer group">
@@ -1410,7 +1410,7 @@ const IngeniousCapital = () => {
                     <img 
                       src="https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/k0bki6nj_section-106-reclaims-logo-4color.png" 
                       alt="Section 106 Reclaims Logo" 
-                      className="h-20 w-auto object-contain"
+                      className="h-16 w-auto object-contain"
                     />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">Section 106 Reclaims</h3>
@@ -1433,11 +1433,11 @@ const IngeniousCapital = () => {
               {/* Description Area */}
               <div className="bg-gray-800 rounded-2xl p-6 border border-gray-600 flex-1 flex flex-col">
                 <h4 className="text-lg font-bold text-white mb-4">Investment Description</h4>
-                <div className="text-sm text-gray-300 leading-relaxed flex-1">
-                  <p className="mb-3">
+                <div className="text-xs text-gray-300 leading-relaxed flex-1">
+                  <p className="mb-2">
                     Section 106 Reclaims presents a specialized property investment opportunity focused on reclaiming developer contributions from local authorities. This unique asset class offers investors exposure to recoverable funds with strong legal foundations.
                   </p>
-                  <p className="mb-3">
+                  <p className="mb-2">
                     The opportunity leverages extensive legal expertise and established relationships with local councils to identify and recover significant sums. Historical success rates exceed 85% with average recovery periods of 6-1 months.
                   </p>
                   <p>
@@ -1452,12 +1452,12 @@ const IngeniousCapital = () => {
             </div>
 
             {/* Investment Opportunity 3 - Coming Soon */}
-            <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full min-h-[800px]">
+            <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full min-h-[600px]">
               {/* PDF Pitch Deck Area */}
               <div className="mb-6">
                 <div className="bg-gray-700 rounded-2xl p-6 border-2 border-dashed border-gray-600 text-center hover:border-gray-500 transition-colors cursor-pointer group">
                   <div className="w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Upload className="h-20 w-20 text-gray-500" />
+                    <Upload className="h-16 w-16 text-gray-500" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">Coming Soon</h3>
                   <p className="text-gray-400 text-sm mb-4">New opportunity launching shortly</p>
@@ -1471,7 +1471,7 @@ const IngeniousCapital = () => {
               {/* Description Area */}
               <div className="bg-gray-800 rounded-2xl p-6 border border-gray-600 flex-1 flex flex-col">
                 <h4 className="text-lg font-bold text-white mb-4">Investment Description</h4>
-                <div className="text-sm text-gray-400 leading-relaxed text-center py-8 flex-1 flex flex-col justify-center">
+                <div className="text-xs text-gray-400 leading-relaxed text-center py-8 flex-1 flex flex-col justify-center">
                   <p className="mb-3">
                     🚀 Exciting new investment opportunity in development
                   </p>
@@ -1481,6 +1481,41 @@ const IngeniousCapital = () => {
                   </p>
                   <p className="text-xs text-gray-500">
                     Contact us to be added to the priority notification list
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Investment Opportunity 4 - Coming Soon */}
+            <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full min-h-[600px]">
+              {/* PDF Pitch Deck Area */}
+              <div className="mb-6">
+                <div className="bg-gray-700 rounded-2xl p-6 border-2 border-dashed border-gray-600 text-center hover:border-purple-500 transition-colors cursor-pointer group">
+                  <div className="w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Briefcase className="h-16 w-16 text-purple-500" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2">Future Opportunity</h3>
+                  <p className="text-gray-400 text-sm mb-4">Pipeline opportunity in development</p>
+                  <div className="bg-gray-800 rounded-lg p-4 text-left">
+                    <p className="text-xs text-gray-500 mb-2">📄 Investment details coming soon</p>
+                    <p className="text-xs text-gray-500">Join our investor network for early access</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Description Area */}
+              <div className="bg-gray-800 rounded-2xl p-6 border border-gray-600 flex-1 flex flex-col">
+                <h4 className="text-lg font-bold text-white mb-4">Investment Description</h4>
+                <div className="text-xs text-gray-400 leading-relaxed text-center py-8 flex-1 flex flex-col justify-center">
+                  <p className="mb-3">
+                    💼 Additional investment opportunity in our pipeline
+                  </p>
+                  <p className="mb-3">
+                    We continuously evaluate high-quality investment opportunities across various sectors. 
+                    Our rigorous due diligence process ensures only the most promising ventures reach our investors.
+                  </p>
+                  <p className="text-xs text-gray-500">
+                    Register your interest for priority access to new opportunities
                   </p>
                 </div>
               </div>
