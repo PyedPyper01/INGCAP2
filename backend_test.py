@@ -4,7 +4,7 @@ from datetime import datetime
 import json
 
 class IngeniousCapitalAPITester:
-    def __init__(self, base_url="https://f2ac2f5d-09e9-44b7-94d9-607506d31781.preview.emergentagent.com"):
+    def __init__(self, base_url="http://localhost:8001"):
         self.base_url = base_url
         self.tests_run = 0
         self.tests_passed = 0
