@@ -341,7 +341,7 @@ async def send_booking_email(booking: BookingRequest):
             'id': str(uuid.uuid4()),
             'timestamp': datetime.utcnow(),
             'status': 'sent',
-            'emails_sent': ['appointment@ingcap.co.uk', booking.email]
+            'emails_sent': ['appointmentsingcap@gmail.com', booking.email]
         }
         await db.bookings.insert_one(booking_record)
         
