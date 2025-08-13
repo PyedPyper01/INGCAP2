@@ -1464,8 +1464,8 @@ const IngeniousCapital = () => {
               </div>
               
               {/* Description Area */}
-              <div className="bg-gray-800 rounded-2xl p-6 border border-gray-600 flex-1 flex flex-col">
-                <h4 className="text-lg font-bold text-white mb-4">Investment Description</h4>
+              <div className="bg-gray-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-600 flex-1 flex flex-col">
+                <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Investment Description</h4>
                 <div className="text-xs text-gray-300 leading-relaxed flex-1">
                   <p className="mb-2">
                     Section 106 Reclaims presents a specialized property investment opportunity focused on reclaiming developer contributions from local authorities. This unique asset class offers investors exposure to recoverable funds with strong legal foundations.
@@ -1477,7 +1477,7 @@ const IngeniousCapital = () => {
                     Key benefits include: minimal correlation to traditional property cycles, predictable returns, and backed by comprehensive legal precedent in UK property law.
                   </p>
                 </div>
-                <div className="mt-4 flex justify-between items-center">
+                <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0">
                   <span className="text-xs text-gray-500">Investment Type: Alternative Asset</span>
                   <span className="text-xs text-orange-400 font-semibold">Target Return: 40% Annual</span>
                 </div>
