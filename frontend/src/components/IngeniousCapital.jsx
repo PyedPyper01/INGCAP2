@@ -1041,6 +1041,84 @@ const IngeniousCapital = () => {
         </div>
       </section>
 
+      {/* Free Financial Healthcheck Section */}
+      <section id="financial-healthcheck" className="min-h-screen py-32 bg-gray-800 relative overflow-hidden flex items-center">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight">
+              Free Financial <span className="bg-gradient-to-r from-teal-500 to-orange-500 bg-clip-text text-transparent">Healthcheck</span>
+            </h2>
+          </div>
+          
+          <div className="relative">
+            <div className="absolute -top-4 -left-4 w-full h-full bg-gradient-to-r from-teal-500/5 to-orange-500/5 rounded-3xl blur-xl"></div>
+            <div className="relative bg-gray-900 rounded-3xl p-12 shadow-2xl border border-gray-700">
+              <div className="max-w-4xl mx-auto">
+                <p className="text-xl text-gray-300 leading-relaxed text-center mb-8">
+                  We want to be the investment partner to guide you through the financial maze. Not only are we committed to the projects that we invest in, but alongside our partners at Way Fund Managers we carry out a free assessment of your current portfolios, identifying areas of risk.
+                </p>
+                
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
+                  <div className="bg-gray-800 rounded-2xl p-8 border border-gray-600">
+                    <div className="flex items-center mb-6">
+                      <div className="bg-gradient-to-r from-teal-500 to-teal-600 p-3 rounded-2xl mr-4">
+                        <BarChart3 className="h-8 w-8 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-white">Secondary Market Sector</h3>
+                    </div>
+                    <p className="text-gray-300 leading-relaxed">
+                      We also propose to introduce a Secondary Market sector, where you can try to find a buyer (usually discounted) for your underperforming investment.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-gray-800 rounded-2xl p-8 border border-gray-600">
+                    <div className="flex items-center mb-6">
+                      <div className="bg-gradient-to-r from-orange-500 to-orange-600 p-3 rounded-2xl mr-4">
+                        <Shield className="h-8 w-8 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-white">Legal Challenge Support</h3>
+                    </div>
+                    <p className="text-gray-300 leading-relaxed">
+                      In certain circumstances we may even pass some failing investments across to our partnering lawyers to determine whether you have any form of legal challenge against the promoters for mis-selling.
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Key Services Highlight */}
+                <div className="mt-12 bg-gradient-to-r from-gray-800 to-gray-700 rounded-2xl p-8 border border-teal-500/30">
+                  <h4 className="text-2xl font-bold text-white mb-6 text-center">Our Partnership Services</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="text-center">
+                      <div className="bg-gradient-to-r from-teal-500 to-teal-600 p-4 rounded-full w-fit mx-auto mb-4">
+                        <Activity className="h-6 w-6 text-white" />
+                      </div>
+                      <h5 className="text-lg font-semibold text-white mb-2">Portfolio Assessment</h5>
+                      <p className="text-gray-400 text-sm">Free risk analysis with Way Fund Managers</p>
+                    </div>
+                    
+                    <div className="text-center">
+                      <div className="bg-gradient-to-r from-orange-500 to-orange-600 p-4 rounded-full w-fit mx-auto mb-4">
+                        <TrendingDown className="h-6 w-6 text-white" />
+                      </div>
+                      <h5 className="text-lg font-semibold text-white mb-2">Secondary Market</h5>
+                      <p className="text-gray-400 text-sm">Find buyers for underperforming investments</p>
+                    </div>
+                    
+                    <div className="text-center">
+                      <div className="bg-gradient-to-r from-gray-500 to-gray-600 p-4 rounded-full w-fit mx-auto mb-4">
+                        <Lock className="h-6 w-6 text-white" />
+                      </div>
+                      <h5 className="text-lg font-semibold text-white mb-2">Legal Protection</h5>
+                      <p className="text-gray-400 text-sm">Partner lawyers for mis-selling claims</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="min-h-screen py-32 relative overflow-hidden flex items-center">
         <div className="absolute inset-0">
