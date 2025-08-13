@@ -37,6 +37,172 @@ import {
 
 const IngeniousCapital = () => {
   const [currentPage, setCurrentPage] = useState('logo');
+  const [showBookingCalendar, setShowBookingCalendar] = useState(false);
+  const [selectedDate, setSelectedDate] = useState('');
+  const [selectedTime, setSelectedTime] = useState('');
+
+  // Blocked times/dates (you can modify these)
+  const blockedDates = [
+    '2025-01-15', '2025-01-16', '2025-01-22', '2025-01-23'
+  ];
+  
+  const timeSlots = [
+    '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
+    '14:00', '14:30', '15:00', '15:30', '16:00', '16:30'
+  ];
+
+  // Generate next 30 days
+  const generateAvailableDates = () => {
+    const dates = [];
+    const today = new Date();
+    
+    for (let i = 1; i <= 30; i++) {
+      const date = new Date(today);
+      date.setDate(today.getDate() + i);
+      
+      // Skip weekends and blocked dates
+      if (date.getDay() !== 0 && date.getDay() !== 6) {
+        const dateStr = date.toISOString().split('T')[0];
+        if (!blockedDates.includes(dateStr)) {
+          dates.push({
+            date: dateStr,
+            display: date.toLocaleDateString('en-GB', { 
+              weekday: 'short', 
+              day: 'numeric', 
+              month: 'short' 
+            })
+          });
+        }
+      }
+    }
+    return dates;
+  };
+
+  const availableDates = generateAvailableDates();
+
+  const handleBookingSubmit = () => {
+    if (!selectedDate || !selectedTime) {
+      alert('Please select both date and time');
+      return;
+    }
+    
+    // Create booking confirmation
+    const bookingDetails = `Consultation Booking Request:\nDate: ${selectedDate}\nTime: ${selectedTime}\n\nPlease confirm this appointment.`;
+    
+    // You can integrate this with your email system
+    // For now, we'll create a mailto link
+    const mailtoLink = `mailto:investor@ingcap.co.uk?subject=Consultation Booking Request&body=${encodeURIComponent(bookingDetails)}`;
+    window.location.href = mailtoLink;
+    
+    // Reset and close
+    setSelectedDate('');
+    setSelectedTime('');
+    setShowBookingCalendar(false);
+  };
+
+  // Booking Calendar Component
+  const BookingCalendar = () => (
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+      <div className="bg-gray-800 rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-gray-700 shadow-2xl">
+        <div className="flex justify-between items-center mb-8">
+          <h3 className="text-2xl font-bold text-white">Schedule Your Consultation</h3>
+          <button
+            onClick={() => setShowBookingCalendar(false)}
+            className="text-gray-400 hover:text-white transition-colors"
+          >
+            <X className="h-6 w-6" />
+          </button>
+        </div>
+        
+        {/* Date Selection */}
+        <div className="mb-8">
+          <h4 className="text-lg font-semibold text-white mb-4">Select Date</h4>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {availableDates.slice(0, 12).map((dateObj) => (
+              <button
+                key={dateObj.date}
+                onClick={() => setSelectedDate(dateObj.date)}
+                className={`p-3 rounded-xl text-sm font-medium transition-all duration-300 ${
+                  selectedDate === dateObj.date
+                    ? 'bg-gradient-to-r from-teal-500 to-teal-600 text-white'
+                    : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                }`}
+              >
+                {dateObj.display}
+              </button>
+            ))}
+          </div>
+        </div>
+        
+        {/* Time Selection */}
+        {selectedDate && (
+          <div className="mb-8">
+            <h4 className="text-lg font-semibold text-white mb-4">Select Time</h4>
+            <div className="grid grid-cols-3 md:grid-cols-4 gap-3">
+              {timeSlots.map((time) => (
+                <button
+                  key={time}
+                  onClick={() => setSelectedTime(time)}
+                  className={`p-3 rounded-xl text-sm font-medium transition-all duration-300 ${
+                    selectedTime === time
+                      ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white'
+                      : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                  }`}
+                >
+                  {time}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+        
+        {/* Booking Summary & Submit */}
+        {selectedDate && selectedTime && (
+          <div className="bg-gray-900 rounded-2xl p-6 border border-gray-700">
+            <h5 className="text-lg font-semibold text-white mb-3">Booking Summary</h5>
+            <p className="text-gray-300 mb-4">
+              <strong>Date:</strong> {new Date(selectedDate).toLocaleDateString('en-GB', { 
+                weekday: 'long', 
+                day: 'numeric', 
+                month: 'long', 
+                year: 'numeric' 
+              })}
+            </p>
+            <p className="text-gray-300 mb-6">
+              <strong>Time:</strong> {selectedTime}
+            </p>
+            
+            <div className="flex gap-4">
+              <Button
+                onClick={handleBookingSubmit}
+                className="flex-1 bg-gradient-to-r from-teal-500 to-orange-500 hover:from-teal-600 hover:to-orange-600 text-white py-4 rounded-xl font-medium transition-all duration-500 hover:scale-105"
+              >
+                Confirm Booking
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+              
+              <Button
+                onClick={() => {
+                  setSelectedDate('');
+                  setSelectedTime('');
+                }}
+                variant="outline"
+                className="px-6 py-4 border-gray-600 text-gray-300 hover:bg-gray-700 rounded-xl"
+              >
+                Reset
+              </Button>
+            </div>
+          </div>
+        )}
+        
+        <div className="mt-6 text-center">
+          <p className="text-sm text-gray-400">
+            Available Monday - Friday, 9:00 AM - 5:00 PM GMT
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 
   // Prevent body scroll when on logo page
   useEffect(() => {
