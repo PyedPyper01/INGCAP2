@@ -85,14 +85,55 @@ const BookingCalendar = ({
 
   const availableDates = generateAvailableDates();
 
-  const handleBookingSubmit = () => {
+  const handleBookingSubmit = async () => {
     if (!selectedDate || !selectedTime || !bookingForm.name || !bookingForm.email || !bookingForm.phone) {
       alert('Please fill in all required fields and select date/time');
       return;
     }
     
-    // Create comprehensive booking details
-    const bookingDetails = `Consultation Booking Request:
+    try {
+      // Create booking payload
+      const bookingData = {
+        name: bookingForm.name,
+        email: bookingForm.email,
+        phone: bookingForm.phone,
+        company: bookingForm.company || '',
+        date: selectedDate,
+        time: selectedTime
+      };
+      
+      // Get backend URL from environment
+      const backendUrl = import.meta.env?.REACT_APP_BACKEND_URL || process.env?.REACT_APP_BACKEND_URL || 'http://localhost:8001';
+      
+      // Send booking request to backend
+      const response = await fetch(`${backendUrl}/api/send-booking`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(bookingData),
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const result = await response.json();
+      
+      // Reset and close
+      setSelectedDate('');
+      setSelectedTime('');
+      setBookingForm({ name: '', email: '', phone: '', company: '' });
+      setShowBookingCalendar(false);
+      
+      // Show success message
+      alert(result.message || 'Booking request sent successfully! You will be contacted shortly to confirm your appointment.');
+      
+    } catch (error) {
+      console.error('Error sending booking request:', error);
+      
+      // Fallback to mailto if API fails
+      const bookingDetails = `Consultation Booking Request:
 
 CLIENT DETAILS:
 Name: ${bookingForm.name}
@@ -102,29 +143,29 @@ Company: ${bookingForm.company || 'N/A'}
 
 APPOINTMENT DETAILS:
 Date: ${new Date(selectedDate).toLocaleDateString('en-GB', { 
-      weekday: 'long', 
-      day: 'numeric', 
-      month: 'long', 
-      year: 'numeric' 
-    })}
+        weekday: 'long', 
+        day: 'numeric', 
+        month: 'long', 
+        year: 'numeric' 
+      })}
 Time: ${selectedTime}
 
 Please confirm this appointment or suggest an alternative if this time is not available.
 
 Best regards,
 Ingenious Capital Booking System`;
-    
-    // Create mailto link with comprehensive details
-    const mailtoLink = `mailto:investor@ingcap.co.uk?subject=Consultation Booking Request - ${bookingForm.name}&body=${encodeURIComponent(bookingDetails)}`;
-    window.location.href = mailtoLink;
-    
-    // Reset and close
-    setSelectedDate('');
-    setSelectedTime('');
-    setBookingForm({ name: '', email: '', phone: '', company: '' });
-    setShowBookingCalendar(false);
-    
-    alert('Booking request sent! We will contact you shortly to confirm your appointment.');
+      
+      const mailtoLink = `mailto:appointment@ingcap.co.uk?subject=Consultation Booking Request - ${bookingForm.name}&body=${encodeURIComponent(bookingDetails)}`;
+      window.location.href = mailtoLink;
+      
+      // Reset and close
+      setSelectedDate('');
+      setSelectedTime('');
+      setBookingForm({ name: '', email: '', phone: '', company: '' });
+      setShowBookingCalendar(false);
+      
+      alert('There was an issue with the direct booking system. Your email client will open with a pre-filled booking request.');
+    }
   };
 
   const resetAll = () => {
