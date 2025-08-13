@@ -148,7 +148,7 @@ async def send_booking_email(booking: BookingRequest):
         smtp_user = os.environ.get('SMTP_USER', '')
         smtp_password = os.environ.get('SMTP_PASSWORD', '')
         
-        if smtp_user and smtp_password and smtp_user != 'appointmentsingcap@gmail.com':
+        if smtp_user and smtp_password and 'temp_password_for_testing' not in smtp_password and 'YOUR_16_CHAR_APP_PASSWORD_HERE' not in smtp_password:
             try:
                 # Simple email attempt
                 server = smtplib.SMTP(smtp_server, smtp_port)
