@@ -568,7 +568,7 @@ const IngeniousCapital = () => {
                     </div>
                     <div>
                       <p className="text-lg font-semibold text-white">Phone</p>
-                      <p className="text-gray-300">+44 (0) 20 7xxx xxxx</p>
+                      <p className="text-gray-300">020 3916 5288</p>
                     </div>
                   </div>
                   
@@ -578,7 +578,7 @@ const IngeniousCapital = () => {
                     </div>
                     <div>
                       <p className="text-lg font-semibold text-white">Email</p>
-                      <p className="text-gray-300">info@ingenious-capital.com</p>
+                      <p className="text-gray-300">investor@ingcap.co.uk</p>
                     </div>
                   </div>
                   
@@ -588,7 +588,7 @@ const IngeniousCapital = () => {
                     </div>
                     <div>
                       <p className="text-lg font-semibold text-white">Address</p>
-                      <p className="text-gray-300">London, United Kingdom</p>
+                      <p className="text-gray-300">1 Canada Square, Canary Wharf, London E14 5AA</p>
                     </div>
                   </div>
                 </div>
