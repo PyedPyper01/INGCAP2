@@ -1349,7 +1349,7 @@ const IngeniousCapital = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Investment Opportunity 1 - Checkace */}
-            <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105">
+            <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full min-h-[800px]">
               {/* PDF Pitch Deck Area */}
               <div className="mb-6">
                 <div className="bg-gray-700 rounded-2xl p-6 border-2 border-teal-500 text-center cursor-pointer group">
@@ -1378,9 +1378,9 @@ const IngeniousCapital = () => {
               </div>
               
               {/* Description Area */}
-              <div className="bg-gray-800 rounded-2xl p-6 border border-gray-600">
+              <div className="bg-gray-800 rounded-2xl p-6 border border-gray-600 flex-1 flex flex-col">
                 <h4 className="text-lg font-bold text-white mb-4">Investment Description</h4>
-                <div className="text-sm text-gray-300 leading-relaxed">
+                <div className="text-sm text-gray-300 leading-relaxed flex-1">
                   <p className="mb-3">
                     Checkace represents an innovative fintech solution targeting the digital verification and compliance market. This opportunity offers investors exposure to cutting-edge technology that addresses growing regulatory requirements across multiple industries.
                   </p>
@@ -1402,7 +1402,7 @@ const IngeniousCapital = () => {
             </div>
 
             {/* Investment Opportunity 2 - Section 106 Reclaims */}
-            <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105">
+            <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full min-h-[800px]">
               {/* PDF Pitch Deck Area */}
               <div className="mb-6">
                 <div className="bg-gray-700 rounded-2xl p-6 border-2 border-orange-500 text-center cursor-pointer group">
@@ -1431,9 +1431,9 @@ const IngeniousCapital = () => {
               </div>
               
               {/* Description Area */}
-              <div className="bg-gray-800 rounded-2xl p-6 border border-gray-600">
+              <div className="bg-gray-800 rounded-2xl p-6 border border-gray-600 flex-1 flex flex-col">
                 <h4 className="text-lg font-bold text-white mb-4">Investment Description</h4>
-                <div className="text-sm text-gray-300 leading-relaxed">
+                <div className="text-sm text-gray-300 leading-relaxed flex-1">
                   <p className="mb-3">
                     Section 106 Reclaims presents a specialized property investment opportunity focused on reclaiming developer contributions from local authorities. This unique asset class offers investors exposure to recoverable funds with strong legal foundations.
                   </p>
@@ -1452,12 +1452,12 @@ const IngeniousCapital = () => {
             </div>
 
             {/* Investment Opportunity 3 - Coming Soon */}
-            <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105">
+            <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full min-h-[800px]">
               {/* PDF Pitch Deck Area */}
               <div className="mb-6">
                 <div className="bg-gray-700 rounded-2xl p-6 border-2 border-dashed border-gray-600 text-center hover:border-gray-500 transition-colors cursor-pointer group">
-                  <div className="bg-gradient-to-r from-gray-500 to-gray-600 p-4 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Upload className="h-8 w-8 text-white" />
+                  <div className="w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Upload className="h-20 w-20 text-gray-500" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">Coming Soon</h3>
                   <p className="text-gray-400 text-sm mb-4">New opportunity launching shortly</p>
@@ -1469,9 +1469,9 @@ const IngeniousCapital = () => {
               </div>
               
               {/* Description Area */}
-              <div className="bg-gray-800 rounded-2xl p-6 border border-gray-600">
+              <div className="bg-gray-800 rounded-2xl p-6 border border-gray-600 flex-1 flex flex-col">
                 <h4 className="text-lg font-bold text-white mb-4">Investment Description</h4>
-                <div className="text-sm text-gray-400 leading-relaxed text-center py-8">
+                <div className="text-sm text-gray-400 leading-relaxed text-center py-8 flex-1 flex flex-col justify-center">
                   <p className="mb-3">
                     🚀 Exciting new investment opportunity in development
                   </p>
