@@ -481,43 +481,73 @@ const IngeniousCapital = () => {
   };
 
   // Logo Page Component
-  const LogoPage = () => (
-    <div className="h-screen w-screen overflow-hidden bg-black flex flex-col">
-      {/* Navigation Links - Top */}
-      <nav className="w-full py-8">
-        <div className="flex justify-center items-center space-x-16">
-          {[
-            { id: 'about', label: 'Our Approach' },
-            { id: 'services', label: 'Services' },
-            { id: 'team', label: 'Team' },
-            { id: 'investor-network', label: 'Investor Network' },
-            { id: 'financial-healthcheck', label: 'Financial Healthcheck' },
-            { id: 'in-a-nutshell', label: 'In a Nutshell' },
-            { id: 'investment-opportunities', label: 'Opportunities' },
-            { id: 'invest', label: 'Invest' },
-            { id: 'contact', label: 'Contact' }
-          ].map(item => (
+  const LogoPage = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    
+    return (
+      <div className="h-screen w-screen overflow-hidden bg-black flex flex-col">
+        {/* Navigation Dropdown - Top Right Corner */}
+        <div className="absolute top-6 right-6 z-50">
+          <div className="relative">
             <button
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className="text-white text-lg font-medium hover:text-teal-400 transition-colors duration-300"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-lg border border-gray-600 transition-colors duration-300 flex items-center space-x-2"
             >
-              {item.label}
+              <Menu className="h-5 w-5" />
+              <span className="text-sm font-medium">Menu</span>
             </button>
-          ))}
+            
+            {isMenuOpen && (
+              <>
+                {/* Backdrop */}
+                <div 
+                  className="fixed inset-0 bg-black bg-opacity-50 z-40"
+                  onClick={() => setIsMenuOpen(false)}
+                ></div>
+                
+                {/* Dropdown Menu */}
+                <div className="absolute right-0 top-full mt-2 w-64 bg-gray-800 rounded-lg border border-gray-600 shadow-2xl z-50">
+                  <div className="py-2">
+                    {[
+                      { id: 'about', label: 'Our Approach' },
+                      { id: 'services', label: 'Services' },
+                      { id: 'team', label: 'Team' },
+                      { id: 'investor-network', label: 'Investor Network' },
+                      { id: 'financial-healthcheck', label: 'Financial Healthcheck' },
+                      { id: 'in-a-nutshell', label: 'In a Nutshell' },
+                      { id: 'investment-opportunities', label: 'Opportunities' },
+                      { id: 'invest', label: 'Invest' },
+                      { id: 'contact', label: 'Contact' }
+                    ].map(item => (
+                      <button
+                        key={item.id}
+                        onClick={() => {
+                          scrollToSection(item.id);
+                          setIsMenuOpen(false);
+                        }}
+                        className="w-full text-left px-4 py-3 text-white hover:bg-gray-700 hover:text-teal-400 transition-colors duration-300 flex items-center space-x-3"
+                      >
+                        <ChevronRight className="h-4 w-4" />
+                        <span className="text-sm font-medium">{item.label}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
         </div>
-      </nav>
 
-      {/* Logo Frame - Takes remaining space */}
-      <div className="flex-1 flex items-center justify-center p-12">
-        <div 
-          className="w-full h-full max-w-4xl max-h-4xl flex items-center justify-center bg-black rounded-3xl border-4 border-gray-700 cursor-pointer group hover:border-gray-600 transition-colors duration-300"
-          onClick={() => scrollToSection('about')}
-        >
-          <img 
-            src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
-            alt="Ingenious Capital - Click to Enter" 
-            className="w-full h-full object-contain p-8 group-hover:scale-105 transition-transform duration-500"
+        {/* Logo Frame - Takes full space */}
+        <div className="flex-1 flex items-center justify-center p-12">
+          <div 
+            className="w-full h-full max-w-4xl max-h-4xl flex items-center justify-center bg-black rounded-3xl border-4 border-gray-700 cursor-pointer group hover:border-gray-600 transition-colors duration-300"
+            onClick={() => scrollToSection('about')}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
+              alt="Ingenious Capital - Click to Enter" 
+              className="w-full h-full object-contain p-8 group-hover:scale-105 transition-transform duration-500"
           />
         </div>
       </div>
