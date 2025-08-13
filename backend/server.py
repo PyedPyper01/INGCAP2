@@ -331,7 +331,7 @@ async def send_booking_email(booking: BookingRequest):
         customer_msg.attach(MIMEText(customer_html, 'html', 'utf-8'))
         
         # Send both emails
-        server.sendmail(smtp_user, 'appointment@ingcap.co.uk', business_msg.as_string())
+        server.sendmail(smtp_user, 'appointmentsingcap@gmail.com', business_msg.as_string())
         server.sendmail(smtp_user, booking.email, customer_msg.as_string())
         server.quit()
         
