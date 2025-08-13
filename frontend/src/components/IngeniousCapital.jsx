@@ -1533,7 +1533,7 @@ const IngeniousCapital = () => {
                     As the development progresses the value of the units rises and accordingly it provides us with an opportunity to sell our position on in a 6 month period or stay in for the full 2 years to optimise value. The estimated return over 6 months is in the region of 15-20% and over 2 years is likely in excess of 100%.
                   </p>
                   <p className="text-blue-400 font-semibold text-xs">
-                    In the event something goes wrong our funds are taken out of escrow where we have negotiated a 5% rate of interest, so downside in the unlikely event of the site not being completed is a 5% return and the upside is a 100%+ return over 2 years.
+                    In the event something goes wrong, our funds are protected in escrow where we have negotiated a 5% rate of interest, so the downside in the unlikely event of the site not being completed is a guaranteed 5% return, while the upside is a 100%+ return over 2 years.
                   </p>
                 </div>
                 <div className="mt-3 sm:mt-4 flex flex-col space-y-1">
