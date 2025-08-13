@@ -506,7 +506,7 @@ const IngeniousCapital = () => {
                 ></div>
                 
                 {/* Dropdown Menu */}
-                <div className="absolute right-0 top-full mt-2 w-56 sm:w-64 bg-gray-800 rounded-lg border border-gray-600 shadow-2xl z-50 max-h-96 overflow-y-auto">
+                <div className="absolute right-0 top-full mt-2 w-56 sm:w-64 bg-gray-800 rounded-lg border border-gray-600 shadow-2xl z-50 max-h-screen overflow-y-auto">
                   <div className="py-2">
                     {[
                       { id: 'about', label: 'Our Approach' },
