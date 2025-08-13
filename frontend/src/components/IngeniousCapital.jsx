@@ -636,7 +636,7 @@ const IngeniousCapital = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-32 bg-gray-900 relative overflow-hidden">
+      <section id="services" className="min-h-screen py-32 bg-gray-900 relative overflow-hidden flex items-center">
         <div className="absolute inset-0 opacity-5">
           <img 
             src="https://images.unsplash.com/photo-1540760029765-138c8f6d2eac?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBvZmZpY2V8ZW58MHx8fHwxNzU1MDEwOTM5fDA&ixlib=rb-4.1.0&q=85" 
