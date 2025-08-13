@@ -46,6 +46,9 @@ const BookingCalendar = ({
   bookingForm, 
   setBookingForm 
 }) => {
+  const [bookedSlots, setBookedSlots] = useState([]);
+  const [loadingSlots, setLoadingSlots] = useState(false);
+
   // Blocked times/dates (you can modify these)
   const blockedDates = [
     '2025-01-15', '2025-01-16', '2025-01-22', '2025-01-23'
@@ -55,6 +58,37 @@ const BookingCalendar = ({
     '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
     '14:00', '14:30', '15:00', '15:30', '16:00', '16:30'
   ];
+
+  // Fetch booked slots when date is selected
+  useEffect(() => {
+    if (selectedDate) {
+      fetchBookedSlots(selectedDate);
+    }
+  }, [selectedDate]);
+
+  const fetchBookedSlots = async (date) => {
+    setLoadingSlots(true);
+    try {
+      const backendUrl = import.meta.env?.REACT_APP_BACKEND_URL || process.env?.REACT_APP_BACKEND_URL || 'http://localhost:8001';
+      const response = await fetch(`${backendUrl}/api/booked-slots/${date}`);
+      
+      if (response.ok) {
+        const data = await response.json();
+        setBookedSlots(data.booked_times || []);
+      } else {
+        setBookedSlots([]);
+      }
+    } catch (error) {
+      console.error('Error fetching booked slots:', error);
+      setBookedSlots([]);
+    }
+    setLoadingSlots(false);
+  };
+
+  // Get available time slots (excluding booked ones)
+  const getAvailableTimeSlots = () => {
+    return timeSlots.filter(time => !bookedSlots.includes(time));
+  };
 
   // Generate next 30 days
   const generateAvailableDates = () => {
