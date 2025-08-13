@@ -1411,8 +1411,8 @@ const IngeniousCapital = () => {
               </div>
               
               {/* Description Area */}
-              <div className="bg-gray-800 rounded-2xl p-6 border border-gray-600 flex-1 flex flex-col">
-                <h4 className="text-lg font-bold text-white mb-4">Investment Description</h4>
+              <div className="bg-gray-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-600 flex-1 flex flex-col">
+                <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Investment Description</h4>
                 <div className="text-xs text-gray-300 leading-relaxed flex-1">
                   <p className="mb-2">
                     Checkace represents an innovative fintech solution targeting the digital verification and compliance market. This opportunity offers investors exposure to cutting-edge technology that addresses growing regulatory requirements across multiple industries.
@@ -1427,7 +1427,7 @@ const IngeniousCapital = () => {
                     Checkaface has received HMRC Advance Assurance Approval for SEIS/EIS, making it a very attractive tax efficient investment.
                   </p>
                 </div>
-                <div className="mt-4 flex justify-between items-center">
+                <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0">
                   <span className="text-xs text-gray-500">Investment Stage: Series A</span>
                   <span className="text-xs text-teal-400 font-semibold">Target Return: 50% IRR over a 3 year investment cycle</span>
                 </div>
