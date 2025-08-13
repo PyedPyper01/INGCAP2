@@ -1319,20 +1319,15 @@ const IngeniousCapital = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Investment Opportunity 1 - Checkace */}
             <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105">
-              {/* Company Logo */}
-              <div className="mb-6 text-center">
-                <img 
-                  src="https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/7qm8o67m_Checkaface%20Wide%20Logo.jpg" 
-                  alt="Checkaface Logo" 
-                  className="h-16 mx-auto mb-4 object-contain"
-                />
-              </div>
-              
               {/* PDF Pitch Deck Area */}
               <div className="mb-6">
                 <div className="bg-gray-700 rounded-2xl p-6 border-2 border-teal-500 text-center cursor-pointer group">
-                  <div className="bg-gradient-to-r from-teal-500 to-teal-600 p-4 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <FileText className="h-8 w-8 text-white" />
+                  <div className="bg-white p-4 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <img 
+                      src="https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/7qm8o67m_Checkaface%20Wide%20Logo.jpg" 
+                      alt="Checkaface Logo" 
+                      className="h-8 w-auto object-contain"
+                    />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">Checkace</h3>
                   <p className="text-gray-300 text-sm mb-4">Click to view pitch deck</p>
@@ -1374,25 +1369,13 @@ const IngeniousCapital = () => {
 
             {/* Investment Opportunity 2 - Section 106 Reclaims */}
             <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105">
-              {/* Company Logo/Brand */}
-              <div className="mb-6 text-center">
-                <div className="relative h-16 mb-4 flex items-center justify-center bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl">
-                  <img 
-                    src="https://images.unsplash.com/photo-1563986768711-b3bde3dc821e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwxfHxmaW5hbmNlJTIwaW52ZXN0bWVudHxlbnwwfHx8fDE3NTUwOTIxMjV8MA&ixlib=rb-4.1.0&q=85" 
-                    alt="Financial Analysis Background" 
-                    className="absolute inset-0 w-full h-full object-cover rounded-2xl opacity-20"
-                  />
-                  <div className="relative z-10 text-white font-bold text-lg tracking-wider">
-                    SECTION 106 RECLAIMS
-                  </div>
-                </div>
-              </div>
-              
               {/* PDF Pitch Deck Area */}
               <div className="mb-6">
                 <div className="bg-gray-700 rounded-2xl p-6 border-2 border-orange-500 text-center cursor-pointer group">
-                  <div className="bg-gradient-to-r from-orange-500 to-orange-600 p-4 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Building className="h-8 w-8 text-white" />
+                  <div className="bg-gradient-to-r from-orange-500 to-orange-600 p-4 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center min-h-[4rem]">
+                    <div className="bg-white rounded-lg px-3 py-2">
+                      <span className="text-orange-600 font-bold text-xs tracking-wider">SECTION 106<br/>RECLAIMS</span>
+                    </div>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">Section 106 Reclaims</h3>
                   <p className="text-gray-300 text-sm mb-4">Click to view pitch deck</p>
