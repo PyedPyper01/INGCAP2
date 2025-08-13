@@ -1373,9 +1373,11 @@ const IngeniousCapital = () => {
               <div className="mb-6">
                 <div className="bg-gray-700 rounded-2xl p-6 border-2 border-orange-500 text-center cursor-pointer group">
                   <div className="w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <div className="text-orange-400 font-bold text-2xl tracking-wider text-center">
-                      SECTION 106<br/>RECLAIMS
-                    </div>
+                    <img 
+                      src="https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/k0bki6nj_section-106-reclaims-logo-4color.png" 
+                      alt="Section 106 Reclaims Logo" 
+                      className="h-20 w-auto object-contain"
+                    />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">Section 106 Reclaims</h3>
                   <p className="text-gray-300 text-sm mb-4">Click to view pitch deck</p>
