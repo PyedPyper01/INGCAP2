@@ -109,10 +109,45 @@ async def send_booking_email(booking: BookingRequest):
                 "fallback": True
             }
         
-        # Connect to SMTP server
-        server = smtplib.SMTP(smtp_server, smtp_port)
-        server.starttls()
-        server.login(smtp_user, smtp_password)
+        # Connect to SMTP server with proper error handling
+        try:
+            server = smtplib.SMTP(smtp_server, smtp_port)
+            server.starttls()
+            server.login(smtp_user, smtp_password)
+        except smtplib.SMTPAuthenticationError as auth_error:
+            logger.error(f"SMTP Authentication failed: {auth_error}")
+            # Store in database and return success message to user
+            booking_record = {
+                **booking.dict(),
+                'id': str(uuid.uuid4()),
+                'timestamp': datetime.utcnow(),
+                'status': 'auth_error',
+                'error': str(auth_error)
+            }
+            await db.bookings.insert_one(booking_record)
+            
+            return {
+                "success": True, 
+                "message": "Booking request received and saved. You will be contacted shortly to confirm your appointment.",
+                "fallback": True
+            }
+        except Exception as smtp_error:
+            logger.error(f"SMTP connection failed: {smtp_error}")
+            # Store in database and return success message to user
+            booking_record = {
+                **booking.dict(),
+                'id': str(uuid.uuid4()),
+                'timestamp': datetime.utcnow(),
+                'status': 'smtp_error',
+                'error': str(smtp_error)
+            }
+            await db.bookings.insert_one(booking_record)
+            
+            return {
+                "success": True, 
+                "message": "Booking request received and saved. You will be contacted shortly to confirm your appointment.",
+                "fallback": True
+            }
         
         # EMAIL 1: Send to business (appointment@ingcap.co.uk)
         business_subject = f"New Consultation Booking Request - {booking.name}"
