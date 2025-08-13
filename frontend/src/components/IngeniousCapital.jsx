@@ -299,22 +299,48 @@ Ingenious Capital Booking System`;
             {/* Time Selection */}
             {selectedDate && (
               <div>
-                <h4 className="text-lg font-semibold text-white mb-4">Select Time</h4>
+                <h4 className="text-lg font-semibold text-white mb-4">
+                  Select Time
+                  {loadingSlots && (
+                    <span className="ml-2 text-sm text-gray-400">(Loading available slots...)</span>
+                  )}
+                </h4>
                 <div className="grid grid-cols-2 gap-3 max-h-48 overflow-y-auto">
-                  {timeSlots.map((time) => (
-                    <button
-                      key={time}
-                      onClick={() => setSelectedTime(time)}
-                      className={`p-3 rounded-xl text-sm font-medium transition-all duration-300 ${
-                        selectedTime === time
-                          ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white'
-                          : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-                      }`}
-                    >
-                      {time}
-                    </button>
-                  ))}
+                  {getAvailableTimeSlots().length > 0 ? (
+                    getAvailableTimeSlots().map((time) => (
+                      <button
+                        key={time}
+                        onClick={() => setSelectedTime(time)}
+                        disabled={loadingSlots}
+                        className={`p-3 rounded-xl text-sm font-medium transition-all duration-300 ${
+                          selectedTime === time
+                            ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white'
+                            : loadingSlots
+                            ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
+                            : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                        }`}
+                      >
+                        {time}
+                      </button>
+                    ))
+                  ) : loadingSlots ? (
+                    <div className="col-span-2 text-center text-gray-400 py-4">
+                      Loading available time slots...
+                    </div>
+                  ) : (
+                    <div className="col-span-2 text-center text-gray-400 py-4">
+                      No available slots for this date. Please select another date.
+                    </div>
+                  )}
                 </div>
+                
+                {bookedSlots.length > 0 && !loadingSlots && (
+                  <div className="mt-4 p-3 bg-gray-700 rounded-lg">
+                    <p className="text-sm text-gray-400">
+                      <strong>Unavailable times:</strong> {bookedSlots.join(', ')}
+                    </p>
+                  </div>
+                )}
               </div>
             )}
           </div>
