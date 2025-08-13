@@ -487,6 +487,7 @@ const IngeniousCapital = () => {
             { id: 'about', label: 'Our Approach' },
             { id: 'services', label: 'Services' },
             { id: 'team', label: 'Team' },
+            { id: 'investor-network', label: 'Investor Network' },
             { id: 'invest', label: 'Invest' },
             { id: 'contact', label: 'Contact' }
           ].map(item => (
