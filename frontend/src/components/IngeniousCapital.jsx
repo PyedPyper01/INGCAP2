@@ -1448,14 +1448,14 @@ const IngeniousCapital = () => {
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Section 106 Reclaims</h3>
                   <p className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4">Click to view pitch deck</p>
-                  <div className="bg-gray-800 rounded-lg p-4 text-left">
+                  <div className="bg-gray-800 rounded-lg p-3 sm:p-4 text-left">
                     <div className="flex items-center justify-between mb-2">
-                      <p className="text-sm text-orange-400 font-semibold">📄 Section-106-Reclaim Pitch.pdf</p>
-                      <Download className="h-4 w-4 text-orange-400" />
+                      <p className="text-xs sm:text-sm text-orange-400 font-semibold">📄 Section-106-Reclaim Pitch.pdf</p>
+                      <Download className="h-3 w-3 sm:h-4 sm:w-4 text-orange-400" />
                     </div>
                     <button
                       onClick={() => window.open('https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/u942afse_Section-106-Reclaim%20Pitch.pdf', '_blank')}
-                      className="w-full bg-orange-600 hover:bg-orange-700 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors"
+                      className="w-full bg-orange-600 hover:bg-orange-700 text-white py-2 px-4 rounded-lg text-xs sm:text-sm font-medium transition-colors"
                     >
                       Open Pitch Deck
                     </button>
