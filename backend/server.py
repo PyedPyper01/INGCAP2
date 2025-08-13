@@ -88,18 +88,25 @@ async def test_email_connection():
     smtp_port = int(os.environ.get('SMTP_PORT', '587'))
     smtp_user = os.environ.get('SMTP_USER', '')
     smtp_password = os.environ.get('SMTP_PASSWORD', '')
+    use_ssl = os.environ.get('SMTP_USE_SSL', 'false').lower() == 'true'
     
-    if not smtp_user or not smtp_password or 'YOUR_16_CHAR_APP_PASSWORD_HERE' in smtp_password:
-        return {"error": "Please set up your Gmail app password in the .env file"}
+    if not smtp_user or not smtp_password:
+        return {"error": "SMTP credentials not configured"}
     
     try:
-        server = smtplib.SMTP(smtp_server, smtp_port)
-        server.starttls()
+        if use_ssl and smtp_port == 465:
+            # Use SSL connection for port 465
+            server = smtplib.SMTP_SSL(smtp_server, smtp_port)
+        else:
+            # Use regular SMTP with STARTTLS for port 587
+            server = smtplib.SMTP(smtp_server, smtp_port)
+            server.starttls()
+        
         server.login(smtp_user, smtp_password)
         server.quit()
-        return {"success": True, "message": f"Successfully connected to Gmail as {smtp_user}"}
+        return {"success": True, "message": f"Successfully connected to {smtp_server} as {smtp_user} (SSL: {use_ssl})"}
     except smtplib.SMTPAuthenticationError as e:
-        return {"error": f"Gmail authentication failed - check your app password: {str(e)}"}
+        return {"error": f"Authentication failed - check credentials: {str(e)}"}
     except Exception as e:
         return {"error": f"Connection failed: {str(e)}"}
 
