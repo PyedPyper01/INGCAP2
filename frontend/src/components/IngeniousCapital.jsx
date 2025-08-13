@@ -1382,7 +1382,7 @@ const IngeniousCapital = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {/* Investment Opportunity 1 - Checkace */}
-            <div className="bg-gray-900 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full min-h-[500px] sm:min-h-[600px]">
+            <div className="bg-gray-900 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full">
               {/* PDF Pitch Deck Area */}
               <div className="mb-4 sm:mb-6">
                 <div className="bg-gray-700 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-teal-500 text-center cursor-pointer group">
@@ -1390,7 +1390,7 @@ const IngeniousCapital = () => {
                     <img 
                       src="https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/7qm8o67m_Checkaface%20Wide%20Logo.jpg" 
                       alt="Checkaface Logo" 
-                      className="h-12 sm:h-14 md:h-16 w-auto object-contain"
+                      className="h-10 sm:h-12 w-auto object-contain"
                     />
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Checkace</h3>
@@ -1435,7 +1435,7 @@ const IngeniousCapital = () => {
             </div>
 
             {/* Investment Opportunity 2 - Section 106 Reclaims */}
-            <div className="bg-gray-900 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full min-h-[500px] sm:min-h-[600px]">
+            <div className="bg-gray-900 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full">
               {/* PDF Pitch Deck Area */}
               <div className="mb-4 sm:mb-6">
                 <div className="bg-gray-700 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-orange-500 text-center cursor-pointer group">
@@ -1443,7 +1443,7 @@ const IngeniousCapital = () => {
                     <img 
                       src="https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/k0bki6nj_section-106-reclaims-logo-4color.png" 
                       alt="Section 106 Reclaims Logo" 
-                      className="h-12 sm:h-14 md:h-16 w-auto object-contain"
+                      className="h-10 sm:h-12 w-auto object-contain"
                     />
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Section 106 Reclaims</h3>
@@ -1485,12 +1485,12 @@ const IngeniousCapital = () => {
             </div>
 
             {/* Investment Opportunity 3 - Serenity Lakes */}
-            <div className="bg-gray-900 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full min-h-[500px] sm:min-h-[600px]">
+            <div className="bg-gray-900 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full">
               {/* PDF Pitch Deck Area */}
               <div className="mb-4 sm:mb-6">
                 <div className="bg-gray-700 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-blue-500 text-center cursor-pointer group">
                   <div className="w-fit mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-blue-500">
+                    <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-blue-500">
                       <img 
                         src="https://images.unsplash.com/photo-1753958509901-a2676dbb4c4f" 
                         alt="Serenity Lakes - Premium Lakefront Development" 
@@ -1550,12 +1550,12 @@ const IngeniousCapital = () => {
             </div>
 
             {/* Investment Opportunity 4 - Future Opportunity */}
-            <div className="bg-gray-900 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full min-h-[500px] sm:min-h-[600px]">
+            <div className="bg-gray-900 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full">
               {/* PDF Pitch Deck Area */}
               <div className="mb-4 sm:mb-6">
                 <div className="bg-gray-700 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-dashed border-gray-600 text-center hover:border-purple-500 transition-colors cursor-pointer group">
                   <div className="w-fit mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Briefcase className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 text-purple-500" />
+                    <Briefcase className="h-10 w-10 sm:h-12 sm:w-12 text-purple-500" />
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Future Opportunity</h3>
                   <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">Pipeline opportunity in development</p>
