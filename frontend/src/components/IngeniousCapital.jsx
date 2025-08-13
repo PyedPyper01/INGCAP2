@@ -1539,11 +1539,11 @@ const IngeniousCapital = () => {
                 <div className="mt-3 sm:mt-4 flex flex-col space-y-1">
                   <div className="flex justify-between items-center">
                     <span className="text-xs text-gray-500">Investment Type: Property Development</span>
-                    <span className="text-xs text-blue-400 font-semibold">6 months: 15-20%</span>
+                    <span className="text-xs text-blue-400 font-semibold">Target Return: 6 months: 15-20%</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-xs text-gray-500">Risk Protection: 5% minimum return</span>
-                    <span className="text-xs text-blue-400 font-semibold">2 years: 100%+</span>
+                    <span className="text-xs text-blue-400 font-semibold">Target Return: 2 years: 100%+</span>
                   </div>
                 </div>
               </div>
