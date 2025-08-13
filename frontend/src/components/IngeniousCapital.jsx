@@ -548,11 +548,12 @@ const IngeniousCapital = () => {
               src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
               alt="Ingenious Capital - Click to Enter" 
               className="w-full h-full object-contain p-8 group-hover:scale-105 transition-transform duration-500"
-          />
+            />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   // Main Site Component
   const MainSite = () => (
