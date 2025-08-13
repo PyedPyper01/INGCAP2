@@ -92,8 +92,7 @@ async def get_booked_slots(date: str):
     try:
         # Find all bookings for the given date
         bookings = await db.bookings.find({
-            "date": date,
-            "status": {"$in": ["sent", "confirmed", "auth_error", "smtp_error", "pending"]}
+            "date": date
         }).to_list(100)
         
         # Extract just the times
