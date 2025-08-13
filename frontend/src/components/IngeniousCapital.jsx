@@ -1404,7 +1404,7 @@ const IngeniousCapital = () => {
                     Section 106 Reclaims presents a specialized property investment opportunity focused on reclaiming developer contributions from local authorities. This unique asset class offers investors exposure to recoverable funds with strong legal foundations.
                   </p>
                   <p className="mb-3">
-                    The opportunity leverages extensive legal expertise and established relationships with local councils to identify and recover significant sums. Historical success rates exceed 85% with average recovery periods of 12-18 months.
+                    The opportunity leverages extensive legal expertise and established relationships with local councils to identify and recover significant sums. Historical success rates exceed 85% with average recovery periods of 6-1 months.
                   </p>
                   <p>
                     Key benefits include: minimal correlation to traditional property cycles, predictable returns, and backed by comprehensive legal precedent in UK property law.
@@ -1412,7 +1412,7 @@ const IngeniousCapital = () => {
                 </div>
                 <div className="mt-4 flex justify-between items-center">
                   <span className="text-xs text-gray-500">Investment Type: Alternative Asset</span>
-                  <span className="text-xs text-orange-400 font-semibold">Target Return: 15-20% Annual</span>
+                  <span className="text-xs text-orange-400 font-semibold">Target Return: 40% Annual</span>
                 </div>
               </div>
             </div>
