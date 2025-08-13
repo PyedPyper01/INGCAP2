@@ -63,6 +63,28 @@ async def get_status_checks():
     status_checks = await db.status_checks.find().to_list(1000)
     return [StatusCheck(**status_check) for status_check in status_checks]
 
+@api_router.get("/test-email")
+async def test_email_connection():
+    """Test SMTP connection and authentication"""
+    smtp_server = os.environ.get('SMTP_SERVER', '')
+    smtp_port = int(os.environ.get('SMTP_PORT', '587'))
+    smtp_user = os.environ.get('SMTP_USER', '')
+    smtp_password = os.environ.get('SMTP_PASSWORD', '')
+    
+    if not smtp_user or not smtp_password:
+        return {"error": "SMTP credentials not configured"}
+    
+    try:
+        server = smtplib.SMTP(smtp_server, smtp_port)
+        server.starttls()
+        server.login(smtp_user, smtp_password)
+        server.quit()
+        return {"success": True, "message": f"Successfully connected to {smtp_server} as {smtp_user}"}
+    except smtplib.SMTPAuthenticationError as e:
+        return {"error": f"Authentication failed: {str(e)}"}
+    except Exception as e:
+        return {"error": f"Connection failed: {str(e)}"}
+
 @api_router.get("/booked-slots/{date}")
 async def get_booked_slots(date: str):
     """Get all booked time slots for a specific date"""
