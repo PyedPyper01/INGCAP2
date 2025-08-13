@@ -1385,24 +1385,24 @@ const IngeniousCapital = () => {
             <div className="bg-gray-900 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full min-h-[500px] sm:min-h-[600px]">
               {/* PDF Pitch Deck Area */}
               <div className="mb-4 sm:mb-6">
-                <div className="bg-gray-700 rounded-2xl p-6 border-2 border-teal-500 text-center cursor-pointer group">
-                  <div className="w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="bg-gray-700 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-teal-500 text-center cursor-pointer group">
+                  <div className="w-fit mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
                     <img 
                       src="https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/7qm8o67m_Checkaface%20Wide%20Logo.jpg" 
                       alt="Checkaface Logo" 
-                      className="h-16 w-auto object-contain"
+                      className="h-12 sm:h-14 md:h-16 w-auto object-contain"
                     />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">Checkace</h3>
-                  <p className="text-gray-300 text-sm mb-4">Click to view pitch deck</p>
-                  <div className="bg-gray-800 rounded-lg p-4 text-left">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Checkace</h3>
+                  <p className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4">Click to view pitch deck</p>
+                  <div className="bg-gray-800 rounded-lg p-3 sm:p-4 text-left">
                     <div className="flex items-center justify-between mb-2">
-                      <p className="text-sm text-teal-400 font-semibold">📄 Checkaface-Pitch-Deck.pdf</p>
-                      <Download className="h-4 w-4 text-teal-400" />
+                      <p className="text-xs sm:text-sm text-teal-400 font-semibold">📄 Checkaface-Pitch-Deck.pdf</p>
+                      <Download className="h-3 w-3 sm:h-4 sm:w-4 text-teal-400" />
                     </div>
                     <button
                       onClick={() => window.open('https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/wxmtu9on_Checkaface-Pitch-Deck%20.pdf', '_blank')}
-                      className="w-full bg-teal-600 hover:bg-teal-700 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors"
+                      className="w-full bg-teal-600 hover:bg-teal-700 text-white py-2 px-4 rounded-lg text-xs sm:text-sm font-medium transition-colors"
                     >
                       Open Pitch Deck
                     </button>
