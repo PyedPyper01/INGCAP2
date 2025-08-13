@@ -1016,7 +1016,16 @@ const IngeniousCapital = () => {
   return (
     <>
       {currentPage === 'logo' ? <LogoPage /> : <MainSite />}
-      {showBookingCalendar && <BookingCalendar />}
+      <BookingCalendar
+        showBookingCalendar={showBookingCalendar}
+        setShowBookingCalendar={setShowBookingCalendar}
+        selectedDate={selectedDate}
+        setSelectedDate={setSelectedDate}
+        selectedTime={selectedTime}
+        setSelectedTime={setSelectedTime}
+        bookingForm={bookingForm}
+        setBookingForm={setBookingForm}
+      />
     </>
   );
 };
