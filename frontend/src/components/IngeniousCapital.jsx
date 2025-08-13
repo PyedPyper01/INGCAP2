@@ -35,18 +35,17 @@ import {
   Percent
 } from 'lucide-react';
 
-const IngeniousCapital = () => {
-  const [currentPage, setCurrentPage] = useState('logo');
-  const [showBookingCalendar, setShowBookingCalendar] = useState(false);
-  const [selectedDate, setSelectedDate] = useState('');
-  const [selectedTime, setSelectedTime] = useState('');
-  const [bookingForm, setBookingForm] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: ''
-  });
-
+// Booking Calendar Component (moved outside to prevent re-render issues)
+const BookingCalendar = ({ 
+  showBookingCalendar, 
+  setShowBookingCalendar, 
+  selectedDate, 
+  setSelectedDate, 
+  selectedTime, 
+  setSelectedTime, 
+  bookingForm, 
+  setBookingForm 
+}) => {
   // Blocked times/dates (you can modify these)
   const blockedDates = [
     '2025-01-15', '2025-01-16', '2025-01-22', '2025-01-23'
@@ -128,15 +127,15 @@ Ingenious Capital Booking System`;
     alert('Booking request sent! We will contact you shortly to confirm your appointment.');
   };
 
-  const handleFormChange = (field, value) => {
-    setBookingForm(prev => ({
-      ...prev,
-      [field]: value
-    }));
+  const resetAll = () => {
+    setSelectedDate('');
+    setSelectedTime('');
+    setBookingForm({ name: '', email: '', phone: '', company: '' });
   };
 
-  // Booking Calendar Component
-  const BookingCalendar = () => (
+  if (!showBookingCalendar) return null;
+
+  return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <div className="bg-gray-800 rounded-3xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-gray-700 shadow-2xl">
         <div className="flex justify-between items-center mb-8">
@@ -282,11 +281,7 @@ Ingenious Capital Booking System`;
               </Button>
               
               <Button
-                onClick={() => {
-                  setSelectedDate('');
-                  setSelectedTime('');
-                  setBookingForm({ name: '', email: '', phone: '', company: '' });
-                }}
+                onClick={resetAll}
                 variant="outline"
                 className="px-6 py-4 border-gray-600 text-gray-300 hover:bg-gray-700 rounded-xl"
               >
@@ -304,6 +299,19 @@ Ingenious Capital Booking System`;
       </div>
     </div>
   );
+};
+
+const IngeniousCapital = () => {
+  const [currentPage, setCurrentPage] = useState('logo');
+  const [showBookingCalendar, setShowBookingCalendar] = useState(false);
+  const [selectedDate, setSelectedDate] = useState('');
+  const [selectedTime, setSelectedTime] = useState('');
+  const [bookingForm, setBookingForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: ''
+  });
 
   // Prevent body scroll when on logo page
   useEffect(() => {
