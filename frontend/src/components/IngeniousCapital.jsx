@@ -1371,8 +1371,8 @@ const IngeniousCapital = () => {
       {/* Investment Opportunities Section */}
       <section id="investment-opportunities" className="min-h-screen py-16 sm:py-24 md:py-32 bg-gray-800 relative overflow-hidden flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 md:mb-8 tracking-tight">
               Some of our Current <span className="bg-gradient-to-r from-teal-500 to-orange-500 bg-clip-text text-transparent">Investment Opportunities</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
