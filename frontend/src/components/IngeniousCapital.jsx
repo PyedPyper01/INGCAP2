@@ -904,7 +904,12 @@ const IngeniousCapital = () => {
   );
 
   // Render based on current page
-  return currentPage === 'logo' ? <LogoPage /> : <MainSite />;
+  return (
+    <>
+      {currentPage === 'logo' ? <LogoPage /> : <MainSite />}
+      {showBookingCalendar && <BookingCalendar />}
+    </>
+  );
 };
 
 export default IngeniousCapital;
