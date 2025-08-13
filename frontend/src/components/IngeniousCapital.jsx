@@ -1603,6 +1603,7 @@ const IngeniousCapital = () => {
                   { label: 'Investor Network', id: 'investor-network' },
                   { label: 'Financial Healthcheck', id: 'financial-healthcheck' },
                   { label: 'In a Nutshell', id: 'in-a-nutshell' },
+                  { label: 'Opportunities', id: 'investment-opportunities' },
                   { label: 'Investment', id: 'invest' }
                 ].map(link => (
                   <li key={link.id}>
