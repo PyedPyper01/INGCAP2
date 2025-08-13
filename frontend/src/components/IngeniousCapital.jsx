@@ -822,7 +822,8 @@ const IngeniousCapital = () => {
                 </div>
                 
                 <Button 
-                  type="submit"
+                  type="button"
+                  onClick={() => setShowBookingCalendar(true)}
                   size="lg"
                   className="w-full bg-gradient-to-r from-teal-500 to-orange-500 hover:from-teal-600 hover:to-orange-600 text-white py-6 rounded-xl text-lg font-medium transition-all duration-500 hover:scale-105 shadow-2xl"
                 >
