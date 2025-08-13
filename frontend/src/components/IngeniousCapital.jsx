@@ -923,6 +923,122 @@ const IngeniousCapital = () => {
         </div>
       </section>
 
+      {/* Our Investor Network Section */}
+      <section id="investor-network" className="min-h-screen py-32 bg-gray-900 relative overflow-hidden flex items-center">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight">
+              Our Investor <span className="bg-gradient-to-r from-teal-500 to-orange-500 bg-clip-text text-transparent">Network</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-12">
+              As we develop our client base we will be looking to cap it at no more than 500, to ensure that we are able to give a complete and personalised service to all of our customers. With that in mind when you make your first investment you will be allocated a membership number to ensure that you do not miss out on any of the upcoming opportunities.
+            </p>
+          </div>
+          
+          {/* Investor Network Benefits */}
+          <div className="relative">
+            <div className="absolute -top-4 -left-4 w-full h-full bg-gradient-to-r from-teal-500/5 to-orange-500/5 rounded-3xl blur-xl"></div>
+            <div className="relative bg-gray-800 rounded-3xl p-10 shadow-2xl border border-gray-700">
+              <h3 className="text-3xl font-bold text-white mb-8 text-center">Investor Network Benefits</h3>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-gradient-to-r from-teal-500 to-teal-600 p-2 rounded-lg mt-1 flex-shrink-0">
+                      <Eye className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-white mb-2">Exclusive Deal Flow</h4>
+                      <p className="text-gray-300 leading-relaxed">
+                        Access to pre-seed and mezzanine opportunities before they reach the market
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-gradient-to-r from-orange-500 to-orange-600 p-2 rounded-lg mt-1 flex-shrink-0">
+                      <BarChart3 className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-white mb-2">Quarterly Reporting</h4>
+                      <p className="text-gray-300 leading-relaxed">
+                        Transparent performance updates and portfolio company progress
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-gradient-to-r from-gray-500 to-gray-600 p-2 rounded-lg mt-1 flex-shrink-0">
+                      <Users className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-white mb-2">Co-Investment</h4>
+                      <p className="text-gray-300 leading-relaxed">
+                        Opportunities for direct investment alongside the fund
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-gradient-to-r from-teal-600 to-orange-600 p-2 rounded-lg mt-1 flex-shrink-0">
+                      <Calendar className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-white mb-2">Investor Events</h4>
+                      <p className="text-gray-300 leading-relaxed">
+                        Regular networking events and portfolio company presentations
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-gradient-to-r from-teal-500 to-orange-500 p-2 rounded-lg mt-1 flex-shrink-0">
+                      <Percent className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-white mb-2">Discounted Partner Services</h4>
+                      <p className="text-gray-300 leading-relaxed">
+                        Discounted pricing on all our partner services including:
+                      </p>
+                      <ul className="text-gray-400 text-sm mt-2 space-y-1 pl-4">
+                        <li>• Accounting & Tax positioning</li>
+                        <li>• Legal services</li>
+                        <li>• Will Writing</li>
+                        <li>• Discretionary Trust set up</li>
+                        <li>• Pension advice</li>
+                        <li>• Mortgage reviews</li>
+                        <li>• Investment Appraisals</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Membership highlight */}
+              <div className="mt-12 text-center bg-gradient-to-r from-gray-800 to-gray-700 rounded-2xl p-8 border border-teal-500/30">
+                <h4 className="text-2xl font-bold text-white mb-4">Limited Membership</h4>
+                <div className="flex justify-center items-center space-x-8">
+                  <div className="text-center">
+                    <div className="text-4xl font-bold text-teal-500 mb-2">500</div>
+                    <div className="text-gray-300 font-medium text-sm">Maximum Members</div>
+                  </div>
+                  <div className="w-px h-16 bg-gray-600"></div>
+                  <div className="text-center">
+                    <div className="text-4xl font-bold text-orange-500 mb-2">#1</div>
+                    <div className="text-gray-300 font-medium text-sm">Your Membership Number</div>
+                  </div>
+                </div>
+                <p className="text-gray-400 mt-4 text-sm">
+                  Exclusive membership ensures personalized service and priority access to opportunities
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="min-h-screen py-32 relative overflow-hidden flex items-center">
         <div className="absolute inset-0">
