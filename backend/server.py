@@ -191,7 +191,7 @@ You can reply directly to this email or call them at {booking.phone}.
                 business_msg = MIMEText(business_body)
                 business_msg['Subject'] = business_subject
                 business_msg['From'] = smtp_user
-                business_msg['To'] = 'appointment@ingcap.co.uk'
+                business_msg['To'] = 'appointmentsingcap@gmail.com'
                 business_msg['Reply-To'] = booking.email
                 
                 server.send_message(business_msg)
