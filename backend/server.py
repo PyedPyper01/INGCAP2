@@ -70,16 +70,21 @@ async def test_email_connection():
     smtp_port = int(os.environ.get('SMTP_PORT', '587'))
     smtp_user = os.environ.get('SMTP_USER', '')
     smtp_password = os.environ.get('SMTP_PASSWORD', '')
+    use_ssl = os.environ.get('SMTP_USE_SSL', 'false').lower() == 'true'
     
     if not smtp_user or not smtp_password:
         return {"error": "SMTP credentials not configured"}
     
     try:
-        server = smtplib.SMTP(smtp_server, smtp_port)
-        server.starttls()
+        if use_ssl:
+            server = smtplib.SMTP_SSL(smtp_server, smtp_port)
+        else:
+            server = smtplib.SMTP(smtp_server, smtp_port)
+            server.starttls()
+        
         server.login(smtp_user, smtp_password)
         server.quit()
-        return {"success": True, "message": f"Successfully connected to {smtp_server} as {smtp_user}"}
+        return {"success": True, "message": f"Successfully connected to {smtp_server} as {smtp_user} (SSL: {use_ssl})"}
     except smtplib.SMTPAuthenticationError as e:
         return {"error": f"Authentication failed: {str(e)}"}
     except Exception as e:
