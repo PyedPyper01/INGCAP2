@@ -68,41 +68,23 @@ async def get_all_bookings():
     """Get all booking requests for admin review"""
     try:
         bookings = await db.bookings.find().sort("timestamp", -1).to_list(100)
+        # Convert ObjectId to string and format timestamps
+        formatted_bookings = []
         for booking in bookings:
-            # Format timestamp for display
-            if 'timestamp' in booking:
+            if '_id' in booking:
+                booking['_id'] = str(booking['_id'])
+            if 'timestamp' in booking and isinstance(booking['timestamp'], datetime):
                 booking['formatted_date'] = booking['timestamp'].strftime('%Y-%m-%d %H:%M:%S')
-        return {"bookings": bookings}
+            formatted_bookings.append(booking)
+        return {"bookings": formatted_bookings}
     except Exception as e:
         logger.error(f"Error fetching bookings: {str(e)}")
-        return {"bookings": []}
+        return {"bookings": [], "error": str(e)}
 
 @api_router.get("/test-email")
 async def test_email_connection():
     """Test SMTP connection and authentication"""
-    smtp_server = os.environ.get('SMTP_SERVER', '')
-    smtp_port = int(os.environ.get('SMTP_PORT', '587'))
-    smtp_user = os.environ.get('SMTP_USER', '')
-    smtp_password = os.environ.get('SMTP_PASSWORD', '')
-    use_ssl = os.environ.get('SMTP_USE_SSL', 'false').lower() == 'true'
-    
-    if not smtp_user or not smtp_password:
-        return {"error": "SMTP credentials not configured"}
-    
-    try:
-        if use_ssl:
-            server = smtplib.SMTP_SSL(smtp_server, smtp_port)
-        else:
-            server = smtplib.SMTP(smtp_server, smtp_port)
-            server.starttls()
-        
-        server.login(smtp_user, smtp_password)
-        server.quit()
-        return {"success": True, "message": f"Successfully connected to {smtp_server} as {smtp_user} (SSL: {use_ssl})"}
-    except smtplib.SMTPAuthenticationError as e:
-        return {"error": f"Authentication failed: {str(e)}"}
-    except Exception as e:
-        return {"error": f"Connection failed: {str(e)}"}
+    return {"message": "Email testing disabled - using database storage only"}
 
 @api_router.get("/booked-slots/{date}")
 async def get_booked_slots(date: str):
@@ -111,266 +93,99 @@ async def get_booked_slots(date: str):
         # Find all bookings for the given date
         bookings = await db.bookings.find({
             "date": date,
-            "status": {"$in": ["sent", "confirmed"]}
+            "status": {"$in": ["sent", "confirmed", "auth_error", "smtp_error", "pending"]}
         }).to_list(100)
         
         # Extract just the times
-        booked_times = [booking["time"] for booking in bookings]
+        booked_times = [booking["time"] for booking in bookings if "time" in booking]
         
-        return {"booked_times": booked_times}
+        return {"booked_times": booked_times, "date": date, "total_bookings": len(booked_times)}
         
     except Exception as e:
         logger.error(f"Error fetching booked slots: {str(e)}")
-        return {"booked_times": []}
+        return {"booked_times": [], "error": str(e)}
 
 @api_router.post("/send-booking")
 async def send_booking_email(booking: BookingRequest):
     try:
-        # Format the appointment date
-        appointment_date = datetime.strptime(booking.date, '%Y-%m-%d').strftime('%A, %d %B %Y')
-        
-        smtp_server = os.environ.get('SMTP_SERVER', 'smtp.gmail.com')
-        smtp_port = int(os.environ.get('SMTP_PORT', '587'))
-        smtp_user = os.environ.get('SMTP_USER', '')
-        smtp_password = os.environ.get('SMTP_PASSWORD', '')
-        
-        if not smtp_user or not smtp_password:
-            # Store the booking in the database as a fallback
-            booking_record = {
-                **booking.dict(),
-                'id': str(uuid.uuid4()),
-                'timestamp': datetime.utcnow(),
-                'status': 'pending'
-            }
-            await db.bookings.insert_one(booking_record)
-            
-            return {
-                "success": True, 
-                "message": "Booking request received. You will be contacted shortly to confirm your appointment.",
-                "fallback": True
-            }
-        
-        # Connect to SMTP server with proper error handling
-        try:
-            use_ssl = os.environ.get('SMTP_USE_SSL', 'false').lower() == 'true'
-            
-            if use_ssl:
-                server = smtplib.SMTP_SSL(smtp_server, smtp_port)
-            else:
-                server = smtplib.SMTP(smtp_server, smtp_port)
-                server.starttls()
-            
-            server.login(smtp_user, smtp_password)
-        except smtplib.SMTPAuthenticationError as auth_error:
-            logger.error(f"SMTP Authentication failed: {auth_error}")
-            # Store in database and return success message to user
-            booking_record = {
-                **booking.dict(),
-                'id': str(uuid.uuid4()),
-                'timestamp': datetime.utcnow(),
-                'status': 'auth_error',
-                'error': str(auth_error)
-            }
-            await db.bookings.insert_one(booking_record)
-            
-            return {
-                "success": True, 
-                "message": "Booking request received and saved. You will be contacted shortly to confirm your appointment.",
-                "fallback": True
-            }
-        except Exception as smtp_error:
-            logger.error(f"SMTP connection failed: {smtp_error}")
-            # Store in database and return success message to user
-            booking_record = {
-                **booking.dict(),
-                'id': str(uuid.uuid4()),
-                'timestamp': datetime.utcnow(),
-                'status': 'smtp_error',
-                'error': str(smtp_error)
-            }
-            await db.bookings.insert_one(booking_record)
-            
-            return {
-                "success": True, 
-                "message": "Booking request received and saved. You will be contacted shortly to confirm your appointment.",
-                "fallback": True
-            }
-        
-        # EMAIL 1: Send to business (appointment@ingcap.co.uk)
-        business_subject = f"New Consultation Booking Request - {booking.name}"
-        business_html = f"""
-        <html>
-        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-            <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
-                <h2 style="color: #2d5a5a; border-bottom: 2px solid #f97316; padding-bottom: 10px;">
-                    New Consultation Booking Request
-                </h2>
-                
-                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-                    <h3 style="color: #2d5a5a; margin-top: 0;">Client Details:</h3>
-                    <table style="width: 100%; border-collapse: collapse;">
-                        <tr>
-                            <td style="padding: 8px 0; font-weight: bold; color: #666;">Name:</td>
-                            <td style="padding: 8px 0;">{booking.name}</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 8px 0; font-weight: bold; color: #666;">Email:</td>
-                            <td style="padding: 8px 0;"><a href="mailto:{booking.email}" style="color: #0066cc;">{booking.email}</a></td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 8px 0; font-weight: bold; color: #666;">Phone:</td>
-                            <td style="padding: 8px 0;"><a href="tel:{booking.phone}" style="color: #0066cc;">{booking.phone}</a></td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 8px 0; font-weight: bold; color: #666;">Company:</td>
-                            <td style="padding: 8px 0;">{booking.company or 'Not specified'}</td>
-                        </tr>
-                    </table>
-                </div>
-                
-                <div style="background-color: #e6f3f3; padding: 20px; border-radius: 8px; margin: 20px 0;">
-                    <h3 style="color: #2d5a5a; margin-top: 0;">Requested Appointment:</h3>
-                    <table style="width: 100%; border-collapse: collapse;">
-                        <tr>
-                            <td style="padding: 8px 0; font-weight: bold; color: #666;">Date:</td>
-                            <td style="padding: 8px 0; font-size: 16px; color: #2d5a5a;"><strong>{appointment_date}</strong></td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 8px 0; font-weight: bold; color: #666;">Time:</td>
-                            <td style="padding: 8px 0; font-size: 16px; color: #2d5a5a;"><strong>{booking.time}</strong></td>
-                        </tr>
-                    </table>
-                </div>
-                
-                <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
-                    <p style="margin: 0; color: #666; font-size: 14px;">
-                        <strong>Next Steps:</strong> Please confirm this appointment or suggest an alternative time by replying to this email or calling the client directly.
-                    </p>
-                </div>
-            </div>
-        </body>
-        </html>
-        """
-        
-        business_msg = MIMEMultipart('alternative')
-        business_msg['Subject'] = business_subject
-        business_msg['From'] = smtp_user
-        business_msg['To'] = 'appointmentsingcap@gmail.com'
-        business_msg.attach(MIMEText(business_html, 'html', 'utf-8'))
-        
-        # EMAIL 2: Send confirmation to customer
-        customer_subject = f"Booking Confirmation - Ingenious Capital Consultation"
-        customer_html = f"""
-        <html>
-        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-            <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
-                <div style="text-align: center; margin-bottom: 30px;">
-                    <h1 style="color: #2d5a5a; margin-bottom: 10px;">Ingenious Capital</h1>
-                    <p style="color: #f97316; font-size: 18px; margin: 0;">Investment Consultation Booking</p>
-                </div>
-                
-                <div style="background-color: #e6f3f3; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2d5a5a;">
-                    <h2 style="color: #2d5a5a; margin-top: 0;">Thank you for your booking request!</h2>
-                    <p style="margin: 0; font-size: 16px;">
-                        Dear {booking.name}, we have received your consultation booking request and will contact you shortly to confirm your appointment.
-                    </p>
-                </div>
-                
-                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-                    <h3 style="color: #2d5a5a; margin-top: 0;">Your Booking Details:</h3>
-                    <table style="width: 100%; border-collapse: collapse;">
-                        <tr>
-                            <td style="padding: 8px 0; font-weight: bold; color: #666;">Requested Date:</td>
-                            <td style="padding: 8px 0; font-size: 16px; color: #2d5a5a;"><strong>{appointment_date}</strong></td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 8px 0; font-weight: bold; color: #666;">Requested Time:</td>
-                            <td style="padding: 8px 0; font-size: 16px; color: #2d5a5a;"><strong>{booking.time}</strong></td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 8px 0; font-weight: bold; color: #666;">Contact Email:</td>
-                            <td style="padding: 8px 0;">{booking.email}</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 8px 0; font-weight: bold; color: #666;">Contact Phone:</td>
-                            <td style="padding: 8px 0;">{booking.phone}</td>
-                        </tr>
-                        {f'<tr><td style="padding: 8px 0; font-weight: bold; color: #666;">Company:</td><td style="padding: 8px 0;">{booking.company}</td></tr>' if booking.company else ''}
-                    </table>
-                </div>
-                
-                <div style="background-color: #fff3cd; padding: 20px; border-radius: 8px; margin: 20px 0; border: 1px solid #ffeaa7;">
-                    <h3 style="color: #856404; margin-top: 0;">What happens next?</h3>
-                    <ul style="color: #856404; margin: 0; padding-left: 20px;">
-                        <li style="margin-bottom: 8px;">Our team will review your booking request</li>
-                        <li style="margin-bottom: 8px;">We will contact you within 24 hours to confirm your appointment</li>
-                        <li style="margin-bottom: 8px;">If your requested time is unavailable, we will suggest alternative times</li>
-                        <li>You will receive a calendar invitation once confirmed</li>
-                    </ul>
-                </div>
-                
-                <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
-                    <h3 style="color: #2d5a5a;">Contact Information:</h3>
-                    <p style="margin: 5px 0;"><strong>Email:</strong> <a href="mailto:appointmentsingcap@gmail.com" style="color: #0066cc;">appointmentsingcap@gmail.com</a></p>
-                    <p style="margin: 5px 0;"><strong>Phone:</strong> <a href="tel:02039165288" style="color: #0066cc;">020 3916 5288</a></p>
-                    <p style="margin: 5px 0;"><strong>Address:</strong> 1 Canada Square, Canary Wharf, London E14 5AA</p>
-                </div>
-                
-                <div style="margin-top: 30px; text-align: center; color: #999; font-size: 12px;">
-                    <p>Thank you for choosing Ingenious Capital for your investment consultation needs.</p>
-                </div>
-            </div>
-        </body>
-        </html>
-        """
-        
-        customer_msg = MIMEMultipart('alternative')
-        customer_msg['Subject'] = customer_subject
-        customer_msg['From'] = smtp_user
-        customer_msg['To'] = booking.email
-        customer_msg.attach(MIMEText(customer_html, 'html', 'utf-8'))
-        
-        # Send both emails
-        server.sendmail(smtp_user, 'appointmentsingcap@gmail.com', business_msg.as_string())
-        server.sendmail(smtp_user, booking.email, customer_msg.as_string())
-        server.quit()
-        
-        # Store in database for record keeping
+        # Always save to database first
         booking_record = {
             **booking.dict(),
             'id': str(uuid.uuid4()),
             'timestamp': datetime.utcnow(),
-            'status': 'sent',
-            'emails_sent': ['appointmentsingcap@gmail.com', booking.email]
+            'status': 'saved'
         }
-        await db.bookings.insert_one(booking_record)
+        
+        # Insert into database
+        result = await db.bookings.insert_one(booking_record)
+        
+        # Format the appointment date for display
+        try:
+            appointment_date = datetime.strptime(booking.date, '%Y-%m-%d').strftime('%A, %d %B %Y')
+        except:
+            appointment_date = booking.date
+        
+        # Try to send emails (but don't fail if this doesn't work)
+        email_sent = False
+        smtp_server = os.environ.get('SMTP_SERVER', '')
+        smtp_port = int(os.environ.get('SMTP_PORT', '587'))
+        smtp_user = os.environ.get('SMTP_USER', '')
+        smtp_password = os.environ.get('SMTP_PASSWORD', '')
+        
+        if smtp_user and smtp_password and smtp_user != 'appointmentsingcap@gmail.com':
+            try:
+                # Simple email attempt
+                server = smtplib.SMTP(smtp_server, smtp_port)
+                server.starttls()
+                server.login(smtp_user, smtp_password)
+                
+                # Send simple notification email
+                subject = f"New Booking: {booking.name} - {appointment_date} at {booking.time}"
+                body = f"""
+                New consultation booking received:
+                
+                Name: {booking.name}
+                Email: {booking.email}
+                Phone: {booking.phone}
+                Company: {booking.company}
+                Date: {appointment_date}
+                Time: {booking.time}
+                
+                Please contact the client to confirm this appointment.
+                """
+                
+                msg = MIMEText(body)
+                msg['Subject'] = subject
+                msg['From'] = smtp_user
+                msg['To'] = 'appointmentsingcap@gmail.com'
+                
+                server.send_message(msg)
+                server.quit()
+                
+                # Update status
+                await db.bookings.update_one(
+                    {"_id": result.inserted_id},
+                    {"$set": {"status": "sent", "email_sent": True}}
+                )
+                email_sent = True
+                
+            except Exception as e:
+                logger.error(f"Email sending failed: {str(e)}")
+                await db.bookings.update_one(
+                    {"_id": result.inserted_id},
+                    {"$set": {"status": "email_failed", "email_error": str(e)}}
+                )
         
         return {
             "success": True, 
-            "message": "Booking request sent successfully! You will receive a confirmation email shortly and we will contact you within 24 hours to confirm your appointment."
+            "message": "Booking request received successfully! You will be contacted shortly to confirm your appointment.",
+            "booking_id": str(result.inserted_id),
+            "email_sent": email_sent
         }
         
     except Exception as e:
-        logger.error(f"Error sending booking email: {str(e)}")
-        
-        # Store in database as fallback
-        try:
-            booking_record = {
-                **booking.dict(),
-                'id': str(uuid.uuid4()),
-                'timestamp': datetime.utcnow(),
-                'status': 'error',
-                'error': str(e)
-            }
-            await db.bookings.insert_one(booking_record)
-        except Exception as db_error:
-            logger.error(f"Error storing booking in database: {str(db_error)}")
-        
-        return {
-            "success": True, 
-            "message": "Booking request received. You will be contacted shortly to confirm your appointment.",
-            "fallback": True
-        }
+        logger.error(f"Error processing booking: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Booking failed: {str(e)}")
 
 # Include the router in the main app
 app.include_router(api_router)
