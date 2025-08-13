@@ -1382,9 +1382,9 @@ const IngeniousCapital = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {/* Investment Opportunity 1 - Checkace */}
-            <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full min-h-[600px]">
+            <div className="bg-gray-900 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full min-h-[500px] sm:min-h-[600px]">
               {/* PDF Pitch Deck Area */}
-              <div className="mb-6">
+              <div className="mb-4 sm:mb-6">
                 <div className="bg-gray-700 rounded-2xl p-6 border-2 border-teal-500 text-center cursor-pointer group">
                   <div className="w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <img 
