@@ -1774,6 +1774,7 @@ const IngeniousCapital = () => {
       </footer>
     </div>
   );
+  };
 
   // Render based on current page
   return (
