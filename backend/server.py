@@ -217,7 +217,7 @@ WHAT HAPPENS NEXT:
 • You will receive a calendar invitation once confirmed
 
 CONTACT INFORMATION:
-Email: appointmentsingcap@gmail.com
+Email: appointment@ingcap.co.uk
 Phone: 020 3916 5288
 Address: 1 Canada Square, Canary Wharf, London E14 5AA
 
