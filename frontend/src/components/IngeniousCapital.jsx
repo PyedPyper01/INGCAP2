@@ -1372,9 +1372,9 @@ const IngeniousCapital = () => {
               {/* PDF Pitch Deck Area */}
               <div className="mb-6">
                 <div className="bg-gray-700 rounded-2xl p-6 border-2 border-orange-500 text-center cursor-pointer group">
-                  <div className="bg-gradient-to-r from-orange-500 to-orange-600 p-4 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center min-h-[4rem]">
-                    <div className="bg-white rounded-lg px-3 py-2">
-                      <span className="text-orange-600 font-bold text-xs tracking-wider">SECTION 106<br/>RECLAIMS</span>
+                  <div className="w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-orange-400 font-bold text-2xl tracking-wider text-center">
+                      SECTION 106<br/>RECLAIMS
                     </div>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">Section 106 Reclaims</h3>
