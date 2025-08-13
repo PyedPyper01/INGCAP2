@@ -1293,6 +1293,9 @@ const IngeniousCapital = () => {
                 <p className="text-gray-400 text-center text-sm mt-4">
                   *We only charge a profit share which commences above a 15% annual return to you
                 </p>
+                <p className="text-gray-500 text-center text-xs mt-3 italic">
+                  *Example: If we make you a 35% return in a year, we will charge 25% of everything over 15% which in this case is 20%, meaning our share of profit will be 5% yours will be 30%.
+                </p>
               </div>
             </div>
           </div>
