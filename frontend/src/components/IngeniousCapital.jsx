@@ -553,18 +553,18 @@ const IngeniousCapital = () => {
       </nav>
 
       {/* Our Approach Section */}
-      <section id="about" className="min-h-screen pt-32 pb-16 bg-gray-800 relative overflow-hidden flex items-center">
-        <div className="max-w-7xl mx-auto px-8 relative z-10 w-full">
-          <div className="text-center mb-20">
-            <p className="text-xl lg:text-2xl text-gray-300 mb-16 max-w-4xl mx-auto leading-relaxed font-light backdrop-blur-sm bg-white/5 rounded-2xl p-8 border border-gray-700">
+      <section id="about" className="min-h-screen pt-20 pb-8 bg-gray-800 relative overflow-hidden flex items-center">
+        <div className="max-w-full mx-auto px-4 relative z-10 w-full">
+          <div className="text-center mb-12">
+            <p className="text-lg lg:text-xl text-gray-300 mb-8 max-w-5xl mx-auto leading-relaxed font-light backdrop-blur-sm bg-white/5 rounded-2xl p-6 border border-gray-700">
               As a sophisticated or high net worth investor, it is unlikely that we are the first investment portal that you have visited, and it is with that in mind that we try to do things differently. 
               Our focus is you and how we can help you to declutter your finances and simplify your investments.
             </p>
             
-            <h2 className="text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight">
+            <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
               Our <span className="bg-gradient-to-r from-teal-500 to-orange-500 bg-clip-text text-transparent">Approach</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">
+            <p className="text-lg text-gray-300 max-w-4xl mx-auto font-light leading-relaxed">
               To familiarize yourself with non-traditional, alternative investments requires a partner 
               who has a substantial stake in the game themselves to ensure that the decision
               making is in everybody's best interests. Ingenious Capital does exactly that by co-investing
@@ -572,60 +572,62 @@ const IngeniousCapital = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
-            <div className="space-y-8">
-              <div className="bg-gray-900 rounded-3xl p-10 shadow-2xl border border-gray-700">
-                <h3 className="text-4xl font-bold text-white mb-6 flex items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center max-w-7xl mx-auto">
+            <div className="w-full">
+              <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 h-full">
+                <h3 className="text-3xl font-bold text-white mb-4 flex items-center">
                   <div className="bg-gradient-to-r from-teal-500 to-teal-600 p-3 rounded-2xl mr-4">
-                    <Zap className="h-8 w-8 text-white" />
+                    <Zap className="h-6 w-6 text-white" />
                   </div>
                   Enhanced Liquidity
                 </h3>
-                <p className="text-lg text-gray-300 leading-relaxed mb-4">
+                <p className="text-base text-gray-300 leading-relaxed mb-3">
                   Enhanced profits come at a price – lack of liquidity. 
                 </p>
-                <p className="text-3xl font-bold bg-gradient-to-r from-teal-500 to-orange-500 bg-clip-text text-transparent mb-6">
+                <p className="text-2xl font-bold bg-gradient-to-r from-teal-500 to-orange-500 bg-clip-text text-transparent mb-4">
                   UNTIL NOW...
                 </p>
-                <p className="text-lg text-gray-300 leading-relaxed mb-8">
+                <p className="text-base text-gray-300 leading-relaxed">
                   Ingenious Capital invests into a diverse portfolio of assets ranging from commodities, 
                   shares, ETF's and AIM listed Companies to maintain liquidity and create income. We also invest in property 
                   based business opportunities such as hotels, build to rent units, self storage, holiday parks 
                   and more recently, in demand sporting facilities such as Padel Tennis Centres, considering only those with capable and proven operators. We see this as de-risking 
                   property investment, no developer risk (we have witnessed so many developments fail that involve construction 
-                  and planning risk). <span className="text-xl font-bold text-white bg-gradient-to-r from-teal-500 to-orange-500 bg-clip-text text-transparent">This philosophy means that 50% of your funds invested are available to you on 48 hours notice, 
+                  and planning risk). <span className="text-lg font-bold text-white bg-gradient-to-r from-teal-500 to-orange-500 bg-clip-text text-transparent">This philosophy means that 50% of your funds invested are available to you on 48 hours notice, 
                   with the other 50% on a maximum of 180 days notice.</span>
                 </p>
               </div>
             </div>
             
-            <div className="relative">
-              <div className="absolute -top-4 -left-4 w-full h-full bg-gradient-to-r from-teal-500/20 to-orange-500/20 rounded-3xl blur-xl"></div>
-              <div className="relative bg-gray-900 rounded-3xl p-10 shadow-2xl border border-gray-700">
-                <img
-                  src="https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg"
-                  alt="Financial charts"
-                  className="w-full h-64 rounded-2xl mb-8 object-cover"
-                />
-                
-                <h4 className="text-3xl font-bold text-white mb-6 text-center">Investment Returns</h4>
-                <p className="text-lg text-gray-300 mb-8 text-center">
-                  A world with targeted returns of 1.5 to 6 times initial investment and IRR's of 25-30%.
-                </p>
-                
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="text-center bg-gradient-to-r from-gray-800 to-gray-700 rounded-2xl p-6 border border-teal-500/30">
-                    <div className="text-4xl font-bold text-teal-500 mb-2">1.5-6x</div>
-                    <div className="text-gray-300 font-medium">Return Multiple</div>
-                    <div className="mt-3 bg-gray-600 rounded-full h-2">
-                      <div className="bg-gradient-to-r from-teal-500 to-teal-600 h-2 rounded-full w-4/5"></div>
+            <div className="w-full">
+              <div className="relative">
+                <div className="absolute -top-2 -left-2 w-full h-full bg-gradient-to-r from-teal-500/20 to-orange-500/20 rounded-3xl blur-xl"></div>
+                <div className="relative bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 h-full">
+                  <img
+                    src="https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg"
+                    alt="Financial charts"
+                    className="w-full h-48 rounded-2xl mb-6 object-cover"
+                  />
+                  
+                  <h4 className="text-2xl font-bold text-white mb-4 text-center">Investment Returns</h4>
+                  <p className="text-base text-gray-300 mb-6 text-center">
+                    A world with targeted returns of 1.5 to 6 times initial investment and IRR's of 25-30%.
+                  </p>
+                  
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="text-center bg-gradient-to-r from-gray-800 to-gray-700 rounded-2xl p-4 border border-teal-500/30">
+                      <div className="text-3xl font-bold text-teal-500 mb-2">1.5-6x</div>
+                      <div className="text-gray-300 font-medium text-sm">Return Multiple</div>
+                      <div className="mt-3 bg-gray-600 rounded-full h-2">
+                        <div className="bg-gradient-to-r from-teal-500 to-teal-600 h-2 rounded-full w-4/5"></div>
+                      </div>
                     </div>
-                  </div>
-                  <div className="text-center bg-gradient-to-r from-gray-800 to-gray-700 rounded-2xl p-6 border border-orange-500/30">
-                    <div className="text-4xl font-bold text-orange-500 mb-2">25-30%</div>
-                    <div className="text-gray-300 font-medium">Targeted IRR</div>
-                    <div className="mt-3 bg-gray-600 rounded-full h-2">
-                      <div className="bg-gradient-to-r from-orange-500 to-orange-600 h-2 rounded-full w-3/4"></div>
+                    <div className="text-center bg-gradient-to-r from-gray-800 to-gray-700 rounded-2xl p-4 border border-orange-500/30">
+                      <div className="text-3xl font-bold text-orange-500 mb-2">25-30%</div>
+                      <div className="text-gray-300 font-medium text-sm">Targeted IRR</div>
+                      <div className="mt-3 bg-gray-600 rounded-full h-2">
+                        <div className="bg-gradient-to-r from-orange-500 to-orange-600 h-2 rounded-full w-3/4"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
