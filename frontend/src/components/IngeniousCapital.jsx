@@ -1521,18 +1521,30 @@ const IngeniousCapital = () => {
                 <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Investment Description</h4>
                 <div className="text-xs text-gray-300 leading-relaxed flex-1">
                   <p className="mb-2">
-                    Serenity Lakes represents a premium real estate development opportunity combining luxury residential properties with sustainable environmental practices. This exclusive development offers investors exposure to high-end property markets with strong capital appreciation potential.
+                    Serenity Lakes is a perfect example of how we invest in property. The owners have an excellent track record in leisure development and are seeking funding to assist in the construction of the development. Rather than lend money and be exposed to the development risk Ingenious Capital has negotiated to purchase 25 of the completed units at a 25% discount to value.
                   </p>
                   <p className="mb-2">
-                    The project features carefully planned lakefront properties designed to maximize both lifestyle appeal and investment returns. Strategic location advantages include proximity to key amenities, transport links, and established residential communities.
+                    The site is currently going through the final stages of planning with Maidstone Council and the Environment Agency, with all correspondence demonstrating high level support for the scheme.
                   </p>
-                  <p>
-                    Key investment highlights: prime waterfront locations, premium development standards, established developer track record, and strong rental yield potential in a supply-constrained market.
+                  <p className="mb-2">
+                    Ingenious will exchange conditionally on the units with a 25% deposit, with a deferred completion set for 6 months after the final unit is completed, giving us time to sell or arrange finance to complete the purchase. Conditional exchange removes all the risk for us but enables the developers to arrange a higher level of finance from their bank to fund the development, making it a win-win situation.
+                  </p>
+                  <p className="mb-2">
+                    As the development progresses the value of the units rises and accordingly it provides us with an opportunity to sell our position on in a 6 month period or stay in for the full 2 years to optimise value. The estimated return over 6 months is in the region of 15-20% and over 2 years is likely in excess of 100%.
+                  </p>
+                  <p className="text-blue-400 font-semibold text-xs">
+                    In the event something goes wrong our funds are taken out of escrow where we have negotiated a 5% rate of interest, so downside in the unlikely event of the site not being completed is a 5% return and the upside is a 100%+ return over 2 years.
                   </p>
                 </div>
-                <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0">
-                  <span className="text-xs text-gray-500">Investment Type: Real Estate Development</span>
-                  <span className="text-xs text-blue-400 font-semibold">Target Return: 18-22% Annual</span>
+                <div className="mt-3 sm:mt-4 flex flex-col space-y-1">
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs text-gray-500">Investment Type: Property Development</span>
+                    <span className="text-xs text-blue-400 font-semibold">6 months: 15-20%</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs text-gray-500">Risk Protection: 5% minimum return</span>
+                    <span className="text-xs text-blue-400 font-semibold">2 years: 100%+</span>
+                  </div>
                 </div>
               </div>
             </div>
