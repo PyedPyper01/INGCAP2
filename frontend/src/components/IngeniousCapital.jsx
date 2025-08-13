@@ -1498,11 +1498,11 @@ const IngeniousCapital = () => {
                   <p className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4">Click to view investment brochure</p>
                   <div className="bg-gray-800 rounded-lg p-3 sm:p-4 text-left">
                     <div className="flex items-center justify-between mb-2">
-                      <p className="text-xs sm:text-sm text-blue-400 font-semibold">📄 Serenity Lakes Brochure.pdf</p>
+                      <p className="text-xs sm:text-sm text-blue-400 font-semibold">📄 915-WWP Serenity Lakes Design Update.pdf</p>
                       <Download className="h-3 w-3 sm:h-4 sm:w-4 text-blue-400" />
                     </div>
                     <button
-                      onClick={() => window.open('https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/nvx2wy1e_Serenity%20Lakes%20Brochure.pdf', '_blank')}
+                      onClick={() => window.open('https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/k9038jvk_915-WWP_Serenity%20Lakes-Design%20Update-220819_Low%20Res.pdf', '_blank')}
                       className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg text-xs sm:text-sm font-medium transition-colors"
                     >
                       Open Investment Brochure
