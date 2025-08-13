@@ -63,6 +63,25 @@ async def get_status_checks():
     status_checks = await db.status_checks.find().to_list(1000)
     return [StatusCheck(**status_check) for status_check in status_checks]
 
+@api_router.get("/booked-slots/{date}")
+async def get_booked_slots(date: str):
+    """Get all booked time slots for a specific date"""
+    try:
+        # Find all bookings for the given date
+        bookings = await db.bookings.find({
+            "date": date,
+            "status": {"$in": ["sent", "confirmed"]}
+        }).to_list(100)
+        
+        # Extract just the times
+        booked_times = [booking["time"] for booking in bookings]
+        
+        return {"booked_times": booked_times}
+        
+    except Exception as e:
+        logger.error(f"Error fetching booked slots: {str(e)}")
+        return {"booked_times": []}
+
 @api_router.post("/send-booking")
 async def send_booking_email(booking: BookingRequest):
     try:
