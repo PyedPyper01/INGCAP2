@@ -487,14 +487,14 @@ const IngeniousCapital = () => {
     return (
       <div className="h-screen w-screen overflow-hidden bg-black flex flex-col">
         {/* Navigation Dropdown - Top Right Corner */}
-        <div className="absolute top-6 right-6 z-50">
+        <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50">
           <div className="relative">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-lg border border-gray-600 transition-colors duration-300 flex items-center space-x-2"
+              className="bg-gray-800 hover:bg-gray-700 text-white p-2 sm:p-3 rounded-lg border border-gray-600 transition-colors duration-300 flex items-center space-x-2"
             >
-              <Menu className="h-5 w-5" />
-              <span className="text-sm font-medium">Menu</span>
+              <Menu className="h-4 w-4 sm:h-5 sm:w-5" />
+              <span className="text-xs sm:text-sm font-medium hidden sm:inline">Menu</span>
             </button>
             
             {isMenuOpen && (
@@ -506,7 +506,7 @@ const IngeniousCapital = () => {
                 ></div>
                 
                 {/* Dropdown Menu */}
-                <div className="absolute right-0 top-full mt-2 w-64 bg-gray-800 rounded-lg border border-gray-600 shadow-2xl z-50">
+                <div className="absolute right-0 top-full mt-2 w-56 sm:w-64 bg-gray-800 rounded-lg border border-gray-600 shadow-2xl z-50 max-h-80 overflow-y-auto">
                   <div className="py-2">
                     {[
                       { id: 'about', label: 'Our Approach' },
@@ -525,10 +525,10 @@ const IngeniousCapital = () => {
                           scrollToSection(item.id);
                           setIsMenuOpen(false);
                         }}
-                        className="w-full text-left px-4 py-3 text-white hover:bg-gray-700 hover:text-teal-400 transition-colors duration-300 flex items-center space-x-3"
+                        className="w-full text-left px-3 py-2 sm:px-4 sm:py-3 text-white hover:bg-gray-700 hover:text-teal-400 transition-colors duration-300 flex items-center space-x-3"
                       >
-                        <ChevronRight className="h-4 w-4" />
-                        <span className="text-sm font-medium">{item.label}</span>
+                        <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
+                        <span className="text-xs sm:text-sm font-medium">{item.label}</span>
                       </button>
                     ))}
                   </div>
@@ -539,15 +539,15 @@ const IngeniousCapital = () => {
         </div>
 
         {/* Logo Frame - Takes full space */}
-        <div className="flex-1 flex items-center justify-center p-12">
+        <div className="flex-1 flex items-center justify-center p-4 sm:p-8 md:p-12">
           <div 
-            className="w-full h-full max-w-4xl max-h-4xl flex items-center justify-center bg-black rounded-3xl border-4 border-gray-700 cursor-pointer group hover:border-gray-600 transition-colors duration-300"
+            className="w-full h-full max-w-2xl sm:max-w-3xl md:max-w-4xl max-h-2xl sm:max-h-3xl md:max-h-4xl flex items-center justify-center bg-black rounded-2xl sm:rounded-3xl border-2 sm:border-4 border-gray-700 cursor-pointer group hover:border-gray-600 transition-colors duration-300"
             onClick={() => scrollToSection('about')}
           >
             <img 
               src="https://customer-assets.emergentagent.com/job_capital-forge/artifacts/6pf5cx6a_Logo%20New.jpg" 
               alt="Ingenious Capital - Click to Enter" 
-              className="w-full h-full object-contain p-8 group-hover:scale-105 transition-transform duration-500"
+              className="w-full h-full object-contain p-4 sm:p-6 md:p-8 group-hover:scale-105 transition-transform duration-500"
             />
           </div>
         </div>
