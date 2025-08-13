@@ -1510,7 +1510,7 @@ const IngeniousCapital = () => {
                       onClick={() => window.open('https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/fsk4m607_915-WWP_Serenity%20Lakes-Design%20Update-220819_Low%20Res.pdf', '_blank')}
                       className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg text-xs sm:text-sm font-medium transition-colors"
                     >
-                      Open Investment Brochure
+                      Open Brochure
                     </button>
                   </div>
                 </div>
