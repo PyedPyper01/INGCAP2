@@ -157,9 +157,15 @@ async def send_booking_email(booking: BookingRequest):
         
         if smtp_user and smtp_password and 'temp_password_for_testing' not in smtp_password and 'YOUR_16_CHAR_APP_PASSWORD_HERE' not in smtp_password:
             try:
-                # Connect to Gmail
-                server = smtplib.SMTP(smtp_server, smtp_port)
-                server.starttls()
+                # Connect with SSL support
+                use_ssl = os.environ.get('SMTP_USE_SSL', 'false').lower() == 'true'
+                
+                if use_ssl and smtp_port == 465:
+                    server = smtplib.SMTP_SSL(smtp_server, smtp_port)
+                else:
+                    server = smtplib.SMTP(smtp_server, smtp_port)
+                    server.starttls()
+                    
                 server.login(smtp_user, smtp_password)
                 
                 # EMAIL 1: Send notification to business
