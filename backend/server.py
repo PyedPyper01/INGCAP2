@@ -311,7 +311,7 @@ async def send_booking_email(booking: BookingRequest):
                 
                 <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
                     <h3 style="color: #2d5a5a;">Contact Information:</h3>
-                    <p style="margin: 5px 0;"><strong>Email:</strong> <a href="mailto:appointment@ingcap.co.uk" style="color: #0066cc;">appointment@ingcap.co.uk</a></p>
+                    <p style="margin: 5px 0;"><strong>Email:</strong> <a href="mailto:appointmentsingcap@gmail.com" style="color: #0066cc;">appointmentsingcap@gmail.com</a></p>
                     <p style="margin: 5px 0;"><strong>Phone:</strong> <a href="tel:02039165288" style="color: #0066cc;">020 3916 5288</a></p>
                     <p style="margin: 5px 0;"><strong>Address:</strong> 1 Canada Square, Canary Wharf, London E14 5AA</p>
                 </div>
