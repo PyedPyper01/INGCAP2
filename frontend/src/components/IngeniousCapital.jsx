@@ -1299,6 +1299,141 @@ const IngeniousCapital = () => {
         </div>
       </section>
 
+      {/* Investment Opportunities Section */}
+      <section id="investment-opportunities" className="min-h-screen py-32 bg-gray-800 relative overflow-hidden flex items-center">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight">
+              Some of our Current <span className="bg-gradient-to-r from-teal-500 to-orange-500 bg-clip-text text-transparent">Investment Opportunities</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Explore our carefully selected investment opportunities, each with comprehensive due diligence and detailed pitch decks.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Investment Opportunity 1 */}
+            <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105">
+              {/* PDF Pitch Deck Area */}
+              <div className="mb-6">
+                <div className="bg-gray-700 rounded-2xl p-6 border-2 border-dashed border-gray-600 text-center hover:border-teal-500 transition-colors cursor-pointer group">
+                  <div className="bg-gradient-to-r from-teal-500 to-teal-600 p-4 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Briefcase className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2">Investment Opportunity #1</h3>
+                  <p className="text-gray-400 text-sm mb-4">Click to upload pitch deck PDF</p>
+                  <div className="bg-gray-800 rounded-lg p-4 text-left">
+                    <p className="text-xs text-gray-500 mb-2">📄 Pitch Deck PDF will appear here</p>
+                    <p className="text-xs text-gray-500">Users will be able to open and view the PDF document</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Description Area */}
+              <div className="bg-gray-800 rounded-2xl p-6 border border-gray-600">
+                <h4 className="text-lg font-bold text-white mb-4">Investment Description</h4>
+                <div className="text-sm text-gray-400 mb-4">
+                  <span className="bg-gray-700 px-2 py-1 rounded text-xs">Up to 300 words</span>
+                </div>
+                <textarea 
+                  placeholder="Add your investment opportunity description here (up to 300 words)..."
+                  maxLength={1500}
+                  rows={6}
+                  className="w-full bg-gray-700 border border-gray-600 rounded-xl text-white text-sm p-4 placeholder-gray-500 focus:border-teal-500 focus:outline-none resize-none"
+                ></textarea>
+                <div className="mt-2 text-xs text-gray-500 text-right">
+                  0 / 300 words
+                </div>
+              </div>
+            </div>
+
+            {/* Investment Opportunity 2 */}
+            <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105">
+              {/* PDF Pitch Deck Area */}
+              <div className="mb-6">
+                <div className="bg-gray-700 rounded-2xl p-6 border-2 border-dashed border-gray-600 text-center hover:border-orange-500 transition-colors cursor-pointer group">
+                  <div className="bg-gradient-to-r from-orange-500 to-orange-600 p-4 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <LineChart className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2">Investment Opportunity #2</h3>
+                  <p className="text-gray-400 text-sm mb-4">Click to upload pitch deck PDF</p>
+                  <div className="bg-gray-800 rounded-lg p-4 text-left">
+                    <p className="text-xs text-gray-500 mb-2">📄 Pitch Deck PDF will appear here</p>
+                    <p className="text-xs text-gray-500">Users will be able to open and view the PDF document</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Description Area */}
+              <div className="bg-gray-800 rounded-2xl p-6 border border-gray-600">
+                <h4 className="text-lg font-bold text-white mb-4">Investment Description</h4>
+                <div className="text-sm text-gray-400 mb-4">
+                  <span className="bg-gray-700 px-2 py-1 rounded text-xs">Up to 300 words</span>
+                </div>
+                <textarea 
+                  placeholder="Add your investment opportunity description here (up to 300 words)..."
+                  maxLength={1500}
+                  rows={6}
+                  className="w-full bg-gray-700 border border-gray-600 rounded-xl text-white text-sm p-4 placeholder-gray-500 focus:border-orange-500 focus:outline-none resize-none"
+                ></textarea>
+                <div className="mt-2 text-xs text-gray-500 text-right">
+                  0 / 300 words
+                </div>
+              </div>
+            </div>
+
+            {/* Investment Opportunity 3 */}
+            <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105">
+              {/* PDF Pitch Deck Area */}
+              <div className="mb-6">
+                <div className="bg-gray-700 rounded-2xl p-6 border-2 border-dashed border-gray-600 text-center hover:border-gray-500 transition-colors cursor-pointer group">
+                  <div className="bg-gradient-to-r from-gray-500 to-gray-600 p-4 rounded-full w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Building className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2">Investment Opportunity #3</h3>
+                  <p className="text-gray-400 text-sm mb-4">Click to upload pitch deck PDF</p>
+                  <div className="bg-gray-800 rounded-lg p-4 text-left">
+                    <p className="text-xs text-gray-500 mb-2">📄 Pitch Deck PDF will appear here</p>
+                    <p className="text-xs text-gray-500">Users will be able to open and view the PDF document</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Description Area */}
+              <div className="bg-gray-800 rounded-2xl p-6 border border-gray-600">
+                <h4 className="text-lg font-bold text-white mb-4">Investment Description</h4>
+                <div className="text-sm text-gray-400 mb-4">
+                  <span className="bg-gray-700 px-2 py-1 rounded text-xs">Up to 300 words</span>
+                </div>
+                <textarea 
+                  placeholder="Add your investment opportunity description here (up to 300 words)..."
+                  maxLength={1500}
+                  rows={6}
+                  className="w-full bg-gray-700 border border-gray-600 rounded-xl text-white text-sm p-4 placeholder-gray-500 focus:border-gray-500 focus:outline-none resize-none"
+                ></textarea>
+                <div className="mt-2 text-xs text-gray-500 text-right">
+                  0 / 300 words
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Call to Action */}
+          <div className="text-center mt-16">
+            <p className="text-lg text-gray-400 mb-6">
+              Want to learn more about these opportunities or discuss your investment strategy?
+            </p>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="bg-gradient-to-r from-teal-500 to-orange-500 hover:from-teal-600 hover:to-orange-600 text-white px-8 py-4 rounded-xl text-lg font-medium transition-all duration-500 hover:scale-105 shadow-2xl"
+            >
+              Schedule a Consultation
+              <ArrowRight className="ml-3 h-5 w-5 inline-block" />
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="min-h-screen py-32 relative overflow-hidden flex items-center">
         <div className="absolute inset-0">
