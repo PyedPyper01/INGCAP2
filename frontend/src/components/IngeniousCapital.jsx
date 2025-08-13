@@ -1435,19 +1435,19 @@ const IngeniousCapital = () => {
             </div>
 
             {/* Investment Opportunity 2 - Section 106 Reclaims */}
-            <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full min-h-[600px]">
+            <div className="bg-gray-900 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full min-h-[500px] sm:min-h-[600px]">
               {/* PDF Pitch Deck Area */}
-              <div className="mb-6">
-                <div className="bg-gray-700 rounded-2xl p-6 border-2 border-orange-500 text-center cursor-pointer group">
-                  <div className="w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="mb-4 sm:mb-6">
+                <div className="bg-gray-700 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-orange-500 text-center cursor-pointer group">
+                  <div className="w-fit mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
                     <img 
                       src="https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/k0bki6nj_section-106-reclaims-logo-4color.png" 
                       alt="Section 106 Reclaims Logo" 
-                      className="h-16 w-auto object-contain"
+                      className="h-12 sm:h-14 md:h-16 w-auto object-contain"
                     />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">Section 106 Reclaims</h3>
-                  <p className="text-gray-300 text-sm mb-4">Click to view pitch deck</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Section 106 Reclaims</h3>
+                  <p className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4">Click to view pitch deck</p>
                   <div className="bg-gray-800 rounded-lg p-4 text-left">
                     <div className="flex items-center justify-between mb-2">
                       <p className="text-sm text-orange-400 font-semibold">📄 Section-106-Reclaim Pitch.pdf</p>
