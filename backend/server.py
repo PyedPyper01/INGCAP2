@@ -150,38 +150,87 @@ async def send_booking_email(booking: BookingRequest):
         
         if smtp_user and smtp_password and 'temp_password_for_testing' not in smtp_password and 'YOUR_16_CHAR_APP_PASSWORD_HERE' not in smtp_password:
             try:
-                # Simple email attempt
+                # Connect to Gmail
                 server = smtplib.SMTP(smtp_server, smtp_port)
                 server.starttls()
                 server.login(smtp_user, smtp_password)
                 
-                # Send simple notification email
-                subject = f"New Booking: {booking.name} - {appointment_date} at {booking.time}"
-                body = f"""
-                New consultation booking received:
-                
-                Name: {booking.name}
-                Email: {booking.email}
-                Phone: {booking.phone}
-                Company: {booking.company}
-                Date: {appointment_date}
-                Time: {booking.time}
-                
-                Please contact the client to confirm this appointment.
+                # EMAIL 1: Send notification to business
+                business_subject = f"New Booking: {booking.name} - {appointment_date} at {booking.time}"
+                business_body = f"""
+New consultation booking received:
+
+CLIENT DETAILS:
+Name: {booking.name}
+Email: {booking.email}  
+Phone: {booking.phone}
+Company: {booking.company or 'Not specified'}
+
+APPOINTMENT REQUEST:
+Date: {appointment_date}
+Time: {booking.time}
+
+Please contact the client to confirm this appointment.
+
+You can reply directly to this email or call them at {booking.phone}.
                 """
                 
-                msg = MIMEText(body)
-                msg['Subject'] = subject
-                msg['From'] = smtp_user
-                msg['To'] = 'appointmentsingcap@gmail.com'
+                business_msg = MIMEText(business_body)
+                business_msg['Subject'] = business_subject
+                business_msg['From'] = smtp_user
+                business_msg['To'] = 'appointmentsingcap@gmail.com'
+                business_msg['Reply-To'] = booking.email
                 
-                server.send_message(msg)
+                server.send_message(business_msg)
+                
+                # EMAIL 2: Send confirmation to customer
+                customer_subject = f"Booking Confirmation - Ingenious Capital Consultation"
+                customer_body = f"""
+Dear {booking.name},
+
+Thank you for requesting a consultation with Ingenious Capital!
+
+BOOKING DETAILS:
+Date: {appointment_date}
+Time: {booking.time}
+Your Email: {booking.email}
+Your Phone: {booking.phone}
+{f'Company: {booking.company}' if booking.company else ''}
+
+WHAT HAPPENS NEXT:
+• Our team will review your booking request
+• We will contact you within 24 hours to confirm your appointment
+• If your requested time is unavailable, we will suggest alternatives
+• You will receive a calendar invitation once confirmed
+
+CONTACT INFORMATION:
+Email: appointmentsingcap@gmail.com
+Phone: 020 3916 5288
+Address: 1 Canada Square, Canary Wharf, London E14 5AA
+
+Thank you for choosing Ingenious Capital for your investment consultation needs.
+
+Best regards,
+The Ingenious Capital Team
+                """
+                
+                customer_msg = MIMEText(customer_body)
+                customer_msg['Subject'] = customer_subject
+                customer_msg['From'] = smtp_user
+                customer_msg['To'] = booking.email
+                customer_msg['Reply-To'] = 'appointmentsingcap@gmail.com'
+                
+                server.send_message(customer_msg)
                 server.quit()
                 
-                # Update status
+                # Update status to show both emails sent
                 await db.bookings.update_one(
                     {"_id": result.inserted_id},
-                    {"$set": {"status": "sent", "email_sent": True}}
+                    {"$set": {
+                        "status": "emails_sent", 
+                        "emails_sent_to": ['appointmentsingcap@gmail.com', booking.email],
+                        "email_sent_time": datetime.utcnow()
+                    }}
                 )
                 email_sent = True
                 
