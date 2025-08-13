@@ -1556,16 +1556,16 @@ const IngeniousCapital = () => {
           </div>
           
           {/* Call to Action */}
-          <div className="text-center mt-16">
-            <p className="text-lg text-gray-400 mb-6">
+          <div className="text-center mt-12 sm:mt-16">
+            <p className="text-base sm:text-lg text-gray-400 mb-4 sm:mb-6">
               Want to learn more about these opportunities or discuss your investment strategy?
             </p>
             <button
               onClick={() => scrollToSection('contact')}
-              className="bg-gradient-to-r from-teal-500 to-orange-500 hover:from-teal-600 hover:to-orange-600 text-white px-8 py-4 rounded-xl text-lg font-medium transition-all duration-500 hover:scale-105 shadow-2xl"
+              className="bg-gradient-to-r from-teal-500 to-orange-500 hover:from-teal-600 hover:to-orange-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-medium transition-all duration-500 hover:scale-105 shadow-2xl"
             >
               Schedule a Consultation
-              <ArrowRight className="ml-3 h-5 w-5 inline-block" />
+              <ArrowRight className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 inline-block" />
             </button>
           </div>
         </div>
