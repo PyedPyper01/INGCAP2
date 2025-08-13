@@ -479,7 +479,7 @@ const IngeniousCapital = () => {
 
   // Logo Page Component
   const LogoPage = () => (
-    <div className="h-screen w-screen overflow-hidden bg-gray-900 flex flex-col">
+    <div className="h-screen w-screen overflow-hidden bg-black flex flex-col">
       {/* Navigation Links - Top */}
       <nav className="w-full py-8">
         <div className="flex justify-center items-center space-x-16">
