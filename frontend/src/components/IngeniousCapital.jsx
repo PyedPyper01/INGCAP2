@@ -554,9 +554,9 @@ const IngeniousCapital = () => {
 
       {/* Our Approach Section */}
       <section id="about" className="min-h-screen pt-20 pb-8 bg-gray-800 relative overflow-hidden flex items-center">
-        <div className="max-w-full mx-auto px-4 relative z-10 w-full">
+        <div className="max-w-full mx-auto px-2 relative z-10 w-full">
           <div className="text-center mb-12">
-            <p className="text-lg lg:text-xl text-gray-300 mb-8 max-w-5xl mx-auto leading-relaxed font-light backdrop-blur-sm bg-white/5 rounded-2xl p-6 border border-gray-700">
+            <p className="text-lg lg:text-xl text-gray-300 mb-8 max-w-6xl mx-auto leading-relaxed font-light backdrop-blur-sm bg-white/5 rounded-2xl p-6 border border-gray-700">
               As a sophisticated or high net worth investor, it is unlikely that we are the first investment portal that you have visited, and it is with that in mind that we try to do things differently. 
               Our focus is you and how we can help you to declutter your finances and simplify your investments.
             </p>
@@ -564,7 +564,7 @@ const IngeniousCapital = () => {
             <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
               Our <span className="bg-gradient-to-r from-teal-500 to-orange-500 bg-clip-text text-transparent">Approach</span>
             </h2>
-            <p className="text-lg text-gray-300 max-w-4xl mx-auto font-light leading-relaxed">
+            <p className="text-lg text-gray-300 max-w-5xl mx-auto font-light leading-relaxed">
               To familiarize yourself with non-traditional, alternative investments requires a partner 
               who has a substantial stake in the game themselves to ensure that the decision
               making is in everybody's best interests. Ingenious Capital does exactly that by co-investing
@@ -572,7 +572,7 @@ const IngeniousCapital = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center max-w-full mx-auto px-4">
             <div className="w-full">
               <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 h-full">
                 <h3 className="text-3xl font-bold text-white mb-4 flex items-center">
