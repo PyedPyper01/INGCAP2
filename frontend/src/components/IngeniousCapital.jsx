@@ -40,6 +40,12 @@ const IngeniousCapital = () => {
   const [showBookingCalendar, setShowBookingCalendar] = useState(false);
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
+  const [bookingForm, setBookingForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: ''
+  });
 
   // Blocked times/dates (you can modify these)
   const blockedDates = [
@@ -81,29 +87,58 @@ const IngeniousCapital = () => {
   const availableDates = generateAvailableDates();
 
   const handleBookingSubmit = () => {
-    if (!selectedDate || !selectedTime) {
-      alert('Please select both date and time');
+    if (!selectedDate || !selectedTime || !bookingForm.name || !bookingForm.email || !bookingForm.phone) {
+      alert('Please fill in all required fields and select date/time');
       return;
     }
     
-    // Create booking confirmation
-    const bookingDetails = `Consultation Booking Request:\nDate: ${selectedDate}\nTime: ${selectedTime}\n\nPlease confirm this appointment.`;
+    // Create comprehensive booking details
+    const bookingDetails = `Consultation Booking Request:
+
+CLIENT DETAILS:
+Name: ${bookingForm.name}
+Email: ${bookingForm.email}
+Phone: ${bookingForm.phone}
+Company: ${bookingForm.company || 'N/A'}
+
+APPOINTMENT DETAILS:
+Date: ${new Date(selectedDate).toLocaleDateString('en-GB', { 
+      weekday: 'long', 
+      day: 'numeric', 
+      month: 'long', 
+      year: 'numeric' 
+    })}
+Time: ${selectedTime}
+
+Please confirm this appointment or suggest an alternative if this time is not available.
+
+Best regards,
+Ingenious Capital Booking System`;
     
-    // You can integrate this with your email system
-    // For now, we'll create a mailto link
-    const mailtoLink = `mailto:investor@ingcap.co.uk?subject=Consultation Booking Request&body=${encodeURIComponent(bookingDetails)}`;
+    // Create mailto link with comprehensive details
+    const mailtoLink = `mailto:investor@ingcap.co.uk?subject=Consultation Booking Request - ${bookingForm.name}&body=${encodeURIComponent(bookingDetails)}`;
     window.location.href = mailtoLink;
     
     // Reset and close
     setSelectedDate('');
     setSelectedTime('');
+    setBookingForm({ name: '', email: '', phone: '', company: '' });
     setShowBookingCalendar(false);
+    
+    alert('Booking request sent! We will contact you shortly to confirm your appointment.');
+  };
+
+  const handleFormChange = (field, value) => {
+    setBookingForm(prev => ({
+      ...prev,
+      [field]: value
+    }));
   };
 
   // Booking Calendar Component
   const BookingCalendar = () => (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-gray-800 rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-gray-700 shadow-2xl">
+      <div className="bg-gray-800 rounded-3xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-gray-700 shadow-2xl">
         <div className="flex justify-between items-center mb-8">
           <h3 className="text-2xl font-bold text-white">Schedule Your Consultation</h3>
           <button
@@ -114,70 +149,135 @@ const IngeniousCapital = () => {
           </button>
         </div>
         
-        {/* Date Selection */}
-        <div className="mb-8">
-          <h4 className="text-lg font-semibold text-white mb-4">Select Date</h4>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {availableDates.slice(0, 12).map((dateObj) => (
-              <button
-                key={dateObj.date}
-                onClick={() => setSelectedDate(dateObj.date)}
-                className={`p-3 rounded-xl text-sm font-medium transition-all duration-300 ${
-                  selectedDate === dateObj.date
-                    ? 'bg-gradient-to-r from-teal-500 to-teal-600 text-white'
-                    : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-                }`}
-              >
-                {dateObj.display}
-              </button>
-            ))}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Contact Information Form */}
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-6">Your Details</h4>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">Full Name *</label>
+                <input 
+                  type="text"
+                  value={bookingForm.name}
+                  onChange={(e) => handleFormChange('name', e.target.value)}
+                  className="w-full p-4 bg-gray-900/50 border border-gray-600 rounded-xl text-white focus:border-teal-500 focus:outline-none transition-colors"
+                  placeholder="Enter your full name"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">Email Address *</label>
+                <input 
+                  type="email"
+                  value={bookingForm.email}
+                  onChange={(e) => handleFormChange('email', e.target.value)}
+                  className="w-full p-4 bg-gray-900/50 border border-gray-600 rounded-xl text-white focus:border-teal-500 focus:outline-none transition-colors"
+                  placeholder="your.email@example.com"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">Phone Number *</label>
+                <input 
+                  type="tel"
+                  value={bookingForm.phone}
+                  onChange={(e) => handleFormChange('phone', e.target.value)}
+                  className="w-full p-4 bg-gray-900/50 border border-gray-600 rounded-xl text-white focus:border-teal-500 focus:outline-none transition-colors"
+                  placeholder="Your phone number"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">Company (Optional)</label>
+                <input 
+                  type="text"
+                  value={bookingForm.company}
+                  onChange={(e) => handleFormChange('company', e.target.value)}
+                  className="w-full p-4 bg-gray-900/50 border border-gray-600 rounded-xl text-white focus:border-teal-500 focus:outline-none transition-colors"
+                  placeholder="Your company name"
+                />
+              </div>
+            </div>
+          </div>
+          
+          {/* Date & Time Selection */}
+          <div>
+            {/* Date Selection */}
+            <div className="mb-6">
+              <h4 className="text-lg font-semibold text-white mb-4">Select Date</h4>
+              <div className="grid grid-cols-2 gap-3 max-h-48 overflow-y-auto">
+                {availableDates.slice(0, 12).map((dateObj) => (
+                  <button
+                    key={dateObj.date}
+                    onClick={() => setSelectedDate(dateObj.date)}
+                    className={`p-3 rounded-xl text-sm font-medium transition-all duration-300 ${
+                      selectedDate === dateObj.date
+                        ? 'bg-gradient-to-r from-teal-500 to-teal-600 text-white'
+                        : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                    }`}
+                  >
+                    {dateObj.display}
+                  </button>
+                ))}
+              </div>
+            </div>
+            
+            {/* Time Selection */}
+            {selectedDate && (
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-4">Select Time</h4>
+                <div className="grid grid-cols-2 gap-3 max-h-48 overflow-y-auto">
+                  {timeSlots.map((time) => (
+                    <button
+                      key={time}
+                      onClick={() => setSelectedTime(time)}
+                      className={`p-3 rounded-xl text-sm font-medium transition-all duration-300 ${
+                        selectedTime === time
+                          ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white'
+                          : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                      }`}
+                    >
+                      {time}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
         
-        {/* Time Selection */}
-        {selectedDate && (
-          <div className="mb-8">
-            <h4 className="text-lg font-semibold text-white mb-4">Select Time</h4>
-            <div className="grid grid-cols-3 md:grid-cols-4 gap-3">
-              {timeSlots.map((time) => (
-                <button
-                  key={time}
-                  onClick={() => setSelectedTime(time)}
-                  className={`p-3 rounded-xl text-sm font-medium transition-all duration-300 ${
-                    selectedTime === time
-                      ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white'
-                      : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-                  }`}
-                >
-                  {time}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-        
         {/* Booking Summary & Submit */}
-        {selectedDate && selectedTime && (
-          <div className="bg-gray-900 rounded-2xl p-6 border border-gray-700">
-            <h5 className="text-lg font-semibold text-white mb-3">Booking Summary</h5>
-            <p className="text-gray-300 mb-4">
-              <strong>Date:</strong> {new Date(selectedDate).toLocaleDateString('en-GB', { 
-                weekday: 'long', 
-                day: 'numeric', 
-                month: 'long', 
-                year: 'numeric' 
-              })}
-            </p>
-            <p className="text-gray-300 mb-6">
-              <strong>Time:</strong> {selectedTime}
-            </p>
+        {selectedDate && selectedTime && bookingForm.name && bookingForm.email && bookingForm.phone && (
+          <div className="mt-8 bg-gray-900 rounded-2xl p-6 border border-gray-700">
+            <h5 className="text-lg font-semibold text-white mb-4">Booking Summary</h5>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <p className="text-gray-300 mb-2"><strong>Name:</strong> {bookingForm.name}</p>
+                <p className="text-gray-300 mb-2"><strong>Email:</strong> {bookingForm.email}</p>
+                <p className="text-gray-300 mb-2"><strong>Phone:</strong> {bookingForm.phone}</p>
+                {bookingForm.company && <p className="text-gray-300"><strong>Company:</strong> {bookingForm.company}</p>}
+              </div>
+              <div>
+                <p className="text-gray-300 mb-2">
+                  <strong>Date:</strong> {new Date(selectedDate).toLocaleDateString('en-GB', { 
+                    weekday: 'long', 
+                    day: 'numeric', 
+                    month: 'long', 
+                    year: 'numeric' 
+                  })}
+                </p>
+                <p className="text-gray-300 mb-4">
+                  <strong>Time:</strong> {selectedTime}
+                </p>
+              </div>
+            </div>
             
-            <div className="flex gap-4">
+            <div className="flex gap-4 mt-6">
               <Button
                 onClick={handleBookingSubmit}
                 className="flex-1 bg-gradient-to-r from-teal-500 to-orange-500 hover:from-teal-600 hover:to-orange-600 text-white py-4 rounded-xl font-medium transition-all duration-500 hover:scale-105"
               >
-                Confirm Booking
+                Send Booking Request
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               
@@ -185,11 +285,12 @@ const IngeniousCapital = () => {
                 onClick={() => {
                   setSelectedDate('');
                   setSelectedTime('');
+                  setBookingForm({ name: '', email: '', phone: '', company: '' });
                 }}
                 variant="outline"
                 className="px-6 py-4 border-gray-600 text-gray-300 hover:bg-gray-700 rounded-xl"
               >
-                Reset
+                Reset All
               </Button>
             </div>
           </div>
@@ -197,7 +298,7 @@ const IngeniousCapital = () => {
         
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-400">
-            Available Monday - Friday, 9:00 AM - 5:00 PM GMT
+            Available Monday - Friday, 9:00 AM - 5:00 PM GMT • All fields marked with * are required
           </p>
         </div>
       </div>
