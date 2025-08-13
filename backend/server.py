@@ -255,7 +255,7 @@ async def send_booking_email(booking: BookingRequest):
         business_msg = MIMEMultipart('alternative')
         business_msg['Subject'] = business_subject
         business_msg['From'] = smtp_user
-        business_msg['To'] = 'appointment@ingcap.co.uk'
+        business_msg['To'] = 'appointmentsingcap@gmail.com'
         business_msg.attach(MIMEText(business_html, 'html', 'utf-8'))
         
         # EMAIL 2: Send confirmation to customer
