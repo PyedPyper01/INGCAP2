@@ -563,25 +563,25 @@ const IngeniousCapital = () => {
       <div className="min-h-screen bg-gray-900">
         {/* Navigation */}
         <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-xl shadow-2xl border-b border-gray-700">
-          <div className="max-w-7xl mx-auto px-8 py-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4 sm:py-6">
             <div className="flex justify-between items-center">
               <button
                 onClick={() => navigateToPage('logo')}
-                className="text-white hover:text-teal-400 transition-colors font-medium flex items-center space-x-2"
+                className="text-white hover:text-teal-400 transition-colors font-medium flex items-center space-x-1 sm:space-x-2"
               >
-                <ArrowRight className="h-4 w-4 rotate-180" />
-                <span>Return to Home</span>
+                <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 rotate-180" />
+                <span className="text-xs sm:text-sm">Return to Home</span>
               </button>
               
               {/* Main Navigation Dropdown */}
               <div className="relative">
                 <button
                   onClick={() => setIsMainMenuOpen(!isMainMenuOpen)}
-                  className="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-lg border border-gray-600 transition-colors duration-300 flex items-center space-x-2"
+                  className="bg-gray-800 hover:bg-gray-700 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg border border-gray-600 transition-colors duration-300 flex items-center space-x-1 sm:space-x-2"
                 >
-                  <Menu className="h-4 w-4" />
-                  <span className="text-sm font-medium">Navigation</span>
-                  <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isMainMenuOpen ? 'rotate-180' : ''}`} />
+                  <Menu className="h-3 w-3 sm:h-4 sm:w-4" />
+                  <span className="text-xs sm:text-sm font-medium hidden sm:inline">Navigation</span>
+                  <ChevronDown className={`h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-300 ${isMainMenuOpen ? 'rotate-180' : ''}`} />
                 </button>
                 
                 {isMainMenuOpen && (
@@ -593,7 +593,7 @@ const IngeniousCapital = () => {
                     ></div>
                     
                     {/* Dropdown Menu */}
-                    <div className="absolute right-0 top-full mt-2 w-64 bg-gray-800 rounded-lg border border-gray-600 shadow-2xl z-50">
+                    <div className="absolute right-0 top-full mt-2 w-56 sm:w-64 bg-gray-800 rounded-lg border border-gray-600 shadow-2xl z-50 max-h-80 overflow-y-auto">
                       <div className="py-2">
                         {[
                           { id: 'about', label: 'Our Approach' },
@@ -612,10 +612,10 @@ const IngeniousCapital = () => {
                               scrollToSection(item.id);
                               setIsMainMenuOpen(false);
                             }}
-                            className="w-full text-left px-4 py-3 text-white hover:bg-gray-700 hover:text-teal-400 transition-colors duration-300 flex items-center space-x-3"
+                            className="w-full text-left px-3 py-2 sm:px-4 sm:py-3 text-white hover:bg-gray-700 hover:text-teal-400 transition-colors duration-300 flex items-center space-x-3"
                           >
-                            <ChevronRight className="h-4 w-4" />
-                            <span className="text-sm font-medium">{item.label}</span>
+                            <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
+                            <span className="text-xs sm:text-sm font-medium">{item.label}</span>
                           </button>
                         ))}
                       </div>
