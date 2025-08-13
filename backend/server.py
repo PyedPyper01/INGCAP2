@@ -84,7 +84,24 @@ async def get_all_bookings():
 @api_router.get("/test-email")
 async def test_email_connection():
     """Test SMTP connection and authentication"""
-    return {"message": "Email testing disabled - using database storage only"}
+    smtp_server = os.environ.get('SMTP_SERVER', '')
+    smtp_port = int(os.environ.get('SMTP_PORT', '587'))
+    smtp_user = os.environ.get('SMTP_USER', '')
+    smtp_password = os.environ.get('SMTP_PASSWORD', '')
+    
+    if not smtp_user or not smtp_password or 'YOUR_16_CHAR_APP_PASSWORD_HERE' in smtp_password:
+        return {"error": "Please set up your Gmail app password in the .env file"}
+    
+    try:
+        server = smtplib.SMTP(smtp_server, smtp_port)
+        server.starttls()
+        server.login(smtp_user, smtp_password)
+        server.quit()
+        return {"success": True, "message": f"Successfully connected to Gmail as {smtp_user}"}
+    except smtplib.SMTPAuthenticationError as e:
+        return {"error": f"Gmail authentication failed - check your app password: {str(e)}"}
+    except Exception as e:
+        return {"error": f"Connection failed: {str(e)}"}
 
 @api_router.get("/booked-slots/{date}")
 async def get_booked_slots(date: str):
