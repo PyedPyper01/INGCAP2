@@ -922,7 +922,7 @@ const IngeniousCapital = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-32 relative overflow-hidden">
+      <section id="contact" className="min-h-screen py-32 relative overflow-hidden flex items-center">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1525896544042-354764aa27e6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBvZmZpY2V8ZW58MHx8fHwxNzU1MDEwOTM5fDA&ixlib=rb-4.1.0&q=85" 
