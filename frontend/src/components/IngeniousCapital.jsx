@@ -1490,8 +1490,13 @@ const IngeniousCapital = () => {
               <div className="mb-4 sm:mb-6">
                 <div className="bg-gray-700 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-blue-500 text-center cursor-pointer group">
                   <div className="w-fit mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-4 rounded-2xl">
-                      <span className="text-white font-bold text-lg tracking-wider">SERENITY<br/>LAKES</span>
+                    <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-blue-500">
+                      <img 
+                        src="https://images.unsplash.com/photo-1753958509901-a2676dbb4c4f" 
+                        alt="Serenity Lakes - Premium Lakefront Development" 
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-blue-500/20"></div>
                     </div>
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Serenity Lakes</h3>
