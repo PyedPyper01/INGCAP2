@@ -1383,29 +1383,29 @@ const IngeniousCapital = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Investment Opportunity 1 - Checkace */}
-            <div className="bg-gray-900 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full">
+            <div className="bg-gray-900 rounded-3xl p-6 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full">
               {/* PDF Pitch Deck Area */}
-              <div className="mb-4 sm:mb-6">
-                <div className="bg-gray-700 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-teal-500 text-center cursor-pointer group">
-                  <div className="w-fit mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="mb-4">
+                <div className="bg-gray-700 rounded-2xl p-4 border-2 border-teal-500 text-center cursor-pointer group">
+                  <div className="w-fit mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
                     <img 
                       src="https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/7qm8o67m_Checkaface%20Wide%20Logo.jpg" 
                       alt="Checkaface Logo" 
-                      className="h-10 sm:h-12 w-auto object-contain"
+                      className="h-8 w-auto object-contain"
                     />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Checkace</h3>
-                  <p className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4">Click to view pitch deck</p>
-                  <div className="bg-gray-800 rounded-lg p-3 sm:p-4 text-left">
+                  <h3 className="text-lg font-bold text-white mb-2">Checkace</h3>
+                  <p className="text-gray-300 text-xs mb-3">Click to view pitch deck</p>
+                  <div className="bg-gray-800 rounded-lg p-3 text-left">
                     <div className="flex items-center justify-between mb-2">
-                      <p className="text-xs sm:text-sm text-teal-400 font-semibold">📄 Checkaface-Pitch-Deck.pdf</p>
-                      <Download className="h-3 w-3 sm:h-4 sm:w-4 text-teal-400" />
+                      <p className="text-xs text-teal-400 font-semibold">📄 Checkaface-Pitch-Deck.pdf</p>
+                      <Download className="h-3 w-3 text-teal-400" />
                     </div>
                     <button
                       onClick={() => window.open('https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/wxmtu9on_Checkaface-Pitch-Deck%20.pdf', '_blank')}
-                      className="w-full bg-teal-600 hover:bg-teal-700 text-white py-2 px-4 rounded-lg text-xs sm:text-sm font-medium transition-colors"
+                      className="w-full bg-teal-600 hover:bg-teal-700 text-white py-2 px-3 rounded-lg text-xs font-medium transition-colors"
                     >
                       Open Pitch Deck
                     </button>
@@ -1414,8 +1414,8 @@ const IngeniousCapital = () => {
               </div>
               
               {/* Description Area */}
-              <div className="bg-gray-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-600 flex-1 flex flex-col">
-                <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Investment Description</h4>
+              <div className="bg-gray-800 rounded-2xl p-4 border border-gray-600 flex-1 flex flex-col">
+                <h4 className="text-base font-bold text-white mb-3">Investment Description</h4>
                 <div className="text-xs text-gray-300 leading-relaxed flex-1">
                   <p className="mb-2">
                     Checkace represents an innovative fintech solution targeting the digital verification and compliance market. This opportunity offers investors exposure to cutting-edge technology that addresses growing regulatory requirements across multiple industries.
@@ -1430,35 +1430,37 @@ const IngeniousCapital = () => {
                     Checkaface has received HMRC Advance Assurance Approval for SEIS/EIS, making it a very attractive tax efficient investment.
                   </p>
                 </div>
-                <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0">
-                  <span className="text-xs text-gray-500">Investment Stage: Series A</span>
-                  <span className="text-xs text-teal-400 font-semibold">Target Return: 50% IRR over a 3 year investment cycle</span>
+                <div className="mt-3 flex flex-col space-y-1">
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs text-gray-500">Investment Stage: Series A</span>
+                    <span className="text-xs text-teal-400 font-semibold">Target Return: 50% IRR over a 3 year investment cycle</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Investment Opportunity 2 - Section 106 Reclaims */}
-            <div className="bg-gray-900 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full">
+            <div className="bg-gray-900 rounded-3xl p-6 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full">
               {/* PDF Pitch Deck Area */}
-              <div className="mb-4 sm:mb-6">
-                <div className="bg-gray-700 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-orange-500 text-center cursor-pointer group">
-                  <div className="w-fit mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="mb-4">
+                <div className="bg-gray-700 rounded-2xl p-4 border-2 border-orange-500 text-center cursor-pointer group">
+                  <div className="w-fit mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
                     <img 
                       src="https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/k0bki6nj_section-106-reclaims-logo-4color.png" 
                       alt="Section 106 Reclaims Logo" 
-                      className="h-10 sm:h-12 w-auto object-contain"
+                      className="h-8 w-auto object-contain"
                     />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Section 106 Reclaims</h3>
-                  <p className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4">Click to view pitch deck</p>
-                  <div className="bg-gray-800 rounded-lg p-3 sm:p-4 text-left">
+                  <h3 className="text-lg font-bold text-white mb-2">Section 106 Reclaims</h3>
+                  <p className="text-gray-300 text-xs mb-3">Click to view pitch deck</p>
+                  <div className="bg-gray-800 rounded-lg p-3 text-left">
                     <div className="flex items-center justify-between mb-2">
-                      <p className="text-xs sm:text-sm text-orange-400 font-semibold">📄 Section-106-Reclaim Pitch.pdf</p>
-                      <Download className="h-3 w-3 sm:h-4 sm:w-4 text-orange-400" />
+                      <p className="text-xs text-orange-400 font-semibold">📄 Section-106-Reclaim Pitch.pdf</p>
+                      <Download className="h-3 w-3 text-orange-400" />
                     </div>
                     <button
                       onClick={() => window.open('https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/u942afse_Section-106-Reclaim%20Pitch.pdf', '_blank')}
-                      className="w-full bg-orange-600 hover:bg-orange-700 text-white py-2 px-4 rounded-lg text-xs sm:text-sm font-medium transition-colors"
+                      className="w-full bg-orange-600 hover:bg-orange-700 text-white py-2 px-3 rounded-lg text-xs font-medium transition-colors"
                     >
                       Open Pitch Deck
                     </button>
@@ -1467,8 +1469,8 @@ const IngeniousCapital = () => {
               </div>
               
               {/* Description Area */}
-              <div className="bg-gray-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-600 flex-1 flex flex-col">
-                <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Investment Description</h4>
+              <div className="bg-gray-800 rounded-2xl p-4 border border-gray-600 flex-1 flex flex-col">
+                <h4 className="text-base font-bold text-white mb-3">Investment Description</h4>
                 <div className="text-xs text-gray-300 leading-relaxed flex-1">
                   <p className="mb-2">
                     Section 106 Reclaims presents a specialized property investment opportunity focused on reclaiming developer contributions from local authorities. This unique asset class offers investors exposure to recoverable funds with strong legal foundations.
@@ -1480,20 +1482,22 @@ const IngeniousCapital = () => {
                     Key benefits include: minimal correlation to traditional property cycles, predictable returns, and backed by comprehensive legal precedent in UK property law.
                   </p>
                 </div>
-                <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0">
-                  <span className="text-xs text-gray-500">Investment Type: Alternative Asset</span>
-                  <span className="text-xs text-orange-400 font-semibold">Target Return: 40% Annual</span>
+                <div className="mt-3 flex flex-col space-y-1">
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs text-gray-500">Investment Type: Alternative Asset</span>
+                    <span className="text-xs text-orange-400 font-semibold">Target Return: 40% Annual</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Investment Opportunity 3 - Serenity Lakes */}
-            <div className="bg-gray-900 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full">
+            <div className="bg-gray-900 rounded-3xl p-6 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full">
               {/* PDF Pitch Deck Area */}
-              <div className="mb-4 sm:mb-6">
-                <div className="bg-gray-700 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-blue-500 text-center cursor-pointer group">
-                  <div className="w-fit mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-blue-500">
+              <div className="mb-4">
+                <div className="bg-gray-700 rounded-2xl p-4 border-2 border-blue-500 text-center cursor-pointer group">
+                  <div className="w-fit mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                    <div className="relative w-8 h-8 rounded-full overflow-hidden border-2 border-blue-500">
                       <img 
                         src="https://images.unsplash.com/photo-1753958509901-a2676dbb4c4f" 
                         alt="Serenity Lakes - Premium Lakefront Development" 
@@ -1502,16 +1506,16 @@ const IngeniousCapital = () => {
                       <div className="absolute inset-0 bg-blue-500/20"></div>
                     </div>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Serenity Lakes</h3>
-                  <p className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4">Click to view investment brochure</p>
-                  <div className="bg-gray-800 rounded-lg p-3 sm:p-4 text-left">
+                  <h3 className="text-lg font-bold text-white mb-2">Serenity Lakes</h3>
+                  <p className="text-gray-300 text-xs mb-3">Click to view investment brochure</p>
+                  <div className="bg-gray-800 rounded-lg p-3 text-left">
                     <div className="flex items-center justify-between mb-2">
-                      <p className="text-xs sm:text-sm text-blue-400 font-semibold">📄 915-WWP Serenity Lakes Design Update.pdf</p>
-                      <Download className="h-3 w-3 sm:h-4 sm:w-4 text-blue-400" />
+                      <p className="text-xs text-blue-400 font-semibold">📄 915-WWP Serenity Lakes Design Update.pdf</p>
+                      <Download className="h-3 w-3 text-blue-400" />
                     </div>
                     <button
                       onClick={() => window.open('https://customer-assets.emergentagent.com/job_ingcap-reset/artifacts/fsk4m607_915-WWP_Serenity%20Lakes-Design%20Update-220819_Low%20Res.pdf', '_blank')}
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg text-xs sm:text-sm font-medium transition-colors"
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-3 rounded-lg text-xs font-medium transition-colors"
                     >
                       Open Brochure
                     </button>
@@ -1520,8 +1524,8 @@ const IngeniousCapital = () => {
               </div>
               
               {/* Description Area */}
-              <div className="bg-gray-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-600 flex-1 flex flex-col">
-                <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Investment Description</h4>
+              <div className="bg-gray-800 rounded-2xl p-4 border border-gray-600 flex-1 flex flex-col">
+                <h4 className="text-base font-bold text-white mb-3">Investment Description</h4>
                 <div className="text-xs text-gray-300 leading-relaxed flex-1">
                   <p className="mb-2">
                     Serenity Lakes is a perfect example of how we invest in property. The owners have an excellent track record in leisure development and are seeking funding to assist in the construction of the development. Rather than lend money and be exposed to the development risk Ingenious Capital has negotiated to purchase 25 of the completed units at a 25% discount to value.
@@ -1539,7 +1543,7 @@ const IngeniousCapital = () => {
                     In the event something goes wrong, our funds are protected in escrow where we have negotiated a 5% rate of interest, so the downside in the unlikely event of the site not being completed is a guaranteed 5% return, while the upside is a 100%+ return over 2 years.
                   </p>
                 </div>
-                <div className="mt-3 sm:mt-4 flex flex-col space-y-1">
+                <div className="mt-3 flex flex-col space-y-1">
                   <div className="flex justify-between items-center">
                     <span className="text-xs text-gray-500">Investment Type: Property Development</span>
                     <span className="text-xs text-blue-400 font-semibold">Target Return: 6 months: 15-20%</span>
@@ -1553,16 +1557,16 @@ const IngeniousCapital = () => {
             </div>
 
             {/* Investment Opportunity 4 - Future Opportunity */}
-            <div className="bg-gray-900 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full">
+            <div className="bg-gray-900 rounded-3xl p-6 shadow-2xl border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 flex flex-col h-full">
               {/* PDF Pitch Deck Area */}
-              <div className="mb-4 sm:mb-6">
-                <div className="bg-gray-700 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-dashed border-gray-600 text-center hover:border-purple-500 transition-colors cursor-pointer group">
-                  <div className="w-fit mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Briefcase className="h-10 w-10 sm:h-12 sm:w-12 text-purple-500" />
+              <div className="mb-4">
+                <div className="bg-gray-700 rounded-2xl p-4 border-2 border-dashed border-gray-600 text-center hover:border-purple-500 transition-colors cursor-pointer group">
+                  <div className="w-fit mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                    <Briefcase className="h-8 w-8 text-purple-500" />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Future Opportunity</h3>
-                  <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">Pipeline opportunity in development</p>
-                  <div className="bg-gray-800 rounded-lg p-3 sm:p-4 text-left">
+                  <h3 className="text-lg font-bold text-white mb-2">Future Opportunity</h3>
+                  <p className="text-gray-400 text-xs mb-3">Pipeline opportunity in development</p>
+                  <div className="bg-gray-800 rounded-lg p-3 text-left">
                     <p className="text-xs text-gray-500 mb-2">📄 Investment details coming soon</p>
                     <p className="text-xs text-gray-500">Join our investor network for early access</p>
                   </div>
@@ -1570,9 +1574,9 @@ const IngeniousCapital = () => {
               </div>
               
               {/* Description Area */}
-              <div className="bg-gray-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-600 flex-1 flex flex-col">
-                <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Investment Description</h4>
-                <div className="text-xs text-gray-400 leading-relaxed text-center py-6 sm:py-8 flex-1 flex flex-col justify-center">
+              <div className="bg-gray-800 rounded-2xl p-4 border border-gray-600 flex-1 flex flex-col">
+                <h4 className="text-base font-bold text-white mb-3">Investment Description</h4>
+                <div className="text-xs text-gray-400 leading-relaxed text-center py-4 flex-1 flex flex-col justify-center">
                   <p className="mb-3">
                     💼 Additional investment opportunity in our pipeline
                   </p>
